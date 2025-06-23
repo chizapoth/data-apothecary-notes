@@ -1,0 +1,472 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Cheatsheet: Result processing\"\n",
+        "description: |\n",
+        "  Refer to the jupyter notebook for rendered code.\n",
+        "author: \"Chi Zhang\"\n",
+        "date: \"2025-02-27\"\n",
+        "categories: [Python]\n",
+        "sidebar: false\n",
+        "code-block-bg: true\n",
+        "code-block-border-left: true\n",
+        "jupyter: python3\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    code-fold: false\n",
+        "    code-tools: false\n",
+        "    code-annotations: select\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Multiple classifiers\n",
+        "\n",
+        "This is handy when you want to train multiple classifiers and store the results in a structured way. Similar to **lists** in R.\n",
+        "\n",
+        "### Set up dictionary\n",
+        "\n",
+        "```python\n",
+        "classifiers = {\n",
+        "    'LR1': LogisticRegression(multi_class='multinomial', C=10, penalty='l1', solver='saga'),\n",
+        "    'LR2': LogisticRegression(multi_class='multinomial', C=10, penalty='l2', solver='saga')\n",
+        "}\n",
+        "```\n",
+        "\n",
+        "Can check some information on the dictionary, with `len(classificers)` and `.items()`, `.keys()` and `values()`.\n",
+        "\n",
+        "To access the items inside a dictionary, use `dict['key1']`.\n",
+        "\n",
+        "```python\n",
+        "classifiers['LR1'].fit(Xtrain, ytrain)\n",
+        "classifiers['LR1'].predict(Xtest)\n",
+        "```\n",
+        "Print out the information\n",
+        "\n",
+        "```python\n",
+        "for name, model in classifiers.items():\n",
+        "    print(name)\n",
+        "    print(model)\n",
+        "```\n",
+        "\n",
+        "\n",
+        "### Run the classifiers\n",
+        "\n",
+        "Want to run the classifiers together: set up the result dictionary to hold the outputs of potentially different structures. Remember to save them into the right name! \n",
+        "\n",
+        "```python\n",
+        "results = {}\n",
+        "\n",
+        "# name extracts the key (can be x, i, whatever)\n",
+        "# model refers to the content\n",
+        "\n",
+        "for name, model in classifiers.items():\n",
+        "    model.fit(Xtrain, y_train)\n",
+        "    yhat = model.predict(Xtest)\n",
+        "    accuracy = accuracy_score(y_test, yhat)\n",
+        "\n",
+        "    # save results. it has to be saved in the proper name\n",
+        "    results[name] = {\n",
+        "        'model': name,\n",
+        "        'accuracy': accuracy,\n",
+        "        'coefficients': model.coef_,\n",
+        "        'intercept': model.intercept_,\n",
+        "        'yhat': yhat\n",
+        "    }\n",
+        "```\n",
+        "\n",
+        "### Investigate results\n",
+        "\n",
+        "Say that the results look like the following format. "
+      ],
+      "id": "82fb9d0f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "\n",
+        "model1 = {\n",
+        "    'accuracy': 0.95,\n",
+        "    'yhat': np.array([1,3,5])\n",
+        "}\n",
+        "model2 = {\n",
+        "    'accuracy': 0.97,\n",
+        "    'yhat': np.array([1,4,6])\n",
+        "}\n",
+        "# put them together. remember dictionary must have a key, can not simply do {model1, model2}!\n",
+        "results = {\n",
+        "    'model1': model1,\n",
+        "    'model2': model2\n",
+        "}\n",
+        "results"
+      ],
+      "id": "4615a8b3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Quick glance: `results.items()`, `results.keys()`"
+      ],
+      "id": "56b42bb0"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "results.keys()"
+      ],
+      "id": "d71eece9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "results.items()"
+      ],
+      "id": "91134f2a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Get all the results from the first key ('model1')"
+      ],
+      "id": "03f890a1"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "results['model1']"
+      ],
+      "id": "7ffafad7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "More specific, just get `accuracy`."
+      ],
+      "id": "2f8e9c72"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "results['model1']['accuracy']"
+      ],
+      "id": "cc7d7732",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Extract results with dictionary comprehension\n",
+        "\n",
+        "Here we need to use **list comprehension** and **dictionary comprehension**. Recall that with LC, the syntax goes like `[<expression> for <item> in <iterable>]`."
+      ],
+      "id": "07af28e4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# all the elements\n",
+        "[x for x in results.values()]"
+      ],
+      "id": "6f6cf430",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Combine with dictionary syntax (the expression), to get `model_x['accuracy']` for both models:"
+      ],
+      "id": "0ad493e9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# certain item only\n",
+        "[x['accuracy'] for x in results.values()]"
+      ],
+      "id": "6f1288c1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "This can also be presented as a dataframe too."
+      ],
+      "id": "fc92e920"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "accuracy = pd.DataFrame([x['accuracy'] for x in results.values()])\n",
+        "accuracy # can do accuracy.T  to change the layout"
+      ],
+      "id": "c42014b5",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Can do it to arrays too."
+      ],
+      "id": "28989242"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "[x['yhat'] for x in results.values()]"
+      ],
+      "id": "29f6e380",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Changing names for the result dataframe\n",
+        "\n",
+        "Do it with `df.rename(columns = {'old':'new'})`"
+      ],
+      "id": "fdc13df9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "accuracy.rename(columns = {0:'accuracies'})"
+      ],
+      "id": "1f42204c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Dictionary comprehension\n",
+        "\n",
+        "Dictionary comprehension is similar to LC, and it's more handy when keys are involved for later. Note that here we are extracting from `results.items()` rather than `values()`. "
+      ],
+      "id": "5d995dc6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "{key: {'accuracy': value['accuracy']} for key, value in results.items()}"
+      ],
+      "id": "4e90aa6f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The results here can be put directly into a dataframe."
+      ],
+      "id": "66481f29"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "a = {key: {'accuracy': value['accuracy']} for key, value in results.items()}\n",
+        "pd.DataFrame(a)"
+      ],
+      "id": "fec5e2c2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "yhats = pd.DataFrame({key: {'yhat': value['yhat']} for key, value in results.items()})\n",
+        "yhats"
+      ],
+      "id": "bf18dfe8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Visualize results "
+      ],
+      "id": "5d59cc9e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import matplotlib.pyplot as plt\n",
+        "import seaborn as sns\n",
+        "from sklearn.datasets import make_blobs\n",
+        "\n",
+        "# from code_py.sklearn_1 import Xtrain\n",
+        "\n",
+        "X, y = make_blobs(n_samples=300,\n",
+        "                  centers=4,\n",
+        "                  random_state=0,\n",
+        "                  cluster_std=1)\n",
+        "                  \n",
+        "# plot the two dimensions of X; color with the class in y\n",
+        "\n",
+        "sns.scatterplot(x = X[:,0], y = X[:,1], hue=y, palette=sns.color_palette(\"hls\", 4))\n",
+        "plt.show();"
+      ],
+      "id": "3e55704b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Decision tree example"
+      ],
+      "id": "5ef25534"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# split the data\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, test_size=0.3,random_state=42)\n",
+        "\n",
+        "# fit a decision tree\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "tree = DecisionTreeClassifier().fit(Xtrain, ytrain)\n",
+        "\n",
+        "# make prediction\n",
+        "ytest_pred = tree.predict(Xtest)\n",
+        "ytest_pred[0:5]"
+      ],
+      "id": "e44fb9b3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Now we try to visualise the results. First put the predictions along with the original data, and then add a label for whether there is a mismatch."
+      ],
+      "id": "9e2f0f1c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# tt = pd.DataFrame(Xtest, columns=['x1', 'x2'])\n",
+        "# tt['new'] = ytest\n",
+        "\n",
+        "mat = np.column_stack((Xtest, ytest, ytest_pred))\n",
+        "test_df = pd.DataFrame(mat, columns=['x1', 'x2', 'y', 'pred'])\n",
+        "\n",
+        "# add a new column where y and pred do not match\n",
+        "test_df['mismatch'] = np.where(test_df['y'] != test_df['pred'], 1, 0)\n",
+        "test_df.head()"
+      ],
+      "id": "3627950a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Now visualize"
+      ],
+      "id": "b3ef1db8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# visualize based on mismatch status\n",
+        "sns.relplot(data = test_df,\n",
+        "            x = 'x1',\n",
+        "            y = 'x2',\n",
+        "            col = 'mismatch',\n",
+        "            hue = 'y',\n",
+        "            palette=sns.color_palette(\"hls\", 4))\n",
+        "plt.show();"
+      ],
+      "id": "4f670827",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Another way to visualize\n"
+      ],
+      "id": "2fba3bcd"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.scatterplot(data = test_df,\n",
+        "                x = 'x1',\n",
+        "                y = 'x2',\n",
+        "                hue = 'y',\n",
+        "                style = 'mismatch',\n",
+        "                palette=sns.color_palette(\"hls\", 4))\n",
+        "plt.show();"
+      ],
+      "id": "f93c4e91",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/chizhang/.pyenv/versions/3.12.7/envs/mypydev312/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

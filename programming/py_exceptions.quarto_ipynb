@@ -1,0 +1,394 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Control flow, exceptions\"\n",
+        "description: |\n",
+        "  Control flow, exceptions\n",
+        "author: \"Chi Zhang\"\n",
+        "date: \"2024-12-05\"\n",
+        "categories: [Python]\n",
+        "sidebar: false\n",
+        "code-block-bg: true\n",
+        "code-block-border-left: true\n",
+        "jupyter: python3\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    code-fold: false\n",
+        "    code-tools: false\n",
+        "    code-annotations: select\n",
+        "---\n",
+        "\n",
+        "\n",
+        "## Control flow\n",
+        "\n",
+        "The indentation can be either 2 or 4. In a loop, it has to be indented. The `:` also is necessary.\n",
+        "\n",
+        "* For loops when you know the number of iterations\n",
+        "* While loops when there is a condition to be met\n",
+        "\n",
+        "### For loop "
+      ],
+      "id": "77b2db21"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "for i in range(3):\n",
+        "    print('hello')"
+      ],
+      "id": "efa60504",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "```{r}\n",
+        "for (i in 1:3){\n",
+        "  print('hello')\n",
+        "}\n",
+        "```"
+      ],
+      "id": "d7359fb4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# this prints 0, 1, 2, 3, 4\n",
+        "for i in range(5):\n",
+        "    print(i)"
+      ],
+      "id": "6da16046",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Combined with lists"
+      ],
+      "id": "6b09ba9c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "for i in range(1,3):\n",
+        "  for j in range(2,4):\n",
+        "    print(i, j)"
+      ],
+      "id": "560008a7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "scores = [45, 67, 89, 34, 56, 77, 49, 91, 52]\n",
+        "\n",
+        "for score in scores:\n",
+        "  if score >= 70:\n",
+        "    print(score)"
+      ],
+      "id": "6d005998",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Combined with counter"
+      ],
+      "id": "a770351e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "results = ['Hit', 'Miss', 'Miss', 'Hit', 'Miss']\n",
+        "count = 0\n",
+        "for i in results:\n",
+        "  if i == 'Hit':\n",
+        "    count +=1\n",
+        "print(count)"
+      ],
+      "id": "85dc3c63",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### While loop"
+      ],
+      "id": "5a7e9c03"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "n = 4\n",
+        "while n >0:\n",
+        "  print('continue')\n",
+        "  n = n-1"
+      ],
+      "id": "f40171e3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "In R\n",
+        "\n",
+        "```{r}\n",
+        "n <- 4\n",
+        "while(n>0){\n",
+        "  print('continue')\n",
+        "  n <- n-1\n",
+        "}\n",
+        "```\n",
+        "\n",
+        "\n",
+        "## If else\n",
+        "\n",
+        "\n",
+        "Conditions"
+      ],
+      "id": "e19a7894"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "rating = 74\n",
+        "views = 5400\n",
+        "print(rating>70 and views > 5000)\n",
+        "print(rating>70 or views > 6000)"
+      ],
+      "id": "1943fc17",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "age = 21\n",
+        "if age <= 18:\n",
+        "  print('discount')\n",
+        "#elif age > 18 & age <= 21\n",
+        "#  print('semi-discount')\n",
+        "else:\n",
+        "  print('original price')"
+      ],
+      "id": "6069ebe1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Break, continue\n",
+        "\n",
+        "`break` needs to be inside the loop. Typically used with **while**"
+      ],
+      "id": "84d0c2f3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "songs = [\"Hello\", \"Yesterday\", \"Happy\", \"Hallelujah\"]\n",
+        "\n",
+        "for song in songs:\n",
+        "  print(\"Searching\")\n",
+        "  if song == \"Happy\":\n",
+        "    print(\"Playing \" + song)\n",
+        "    break"
+      ],
+      "id": "16a4848b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`continue` skips when the condition is not met"
+      ],
+      "id": "b66c7408"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "ages = [13,19, 22, 8, 75, 34, 26, 41]\n",
+        "for age in ages:\n",
+        "  if age < 18:\n",
+        "    continue\n",
+        "  print(age)"
+      ],
+      "id": "c77e1a57",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Exception handling\n",
+        "\n",
+        "Types of exceptions:\n",
+        "\n",
+        "* `NameError`\n",
+        "* `SyntaxError`\n",
+        "* `ValueError`\n",
+        "* `IndexError`\n",
+        "* `TypeErorr`\n",
+        "\n",
+        "`try` block: test a block of code for errors\n",
+        "\n",
+        "`except` block: handle the error"
+      ],
+      "id": "270c87cd"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "try:\n",
+        "  print(k) # k is not defined\n",
+        "except:\n",
+        "  print('an exception')"
+      ],
+      "id": "7e67e3e1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "If we do not know what kind of exception we are expecting, "
+      ],
+      "id": "b8bb250a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "try:\n",
+        "  print(k) # k is not defined, hence NameError\n",
+        "except:\n",
+        "  print('Something is wrong')"
+      ],
+      "id": "1c083926",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "try:\n",
+        "  print(k)\n",
+        "except NameError:\n",
+        "  print(\"Variable x is not defined\")\n",
+        "except:\n",
+        "  print(\"Something else went wrong\")"
+      ],
+      "id": "6b457921",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "try:\n",
+        "  print(3 + \"3\")\n",
+        "except ValueError:\n",
+        "  print(\"Cannot add different types\")\n",
+        "except TypeError:\n",
+        "  print(\"Type mismatch error\")"
+      ],
+      "id": "3cf8a4b4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`else` block: execute code when there is no error\n",
+        "\n",
+        "`finally` block: execute code regardless of result of the try/except blocks\n"
+      ],
+      "id": "57ae1626"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "books = ['HP', 'dune']\n",
+        "try:\n",
+        "  print(books[5])\n",
+        "except IndexError:\n",
+        "  print('out of range')\n",
+        "finally:\n",
+        "  print('happy reading')"
+      ],
+      "id": "e2e70117",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Raise an exception \n",
+        "\n",
+        "```python\n",
+        "x = -1\n",
+        "if x<0:\n",
+        "  raise Exception('need x to be above 0') # can also be ValueError\n",
+        "```\n",
+        "\n",
+        "Raise a type error\n",
+        "\n",
+        "```python\n",
+        "x = 'hello'\n",
+        "if not type(x) is int:\n",
+        "  raise TypeError('needs to be an integer')\n",
+        "```"
+      ],
+      "id": "2c65533a"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/chizhang/.pyenv/versions/3.12.7/envs/mypydev312/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

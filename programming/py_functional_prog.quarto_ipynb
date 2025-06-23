@@ -1,0 +1,575 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Functions, functional programming\"\n",
+        "description: |\n",
+        "  Functions\n",
+        "author: \"Chi Zhang\"\n",
+        "date: \"2024-12-05\"\n",
+        "categories: [Python]\n",
+        "sidebar: false\n",
+        "code-block-bg: true\n",
+        "code-block-border-left: true\n",
+        "jupyter: python3\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    code-fold: false\n",
+        "    code-tools: false\n",
+        "    code-annotations: select\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Functional programming\n",
+        "\n",
+        "A function can be assigned to another. The same functionality exists in R. "
+      ],
+      "id": "a311b419"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def add_one(x):\n",
+        "  return x+1\n",
+        "add_one(10)\n",
+        "\n",
+        "# now assign this function to another, Add_One\n",
+        "Add_One = add_one\n",
+        "Add_One(10)"
+      ],
+      "id": "04ee64b9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A function can be the argument of another function\n"
+      ],
+      "id": "50f60d04"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def add_two(x):\n",
+        "  return x+2\n",
+        "\n",
+        "def add_value_string(x, function):\n",
+        "  return 'result is '+ str(function(x))\n",
+        "\n",
+        "add_value_string(10, add_one)\n",
+        "add_value_string(10, add_two)"
+      ],
+      "id": "bd5f4377",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Lambda expressions\n",
+        "\n",
+        "These are functions that are without a name, and has a `lambda` keyword. Typically they do not have a name, but you can also assign a name so that it functions like a normal function.\n",
+        "\n",
+        "\n",
+        "```python\n",
+        "lambda x:x+5\n",
+        "```"
+      ],
+      "id": "f6b98242"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "add_five = lambda x:x+5\n",
+        "add_five(3)"
+      ],
+      "id": "764fca57",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#def greet(name):\n",
+        "#  return 'Welcome, ' + name\n",
+        "greet = lambda name: 'Welcome, ' + name\n",
+        "\n",
+        "print(greet('Puff'))\n",
+        "print(greet('Ponpon'))"
+      ],
+      "id": "7897caa5",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Multiple arguments\n",
+        "\n",
+        "```python\n",
+        "lambda a, b: a*b + 5\n",
+        "```\n",
+        "\n",
+        "Execute "
+      ],
+      "id": "d23131ca"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "res = (lambda x, y: x+y)(2, 3)\n",
+        "res"
+      ],
+      "id": "43c05dc2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Lambda expressions are useful as a function factory,"
+      ],
+      "id": "b7a25b45"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def mult(n):\n",
+        "  return lambda a : a * n\n",
+        "\n",
+        "doubler = mult(2)\n",
+        "tripler = mult(3)\n",
+        "\n",
+        "print(doubler(5))\n",
+        "print(tripler(5))"
+      ],
+      "id": "68ced5f0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Maps and filters\n",
+        "\n",
+        "Syntax: `map(<function>, <iterable>)`\n",
+        "\n",
+        "The iterable does not have to be a list: it can also be a dictionary\n",
+        "\n",
+        "### On lists"
+      ],
+      "id": "1e5f0732"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#List of names in various cases\n",
+        "names = [\"alice\", \"bob\", \"CHARLIE\", \"dEborah\"]\n",
+        "\n",
+        "# Function to capitalize each name\n",
+        "def capitalize(name):\n",
+        "  return name.capitalize()\n",
+        "\n",
+        "# Using map() to apply the capitalization to each name\n",
+        "capitalized = map(capitalize, names)\n",
+        "\n",
+        "# Converting map object to a list\n",
+        "capitalized = list(capitalized)\n",
+        "\n",
+        "print(capitalized)"
+      ],
+      "id": "a49ea265",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Combined with lambdas"
+      ],
+      "id": "2dcbe11e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "numbers = [1, 2, 3]\n",
+        "doubled = list(map(lambda x: x*2, numbers)) # first part is function\n",
+        "doubled"
+      ],
+      "id": "6927c5e8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Filters on a list"
+      ],
+      "id": "21eda107"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "products = [\"Table\", \"Sofa\", \"Cushion\", \"Bookshelf\", \"Vase\"]\n",
+        "\n",
+        "# Filters products with name length equal to 4\n",
+        "filtered_prod = list(filter(lambda name: len(name) == 4, products))\n",
+        "\n",
+        "print(filtered_prod)"
+      ],
+      "id": "97df94ef",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### On dictionary"
+      ],
+      "id": "e922c029"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "products = {'Table': 110, 'Sofa': 120, 'Chair': 45, 'Lamp': 70}\n",
+        "\n",
+        "#filtering products with prices less than 90\n",
+        "filtered_products = dict(filter(lambda item: item[1] < 90, products.items()))\n",
+        "\n",
+        "print(filtered_products)"
+      ],
+      "id": "8f23ab0a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## args and kwargs\n",
+        "\n",
+        "The difference between `*args` and `**kwargs` is that the former receives a tuple, the later receives a dictionary."
+      ],
+      "id": "cf0e8730"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def total(numbers):\n",
+        "  result = 0\n",
+        "  # iterate over the list\n",
+        "  for i in numbers:\n",
+        "    result += i\n",
+        "  return result\n",
+        "\n",
+        "nums = [1,2,3,4]\n",
+        "print(total(nums))"
+      ],
+      "id": "c87d36b5",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### `*args`\n",
+        "\n",
+        "`*args` allows any number of arguments without creating a list before calling. It receives arguments as a **tuple** (an iterable)"
+      ],
+      "id": "959d0aee"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def total(*args): # can also be *number\n",
+        "  result = 0\n",
+        "  for arg in args: # no *, since it's unpacked\n",
+        "    result += arg\n",
+        "  return result\n",
+        "\n",
+        "print(total(1,2,3)) # no need to create a list, here we have 3 arguments instead of a list\n",
+        "print(total(201,23))"
+      ],
+      "id": "a71e2601",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Recall **unpacking** in tuples, use `*` operator. It unpacks a tuple as a list"
+      ],
+      "id": "92106eee"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "three_args = (76, 81, 96)\n",
+        "arg1, arg2, arg3 = three_args\n",
+        "print(arg1)\n",
+        "arg1, *args = three_args # this is where args is\n",
+        "print(args)"
+      ],
+      "id": "295cfe4e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The *args* does not have to be `args`, it can take any name as long as the operator is there."
+      ],
+      "id": "85be8a72"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def display(*words):\n",
+        "  for item in words: # here no *, since it is unpacked!\n",
+        "    print(item)\n",
+        "\n",
+        "display('word1')\n",
+        "display('word1', 'word3', 'word4')\n",
+        "display('word1', 3, 24.1) # doesn't have to be a string"
+      ],
+      "id": "d7879af3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "When combining with regular arguments, the regular ones must come before `*args`\n",
+        "\n",
+        "`def<func> (<argument>, <*args>)`"
+      ],
+      "id": "c3621618"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def show_items(category, *items):\n",
+        "  print(\"Category: \" + category)\n",
+        "  for item in items:\n",
+        "    print(item)\n",
+        "\n",
+        "show_items(\"Electronics\", \"Laptop\", \"Smartphone\", \"Tablet\") # the first is the category"
+      ],
+      "id": "2ff2fddd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### `**kwargs`: keyword arguments\n",
+        "\n",
+        "This one receives argument in the form of a **dictionary** that have key:value pairs. The `**` operator unpacks dictionaries into arguments."
+      ],
+      "id": "a3fce8a3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#**kwargs is a dictionary\n",
+        "def display_info(**kwargs):\n",
+        "  #kwargs.items() returns the key:value pairs\n",
+        "  for key, value in kwargs.items():\n",
+        "    print(key, \":\", value)\n",
+        "\n",
+        "display_info(name=\"Alice\", age=30, city=\"New York\")"
+      ],
+      "id": "930d32bb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "person = {'name':\"Alice\", 'age':30, 'city':\"New York\"}\n",
+        "person.items() # all pairs"
+      ],
+      "id": "93fa3e29",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Put together\n",
+        "\n",
+        "`def<func> (<argument>, <*args>, <**kwargs>)`\n",
+        "\n",
+        "\n",
+        "## Decorators\n",
+        "\n",
+        "Functions can be nested"
+      ],
+      "id": "08d17e87"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def greet(name):\n",
+        "    print(\"Hey\", name)\n",
+        "    \n",
+        "# sub function\n",
+        "    def account():\n",
+        "        return \"Your account is created!\"\n",
+        "\n",
+        "    message = account()\n",
+        "    return message\n",
+        "\n",
+        "print(greet(\"Bob\"))"
+      ],
+      "id": "9df0d50f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Decorator modifies a function's original behavior without changing it"
+      ],
+      "id": "78cfb8bd"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def greet():\n",
+        "    return \"Welcome!\"\n",
+        "\n",
+        "#takes a function as an argument\n",
+        "def uppercase(func): # this is the decorator\n",
+        "    #wrapper function to keep the\n",
+        "    #original function code unchanged\n",
+        "    def wrapper():\n",
+        "        orig_message = func()\n",
+        "        modified_message = orig_message.upper()\n",
+        "        return modified_message\n",
+        "    return wrapper\n",
+        "\n",
+        "greet_upper = uppercase(greet)\n",
+        "print(greet_upper())"
+      ],
+      "id": "9735da15",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Use `@`"
+      ],
+      "id": "ec3a34c3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def uppercase(func):\n",
+        "    def wrapper():\n",
+        "        orig_message = func()\n",
+        "        modified_message = orig_message.upper()\n",
+        "        return modified_message\n",
+        "    return wrapper\n",
+        "\n",
+        "@uppercase\n",
+        "def greet():\n",
+        "    return \"Welcome!\"\n",
+        "\n",
+        "# Using the decorated function\n",
+        "print(greet())"
+      ],
+      "id": "1dcab1cd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Use different decorators for the same function"
+      ],
+      "id": "ca2eb43c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def stock_status_decorator(func):\n",
+        "    def wrapper(item):\n",
+        "        result = func(item)\n",
+        "        print(result, \": stock status for\", item)\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "@stock_status_decorator\n",
+        "def restock_item(item):\n",
+        "    return \"Restocked\"\n",
+        "\n",
+        "@stock_status_decorator\n",
+        "def sell_item(item):\n",
+        "    return \"Sold\"\n",
+        "\n",
+        "print(restock_item(\"Laptop\"))\n",
+        "print(sell_item(\"Smartphone\"))"
+      ],
+      "id": "e0d2a6fa",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/chizhang/.pyenv/versions/3.12.7/envs/mypydev312/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

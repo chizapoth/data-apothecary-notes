@@ -1,0 +1,80 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Python set up with Quarto\"\n",
+        "description: |\n",
+        "  Use Python with Quarto\n",
+        "author: \"Chi Zhang\"\n",
+        "date: \"2024-11-29\"\n",
+        "categories: [Python, Quarto]\n",
+        "sidebar: false\n",
+        "code-block-bg: true\n",
+        "code-block-border-left: true\n",
+        "jupyter: python3\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    code-fold: false\n",
+        "    code-tools: false\n",
+        "    code-annotations: select\n",
+        "---\n",
+        "\n",
+        "\n",
+        "### Pre-requisite \n",
+        "\n",
+        "* Need to enter the virtual environment of your choosing. In RStudio, select the one you need inside Tools -> Global Options -> Python -> Interpreter -> Virtual Environment\n",
+        "* Need `PyYaml` installed in this virtual environment. Try to run `pip install pyyaml` inside the virtualenv.\n",
+        "* Need to set the engine as such, \n",
+        "\n",
+        "```yaml\n",
+        "---\n",
+        "title: \"test python\"\n",
+        "format: html\n",
+        "jupyter: python3\n",
+        "---\n",
+        "```\n",
+        "\n",
+        "\n",
+        "Afterwards, can try to render "
+      ],
+      "id": "42b854b8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "x = np.linspace(0, 20, 100)\n",
+        "plt.plot(x, np.sin(x))\n",
+        "plt.show()"
+      ],
+      "id": "40ac1651",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "To check what packages are installed, can use `pip list`.\n"
+      ],
+      "id": "f7c8a25c"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/chizhang/.pyenv/versions/3.12.7/envs/mypydev312/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

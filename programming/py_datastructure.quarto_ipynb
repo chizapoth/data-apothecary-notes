@@ -1,0 +1,766 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Python data structure\"\n",
+        "description: |\n",
+        "  Python basics\n",
+        "author: \"Chi Zhang\"\n",
+        "date: \"2024-12-02\"\n",
+        "categories: [Python]\n",
+        "sidebar: false\n",
+        "code-block-bg: true\n",
+        "code-block-border-left: true\n",
+        "jupyter: python3\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    code-fold: false\n",
+        "    code-tools: false\n",
+        "    code-annotations: select\n",
+        "---\n",
+        "\n",
+        "> Resources: [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) by Jake VanderPlas\n",
+        "\n",
+        "\n",
+        "### Strings"
+      ],
+      "id": "177ed723"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print('Winter' + 'Park')"
+      ],
+      "id": "8c48e7fb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Check data types"
+      ],
+      "id": "7723d340"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "movie = 'Matrix'\n",
+        "print(type(movie))"
+      ],
+      "id": "7ac30e56",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "channel = 'cnn'\n",
+        "print(channel.upper())  # CNN\n",
+        "print(channel.capitalize()) # Cnn\n",
+        "print(channel.find('c')) # first\n",
+        "print(len(channel)) "
+      ],
+      "id": "267fa542",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Useful functions"
+      ],
+      "id": "1d1fa131"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "movies = ['Avatar', 'Titanic', 'Alien']\n",
+        "movies.append('Avengers')\n",
+        "movies.insert(2, 'Terminator')\n",
+        "print(movies[3])"
+      ],
+      "id": "066562a0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "ages = [25, 33, 19]\n",
+        "sorted(ages)\n",
+        "sorted(ages, reverse = True)\n",
+        "\n",
+        "# sort strings\n",
+        "players = [\"Zoe\", \"Liam\", \"Emma\", \"Noah\", \"Olivia\"]\n",
+        "srt_players = sorted(players)\n",
+        "print(srt_players)"
+      ],
+      "id": "3d68fbe0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data structure\n",
+        "\n",
+        "|    | Mutable   | Ordered | Indexing | Duplicates|\n",
+        "|---------|-----|-----|------|---|\n",
+        "| Lists   | Yes | Yes| Yes| Yes |\n",
+        "| Tuples  |  - | Yes |  Yes| Yes |\n",
+        "| Sets    | Yes  | - |  -   | - |\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Lists\n",
+        "\n",
+        "Square brackets"
+      ],
+      "id": "56bb38c6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "list1 = ['tea', 'jam', 'scone']\n",
+        "list1\n",
+        "\n",
+        "# different types of data can be mixed\n",
+        "list2 = ['tea', 20, True]\n",
+        "list2"
+      ],
+      "id": "79384e0b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Index starts from 0"
+      ],
+      "id": "6314525e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "list1[0]"
+      ],
+      "id": "68807fbb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Lists are **mutable**, you can change the values in the list after it's created."
+      ],
+      "id": "b80469b3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "list1[0] = 'milk'\n",
+        "list1"
+      ],
+      "id": "e9511638",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Index can also be used on a **string**. However strings are **immutable**: we can not replace a character with another."
+      ],
+      "id": "418e9e09"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "string = 'milk'\n",
+        "string[3] # prints the 4th character"
+      ],
+      "id": "3f8a67c4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Slicing\n",
+        "\n",
+        "The stopping index is exclusive: `[0:2]` prints out the 1st and 2nd element. "
+      ],
+      "id": "c6aa27fc"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "animals =[\"cat\", \"dog\", \"bird\", \"cow\"]\n",
+        "print(animals[0:2]) # excludes 0, takes 1st and 2nd\n",
+        "print(animals[1:3]) # excludes 1, takes 2nd and 3rd"
+      ],
+      "id": "69cfb5cf",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The immediate two indices prints out only one value."
+      ],
+      "id": "4be04f03"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(animals[0:1]) # 1st\n",
+        "print(animals[2:3]) # 3rd"
+      ],
+      "id": "f77e7d8c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A easier way to remember this for `[a:b]`, start counting from `[a+1:b]`. Example: `[3:5]` becomes the 4th and 5th; `[2:3]` becomes 3rd and 3rd - just the 3rd.\n",
+        "\n",
+        "Ignoring the starting index or stopping index"
+      ],
+      "id": "e65c4578"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "cart = ['lamp', 'candles', 'chair', 'carpet']\n",
+        "print(cart[:2]) # stopping at 2nd\n",
+        "print(cart[1:]) # starting at 2nd"
+      ],
+      "id": "3ef24045",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Negative indexing"
+      ],
+      "id": "d97e74aa"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(cart[-1]) # last one\n",
+        "print(cart[-3:]) # last 3"
+      ],
+      "id": "41d7e065",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "cart = ['lamp', 'candles', 'chair', 'carpet']\n",
+        "print(cart[1:-1])"
+      ],
+      "id": "49a53179",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "x = 15\n",
+        "x += 5\n",
+        "print(x)\n",
+        "\n",
+        "prices = [15, 19, 24, 8, 5]\n",
+        "for i in prices:\n",
+        "  i += 5\n",
+        "  print(i)"
+      ],
+      "id": "74ecf7a8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## List comprehension\n",
+        "\n",
+        "Syntax: `<variable> = [<expression> for <item> in <iterable>]`\n"
+      ],
+      "id": "a40620a3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "nums = []\n",
+        "for x in range(1,11):\n",
+        "  nums.append(x)\n",
+        "print(nums)\n",
+        "\n",
+        "# alternatively,\n",
+        "nums = [x for x in range(1, 11)]\n",
+        "nums"
+      ],
+      "id": "7617a156",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`<variable> = [<expression> for <item> in <iterable>]`"
+      ],
+      "id": "07c9c3a4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "nums = [x*2 for x in range(10)]\n",
+        "nums\n",
+        "\n",
+        "tags = ['travel', 'vacation']\n",
+        "hashtags = ['#' + x for x in tags]\n",
+        "hashtags\n",
+        "\n",
+        "# capitalise\n",
+        "Tags = [x.capitalize() for x in tags]\n",
+        "Tags"
+      ],
+      "id": "e3c4a93f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Can combine conditions too "
+      ],
+      "id": "51e9bb5c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "users = [\"Brandon\", \"Emma\", \"Brian\", \"Sophia\", \"Bella\", \"Ethan\", \"Ava\", \"Benjamin\", \"Mia\", \"Chloe\"]\n",
+        "group = [x for x in users if x[0] == \"B\"]\n",
+        "print(group)"
+      ],
+      "id": "c17e95ff",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Tuples `()`\n",
+        "\n",
+        "Use parentheses. Tuples are **immutable**, they are useful when data shouldn't be accidentally modified. Therefore you can not use `append` functions on tuples."
+      ],
+      "id": "3f12dfef"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "b_date = (21, 'May', 2004)\n",
+        "b_date[1]"
+      ],
+      "id": "d5883a1b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "scores = (7, 9, 9, 8, 9)\n",
+        "print('# of 7:', scores.count(7))\n",
+        "print('# of 9:', scores.count(9))"
+      ],
+      "id": "addfff6f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Unpacking** in tuple. The length needs to be matched; however if you want to deal with unknown number of elements, can use `*`. After unpacking, the elements becomes a `list []`. "
+      ],
+      "id": "a3db9a4a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "grades = (76, 81, 96)\n",
+        "math, history, art = grades\n",
+        "print(math)\n",
+        "math, *others = grades\n",
+        "print(others)"
+      ],
+      "id": "183629aa",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Sets `{}`\n",
+        "\n",
+        "\n",
+        "With curly brackets. Sets are **unordered** so does not support indexing or slicing. "
+      ],
+      "id": "ae56131c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "guests = {\"Mery\", \"Anna\", \"Jonathan\"}\n",
+        "print(guests)\n",
+        "# print(guests[0]) #error"
+      ],
+      "id": "755eaa57",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Sets can not have duplicates, and duplicates are automatically ignored"
+      ],
+      "id": "a216cae8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "friends = {'Anna', 'Mery', 'Mery', 'Jonathan'}\n",
+        "print(friends)"
+      ],
+      "id": "30f8f3e7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Sets are mutable, so you can `add` and `remove` items. However, `append` does not work on sets since they are unordered."
+      ],
+      "id": "8886fc5b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "guests = {\"Mery\", \"Anna\", \"Jonathan\"}\n",
+        "guests.add('Robert')\n",
+        "guests.remove('Mery')\n",
+        "print(guests)"
+      ],
+      "id": "1c1fc614",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "To clear the set, "
+      ],
+      "id": "2c2bc817"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "guests.clear()\n",
+        "print(guests)"
+      ],
+      "id": "f969f285",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "To join sets, use `set1.union(set2)`. This ignores the duplicates. To find the element only in set 1 but not set 2, use `set1.difference(set2)`"
+      ],
+      "id": "bdc84bce"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "set1 = {'apple', 'banana'}\n",
+        "set2 = {'banana', 'cherry'}\n",
+        "combined_set = set1.union(set2)\n",
+        "print(combined_set)\n",
+        "unique_1 = set1.difference(set2)\n",
+        "unique_2 = set2.difference(set1)\n",
+        "print([unique_1, unique_2]) # print toether"
+      ],
+      "id": "391b14d1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Dictionary\n",
+        "\n",
+        "The values can be of any type, including a list. The keys has to be immutable."
+      ],
+      "id": "a845680c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "product = {\n",
+        "  'name': 'pen',\n",
+        "  'is_red':True,\n",
+        "  'price': 79\n",
+        "}\n",
+        "print(product)"
+      ],
+      "id": "c20e69d2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "When the key is a string, it needs to go with quotation. "
+      ],
+      "id": "40dbae1b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "dancer = {\n",
+        "  'name' : 'maria',\n",
+        "  'points' : [9, 10, 7]\n",
+        "}\n",
+        "dancer"
+      ],
+      "id": "d184dbc7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The key has to be unique. If duplicate, the values will be overwritten. "
+      ],
+      "id": "889d24e3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "contact = {\n",
+        "  'name' : 'maria',\n",
+        "  'company': 'Google',\n",
+        "  'company': 'facebook'\n",
+        "}\n",
+        "contact"
+      ],
+      "id": "3336cba9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "To access the values, use `['key']`"
+      ],
+      "id": "b2332e72"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "contact['company']\n",
+        "contact.get('company')\n",
+        "contact.get('baba', 'puff') # if baba does not exist, returns puff "
+      ],
+      "id": "87b21469",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "contact.keys()\n",
+        "contact.values()\n",
+        "contact.items() # all pairs"
+      ],
+      "id": "ad31cad9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Change values for dictionary with `update()`"
+      ],
+      "id": "7a24b264"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "user = {\n",
+        "  'name': 'Albert',\n",
+        "  'age': 29\n",
+        "}\n",
+        "user.update({'age': 30})\n",
+        "print(user['age'])\n",
+        "print(user.items())"
+      ],
+      "id": "2a4a60cc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`pop()` removes item with specified key name"
+      ],
+      "id": "25f9ccf8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "car = {\n",
+        "  'brand': 'Ford',\n",
+        "  'model': 'mustang',\n",
+        "  'color': 'red'\n",
+        "}\n",
+        "# remove color key\n",
+        "car.pop('color')\n",
+        "print(car)\n",
+        "# check if values are in the dictionary\n",
+        "'mustang' in car.values()"
+      ],
+      "id": "81fb6c91",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Combined with loops, it returns the keys (not values)"
+      ],
+      "id": "cd584b7c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "car = {\n",
+        "  'brand': 'Ford',\n",
+        "  'model': 'mustang',\n",
+        "  'color': 'red'\n",
+        "}\n",
+        "for i in car:\n",
+        "  print(i)\n",
+        "\n",
+        "for i in car.values(): # this prints the values\n",
+        "  print(i)\n",
+        "\n",
+        "for i in car.items(): # this prints the pairs\n",
+        "  print(i)"
+      ],
+      "id": "9b2ad7e4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Unpack dictionary with `**`"
+      ],
+      "id": "b02f4b84"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "dict1 = {'a': 1, 'b': 2}\n",
+        "dict2 = {'c': 3, 'd': 4}\n",
+        "merged_dict = {**dict1, **dict2}\n",
+        "print(merged_dict)"
+      ],
+      "id": "6b1aa5e4",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/chizhang/.pyenv/versions/3.12.7/envs/mypydev312/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

@@ -1,0 +1,441 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Object oriented programming\"\n",
+        "description: |\n",
+        "  OOP\n",
+        "author: \"Chi Zhang\"\n",
+        "date: \"2024-12-10\"\n",
+        "categories: [Python]\n",
+        "sidebar: false\n",
+        "code-block-bg: true\n",
+        "code-block-border-left: true\n",
+        "jupyter: python3\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    code-fold: false\n",
+        "    code-tools: false\n",
+        "    code-annotations: select\n",
+        "---\n",
+        "\n",
+        "Class: template, abstraction, blueprint\n",
+        "\n",
+        "Object: and instance of a class, one derivation\n",
+        "\n",
+        "Attributes: characteristics \n",
+        "\n",
+        "Define a class\n",
+        "\n",
+        "`__init__` method, the first is always `self`"
+      ],
+      "id": "d15f5728"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Car:\n",
+        "  # Initialize attributes\n",
+        "  def __init__(self, brand, color):\n",
+        "    # Assign values to attributes\n",
+        "    self.brand = brand\n",
+        "    self.color = color\n",
+        "\n",
+        "# Create an object of the Car class\n",
+        "my_car = Car('Audi', 'yellow')\n",
+        "\n",
+        "print(my_car)"
+      ],
+      "id": "506de0de",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Access the attributes using `.`"
+      ],
+      "id": "045d7d47"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(my_car.brand)\n",
+        "print(my_car.color)"
+      ],
+      "id": "942622e4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Add custom behaviors to a class. Must always have `self` as the first argument\n"
+      ],
+      "id": "a8b3b9a7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Car:\n",
+        "  # Initialize attributes\n",
+        "  def __init__(self, brand, color):\n",
+        "    # Assign values to attributes\n",
+        "    self.brand = brand\n",
+        "    self.color = color\n",
+        "\n",
+        "  def honk(self):\n",
+        "    print('honk honk')\n",
+        "# Create an object of the Car class\n",
+        "my_car = Car('Audi', 'yellow')\n",
+        "\n",
+        "print(my_car)\n",
+        "my_car.honk()"
+      ],
+      "id": "7f3d2eba",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Difference between a function and a method: function can be called on its own, and method has to be called with the object\n"
+      ],
+      "id": "f1ab5f16"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#function\n",
+        "def greet():\n",
+        "  print(\"Welcome!\")\n",
+        "\n",
+        "#list\n",
+        "prices = [55, 68, 77, 36]\n",
+        "\n",
+        "#data types\n",
+        "x = 5\n",
+        "city = \"London\"\n",
+        "is_open = True\n",
+        "\n",
+        "\n",
+        "print(type(greet))\n",
+        "print(type(prices))\n",
+        "print(type(x))\n",
+        "print(type(city))\n",
+        "print(type(is_open))"
+      ],
+      "id": "43ec8314",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Inheritance\n",
+        "\n",
+        "From an existing class `Animal`, the class `Dog` inherits the method `move`, and also has its own method `bark`.\n"
+      ],
+      "id": "ed5a8e92"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Animal:\n",
+        "  def __init__(self, name):\n",
+        "    self.name = name\n",
+        "  \n",
+        "  def move(self):\n",
+        "    print(\"Moving\")\n",
+        "\n",
+        "# Inherits from Animal class\n",
+        "class Dog(Animal):\n",
+        "  # Specific behavior\n",
+        "  def bark(self):\n",
+        "    print(\"Woof!\")\n",
+        "    \n",
+        "# Creating an instance\n",
+        "my_dog = Dog(\"Bob\")\n",
+        "\n",
+        "# Inherited attribute and behavior\n",
+        "print(my_dog.name)\n",
+        "my_dog.move()\n",
+        "\n",
+        "# Specific behavior\n",
+        "my_dog.bark()"
+      ],
+      "id": "0626cbd9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Add more attributes on the child class in addition to the ones inherited from the parent class: use `super.__init__()` to inherit\n"
+      ],
+      "id": "54d8743a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#child class\n",
+        "class Dog(Animal):\n",
+        "  def __init__(self, name, breed, age):\n",
+        "    # Initialize attributes of the superclass\n",
+        "    super().__init__(name)\n",
+        "    # Additional attributes specific to Dog\n",
+        "    self.breed = breed\n",
+        "    self.age = age\n",
+        "\n",
+        "  def bark(self):\n",
+        "    print(\"Woof!\")\n",
+        "\n",
+        "my_dog = Dog(\"Jax\", \"Bulldog\", 5)\n",
+        "#inherited attribute\n",
+        "print(my_dog.name)\n",
+        "\n",
+        "#Additional attributes\n",
+        "print(my_dog.breed)\n",
+        "print(my_dog.age)"
+      ],
+      "id": "a952acda",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Method overriding**: inherits the method from the parent class, but have modified behavior\n",
+        "\n",
+        "\n",
+        "## Data hiding\n",
+        "\n",
+        "Values of attributes can be modified. The code below modifies the value of `odometer`"
+      ],
+      "id": "001181e9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Car:\n",
+        "  def __init__(self, model, year, odometer):\n",
+        "    self.model = model\n",
+        "    self.year = year\n",
+        "    self.odometer = odometer\n",
+        "\n",
+        "  def describe_car(self):\n",
+        "    print(self.year, self.model)\n",
+        "\n",
+        "  def read_odometer(self):\n",
+        "    print(\"Odometer:\", self.odometer, \"miles\")\n",
+        "\n",
+        "my_car = Car('Audi', 2020, 15000)\n",
+        "\n",
+        "my_car.describe_car()\n",
+        "my_car.read_odometer()\n",
+        "\n",
+        "#changing a value of the attribute\n",
+        "my_car.odometer = 20000\n",
+        "\n",
+        "my_car.read_odometer()"
+      ],
+      "id": "69cd12be",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "To hide the values, the first way is to use `_` before the attribute. This indicates the attribute is for **internal use** only. They can still be accessed by calling `class._attribute`\n"
+      ],
+      "id": "a363cd75"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Car:\n",
+        "  def __init__(self, model, year, odometer):\n",
+        "    self.model = model\n",
+        "    self.year = year\n",
+        "    # Making the odometer attribute 'protected'\n",
+        "    self._odometer = odometer  \n",
+        "\n",
+        "  def describe_car(self):\n",
+        "    print(self.year, self.model)\n",
+        "\n",
+        "  def read_odometer(self):\n",
+        "    print(\"Odometer:\", self._odometer, \"miles\")\n",
+        "\n",
+        "my_car = Car('Audi', 2020, 15000)\n",
+        "\n",
+        "my_car.describe_car()\n",
+        "my_car.read_odometer()\n",
+        "# access the protected attribute\n",
+        "print(my_car._odometer)"
+      ],
+      "id": "ab322a44",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The second way for data hiding is to make it private. If trying to access it, `my_car.__odometer` will print an error.\n",
+        "\n",
+        "```python\n",
+        "class Car:\n",
+        "  def __init__(self, model, year, odometer):\n",
+        "    self.model = model\n",
+        "    self.year = year\n",
+        "    # Making the odometer attribute 'private'\n",
+        "    self.__odometer = odometer\n",
+        "```\n",
+        "\n",
+        "It is possible via name mangling, to access a private member of a class.\n"
+      ],
+      "id": "7c0d9981"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Car:\n",
+        "  def __init__(self, model, year, odometer):\n",
+        "    self.model = model\n",
+        "    self.year = year\n",
+        "    # Making the odometer attribute 'private'\n",
+        "    self.__odometer = odometer  \n",
+        "\n",
+        "  def _describe_car(self):  # Making the describe_car method 'protected'\n",
+        "    print(self.year, self.model)\n",
+        "\n",
+        "  def __read_odometer(self):  # Making the read_odometer method 'private'\n",
+        "    print(\"Odometer:\", self.__odometer, \"miles\")\n",
+        "\n",
+        "\n",
+        "my_car = Car('Audi', 2020, 15000)\n",
+        "\n",
+        "#accessing protected method\n",
+        "my_car._describe_car()\n",
+        "\n",
+        "#error when accessing a privet method\n",
+        "#my_car.__read_odometer()"
+      ],
+      "id": "44866a8f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Class methods\n",
+        "\n",
+        "Define  a class method that works on class itself, instead of an instance (even though it can also be called on a class). It uses the `@classmethod` decorator, and takes the `cls` as argument. \n",
+        "\n",
+        "* regular method: self\n",
+        "* class method: cls\n"
+      ],
+      "id": "017df924"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "class Book:\n",
+        "  def __init__(self, title, author):\n",
+        "    self.title = title\n",
+        "    self.author = author\n",
+        "\n",
+        "  #regular method\n",
+        "  def describe_book(self):\n",
+        "    print(self.title, 'by', self.author)\n",
+        "\n",
+        "  #class method\n",
+        "  @classmethod\n",
+        "  def books_in_series(cls, series_name, number_of_books):\n",
+        "    print('There are', number_of_books, 'books in the', series_name, 'series')\n",
+        "\n",
+        "# Creating an instance of Book\n",
+        "my_book = Book(\"Harry Potter and the Sorcerer's Stone\", \"J.K. Rowling\")\n",
+        "\n",
+        "# Using the instance method to describe the book\n",
+        "my_book.describe_book()\n",
+        "\n",
+        "# Using the class method to display information about the series\n",
+        "Book.books_in_series(\"Harry Potter\", 7)"
+      ],
+      "id": "6a9e86a3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Can also call the class method from the instance."
+      ],
+      "id": "e1bfd187"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# calling the class method on the instance\n",
+        "my_book.books_in_series(\"Harry Potter\", 7)"
+      ],
+      "id": "a1b65099",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "A **static method** does not need the `cls` argument. A static method does not access or modify the class's state.\n",
+        "\n",
+        "```python\n",
+        "  #staticmethod\n",
+        "  @staticmethod\n",
+        "  def books_in_series(series_name, number_of_books):\n",
+        "    print('There are', number_of_books, 'books in the', series_name, 'series')\n",
+        "\n",
+        "# when it's called on the class; \n",
+        "Book.books_in_series(\"Harry Potter\", 7)\n",
+        "```"
+      ],
+      "id": "6a466008"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/chizhang/.pyenv/versions/3.12.7/envs/mypydev312/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
