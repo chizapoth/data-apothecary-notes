@@ -8,7 +8,7 @@ about:
   links:
     - icon: github
       text: Github
-      href: https://github.com/andreaczhang/data-apothecary-notes
+      href: https://github.com/chizapoth/data-apothecary-notes
 ---
 
 ::: {#hero-heading}
@@ -26,6 +26,6 @@ I try to organize the content in a modular way: these should cover the important
 * models
 * programming
 
-Any feedback / mistake corrections are welcome, you can find me [here](https://andreaczhang.github.io). Thank you!
+Any feedback / mistake corrections are welcome, you can find me [here](https://chizapoth.github.io). Thank you!
 
 :::

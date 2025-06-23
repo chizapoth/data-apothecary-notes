@@ -1,0 +1,69 @@
+---
+title: "Industry knowledge"
+listing:
+  - id: business
+    max-description-length: 500
+    image-height: 150px
+    fields: [title, description]
+    contents: 
+      - "business_pharma_ma.qmd"
+      - "business_drugs.qmd"
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    sort: date
+    filter-ui: false
+    categories: true
+---
+
+This doc holds information related to the pharmaceutical industry.
+
+#### Questions to answer
+
+
+
+
+
+## Pharmaceutical industrial chain
+
+5 components:
+
+1. Research and development
+2. Manufacturing
+3. Commercialization
+4. Distribution (hospitals, pharmacies, online)
+5. Payers (health insurance, commercial insurance, self-payment)
+
+
+
+
+Types of pharmaceutical companies
+
+* Brand developers (MNC - multi-national corporations)
+* Generic drug manufacturers
+* Research and development focused
+* CRO, CMO 
+* Biotechnology
+* Medical devices
+
+
+
+Regulation
+
+
+
+
+## Understand the news
+
+::: {#business}
+:::
+
+
+
+
+
+
+
+
+
+

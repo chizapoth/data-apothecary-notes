@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="functional-programming" class="level2">
 <h2 class="anchored" data-anchor-id="functional-programming">Functional programming</h2>
 <p>A function can be assigned to another. The same functionality exists in R.</p>
-<div id="40504451" class="cell" data-execution_count="1">
+<div id="ed9f3f5d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_one(x):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">+</span><span class="dv">1</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>add_one(<span class="dv">10</span>)</span>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>A function can be the argument of another function</p>
-<div id="d00a185a" class="cell" data-execution_count="2">
+<div id="88adc023" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_two(x):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">+</span><span class="dv">2</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -260,14 +260,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="lambda-expressions">Lambda expressions</h2>
 <p>These are functions that are without a name, and has a <code>lambda</code> keyword. Typically they do not have a name, but you can also assign a name so that it functions like a normal function.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> x:x<span class="op">+</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="4c902b6b" class="cell" data-execution_count="3">
+<div id="8f8a1a94" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>add_five <span class="op">=</span> <span class="kw">lambda</span> x:x<span class="op">+</span><span class="dv">5</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>add_five(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>8</code></pre>
 </div>
 </div>
-<div id="2da1643e" class="cell" data-execution_count="4">
+<div id="57f3ed99" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#def greet(name):</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  return 'Welcome, ' + name</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>greet <span class="op">=</span> <span class="kw">lambda</span> name: <span class="st">'Welcome, '</span> <span class="op">+</span> name</span>
@@ -282,7 +282,7 @@ Welcome, Ponpon</code></pre>
 <p>Multiple arguments</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> a, b: a<span class="op">*</span>b <span class="op">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Execute</p>
-<div id="ae67c7e4" class="cell" data-execution_count="5">
+<div id="d1cad9c5" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> (<span class="kw">lambda</span> x, y: x<span class="op">+</span>y)(<span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>res</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -290,7 +290,7 @@ Welcome, Ponpon</code></pre>
 </div>
 </div>
 <p>Lambda expressions are useful as a function factory,</p>
-<div id="0ccc0396" class="cell" data-execution_count="6">
+<div id="d5b4269e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult(n):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">lambda</span> a : a <span class="op">*</span> n</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -311,7 +311,7 @@ Welcome, Ponpon</code></pre>
 <p>The iterable does not have to be a list: it can also be a dictionary</p>
 <section id="on-lists" class="level3">
 <h3 class="anchored" data-anchor-id="on-lists">On lists</h3>
-<div id="33d079d4" class="cell" data-execution_count="7">
+<div id="54eca82d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#List of names in various cases</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"alice"</span>, <span class="st">"bob"</span>, <span class="st">"CHARLIE"</span>, <span class="st">"dEborah"</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -331,7 +331,7 @@ Welcome, Ponpon</code></pre>
 </div>
 </div>
 <p>Combined with lambdas</p>
-<div id="d90df4bc" class="cell" data-execution_count="8">
+<div id="47ad72e5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>doubled <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x<span class="op">*</span><span class="dv">2</span>, numbers)) <span class="co"># first part is function</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>doubled</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -340,7 +340,7 @@ Welcome, Ponpon</code></pre>
 </div>
 </div>
 <p>Filters on a list</p>
-<div id="c8dbcc74" class="cell" data-execution_count="9">
+<div id="c3a31224" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> [<span class="st">"Table"</span>, <span class="st">"Sofa"</span>, <span class="st">"Cushion"</span>, <span class="st">"Bookshelf"</span>, <span class="st">"Vase"</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filters products with name length equal to 4</span></span>
@@ -354,7 +354,7 @@ Welcome, Ponpon</code></pre>
 </section>
 <section id="on-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="on-dictionary">On dictionary</h3>
-<div id="49d26e1f" class="cell" data-execution_count="10">
+<div id="ccf8b731" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> {<span class="st">'Table'</span>: <span class="dv">110</span>, <span class="st">'Sofa'</span>: <span class="dv">120</span>, <span class="st">'Chair'</span>: <span class="dv">45</span>, <span class="st">'Lamp'</span>: <span class="dv">70</span>}</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#filtering products with prices less than 90</span></span>
@@ -370,7 +370,7 @@ Welcome, Ponpon</code></pre>
 <section id="args-and-kwargs" class="level2">
 <h2 class="anchored" data-anchor-id="args-and-kwargs">args and kwargs</h2>
 <p>The difference between <code>*args</code> and <code>**kwargs</code> is that the former receives a tuple, the later receives a dictionary.</p>
-<div id="80f39027" class="cell" data-execution_count="11">
+<div id="61ec2ecf" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total(numbers):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  result <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># iterate over the list</span></span>
@@ -387,7 +387,7 @@ Welcome, Ponpon</code></pre>
 <section id="args" class="level3">
 <h3 class="anchored" data-anchor-id="args"><code>*args</code></h3>
 <p><code>*args</code> allows any number of arguments without creating a list before calling. It receives arguments as a <strong>tuple</strong> (an iterable)</p>
-<div id="cc8b1c92" class="cell" data-execution_count="12">
+<div id="93836daa" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total(<span class="op">*</span>args): <span class="co"># can also be *number</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  result <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> arg <span class="kw">in</span> args: <span class="co"># no *, since it's unpacked</span></span>
@@ -402,7 +402,7 @@ Welcome, Ponpon</code></pre>
 </div>
 </div>
 <p>Recall <strong>unpacking</strong> in tuples, use <code>*</code> operator. It unpacks a tuple as a list</p>
-<div id="3060c920" class="cell" data-execution_count="13">
+<div id="ce097e70" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>three_args <span class="op">=</span> (<span class="dv">76</span>, <span class="dv">81</span>, <span class="dv">96</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>arg1, arg2, arg3 <span class="op">=</span> three_args</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arg1)</span>
@@ -414,7 +414,7 @@ Welcome, Ponpon</code></pre>
 </div>
 </div>
 <p>The <em>args</em> does not have to be <code>args</code>, it can take any name as long as the operator is there.</p>
-<div id="8687f8d8" class="cell" data-execution_count="14">
+<div id="3f548992" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display(<span class="op">*</span>words):</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> item <span class="kw">in</span> words: <span class="co"># here no *, since it is unpacked!</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span>
@@ -434,7 +434,7 @@ word1
 </div>
 <p>When combining with regular arguments, the regular ones must come before <code>*args</code></p>
 <p><code>def&lt;func&gt; (&lt;argument&gt;, &lt;*args&gt;)</code></p>
-<div id="a268c091" class="cell" data-execution_count="15">
+<div id="df05b345" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_items(category, <span class="op">*</span>items):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Category: "</span> <span class="op">+</span> category)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> item <span class="kw">in</span> items:</span>
@@ -452,7 +452,7 @@ Tablet</code></pre>
 <section id="kwargs-keyword-arguments" class="level3">
 <h3 class="anchored" data-anchor-id="kwargs-keyword-arguments"><code>**kwargs</code>: keyword arguments</h3>
 <p>This one receives argument in the form of a <strong>dictionary</strong> that have key:value pairs. The <code>**</code> operator unpacks dictionaries into arguments.</p>
-<div id="99274e6e" class="cell" data-execution_count="16">
+<div id="f8ccda27" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#**kwargs is a dictionary</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_info(<span class="op">**</span>kwargs):</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#kwargs.items() returns the key:value pairs</span></span>
@@ -466,7 +466,7 @@ age : 30
 city : New York</code></pre>
 </div>
 </div>
-<div id="f6b61be0" class="cell" data-execution_count="17">
+<div id="1136f0f4" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> {<span class="st">'name'</span>:<span class="st">"Alice"</span>, <span class="st">'age'</span>:<span class="dv">30</span>, <span class="st">'city'</span>:<span class="st">"New York"</span>}</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>person.items() <span class="co"># all pairs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -482,7 +482,7 @@ city : New York</code></pre>
 <section id="decorators" class="level2">
 <h2 class="anchored" data-anchor-id="decorators">Decorators</h2>
 <p>Functions can be nested</p>
-<div id="f4f5d950" class="cell" data-execution_count="18">
+<div id="2491e735" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hey"</span>, name)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -500,7 +500,7 @@ Your account is created!</code></pre>
 </div>
 </div>
 <p>Decorator modifies a function’s original behavior without changing it</p>
-<div id="3b8c5bc4" class="cell" data-execution_count="19">
+<div id="01ab5b44" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Welcome!"</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -521,7 +521,7 @@ Your account is created!</code></pre>
 </div>
 </div>
 <p>Use <code>@</code></p>
-<div id="ce31617c" class="cell" data-execution_count="20">
+<div id="c88f3d14" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> uppercase(func):</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper():</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        orig_message <span class="op">=</span> func()</span>
@@ -540,7 +540,7 @@ Your account is created!</code></pre>
 </div>
 </div>
 <p>Use different decorators for the same function</p>
-<div id="83898a36" class="cell" data-execution_count="21">
+<div id="e520e27d" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stock_status_decorator(func):</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper(item):</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> func(item)</span>

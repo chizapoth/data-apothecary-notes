@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Attributes: characteristics</p>
 <p>Define a class</p>
 <p><code>__init__</code> method, the first is always <code>self</code></p>
-<div id="a3a4a728" class="cell" data-execution_count="1">
+<div id="96afdc3d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Initialize attributes</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
@@ -233,11 +233,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.Car object at 0x10e2eb380&gt;</code></pre>
+<pre><code>&lt;__main__.Car object at 0x10d173830&gt;</code></pre>
 </div>
 </div>
 <p>Access the attributes using <code>.</code></p>
-<div id="5be0216b" class="cell" data-execution_count="2">
+<div id="6e577fd1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_car.brand)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_car.color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -246,7 +246,7 @@ yellow</code></pre>
 </div>
 </div>
 <p>Add custom behaviors to a class. Must always have <code>self</code> as the first argument</p>
-<div id="d3f2bef6" class="cell" data-execution_count="3">
+<div id="5ac56fac" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Initialize attributes</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
@@ -262,12 +262,12 @@ yellow</code></pre>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_car)</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>my_car.honk()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.Car object at 0x110096c60&gt;
+<pre><code>&lt;__main__.Car object at 0x105fa2b10&gt;
 honk honk</code></pre>
 </div>
 </div>
 <p>Difference between a function and a method: function can be called on its own, and method has to be called with the object</p>
-<div id="01f4055d" class="cell" data-execution_count="4">
+<div id="d564de0d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#function</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Welcome!"</span>)</span>
@@ -297,7 +297,7 @@ honk honk</code></pre>
 <section id="inheritance" class="level2">
 <h2 class="anchored" data-anchor-id="inheritance">Inheritance</h2>
 <p>From an existing class <code>Animal</code>, the class <code>Dog</code> inherits the method <code>move</code>, and also has its own method <code>bark</code>.</p>
-<div id="cf0c1267" class="cell" data-execution_count="5">
+<div id="f5166686" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -327,7 +327,7 @@ Woof!</code></pre>
 </div>
 </div>
 <p>Add more attributes on the child class in addition to the ones inherited from the parent class: use <code>super.__init__()</code> to inherit</p>
-<div id="6b16658c" class="cell" data-execution_count="6">
+<div id="a8a3affc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#child class</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, breed, age):</span>
@@ -358,7 +358,7 @@ Bulldog
 <section id="data-hiding" class="level2">
 <h2 class="anchored" data-anchor-id="data-hiding">Data hiding</h2>
 <p>Values of attributes can be modified. The code below modifies the value of <code>odometer</code></p>
-<div id="89655228" class="cell" data-execution_count="7">
+<div id="16a427ff" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, model, year, odometer):</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.model <span class="op">=</span> model</span>
@@ -387,7 +387,7 @@ Odometer: 20000 miles</code></pre>
 </div>
 </div>
 <p>To hide the values, the first way is to use <code>_</code> before the attribute. This indicates the attribute is for <strong>internal use</strong> only. They can still be accessed by calling <code>class._attribute</code></p>
-<div id="3ba08c5e" class="cell" data-execution_count="8">
+<div id="1de267ea" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, model, year, odometer):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.model <span class="op">=</span> model</span>
@@ -421,7 +421,7 @@ Odometer: 15000 miles
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Making the odometer attribute 'private'</span></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.__odometer <span class="op">=</span> odometer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It is possible via name mangling, to access a private member of a class.</p>
-<div id="7ad9d186" class="cell" data-execution_count="9">
+<div id="9ba0061e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, model, year, odometer):</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.model <span class="op">=</span> model</span>
@@ -455,7 +455,7 @@ Odometer: 15000 miles
 <li>regular method: self</li>
 <li>class method: cls</li>
 </ul>
-<div id="d0a5a783" class="cell" data-execution_count="10">
+<div id="6ef787ce" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, author):</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.title <span class="op">=</span> title</span>
@@ -484,7 +484,7 @@ There are 7 books in the Harry Potter series</code></pre>
 </div>
 </div>
 <p>Can also call the class method from the instance.</p>
-<div id="3b10442c" class="cell" data-execution_count="11">
+<div id="80ea3aeb" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calling the class method on the instance</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>my_book.books_in_series(<span class="st">"Harry Potter"</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

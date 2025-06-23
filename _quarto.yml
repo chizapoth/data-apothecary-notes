@@ -16,6 +16,9 @@ website:
 
       - href: programming/index.qmd
         text: Programming
+  
+      - href: industry/index.qmd
+        text: Industry
         
       - href: gc_mle/index.qmd
         text: GC MLE

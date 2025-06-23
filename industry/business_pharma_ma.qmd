@@ -1,0 +1,107 @@
+---
+title: "Pharma Mergers and Acquisitions"
+description: |
+  Framework to understand the news
+author: "Chi Zhang"
+date: "2025-06-17"
+categories: [overview]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+#### Terms
+
+Patent Cliff: When a drug loses exclusivity and faces generic/biosimilar competition.
+
+Pipeline: Drugs in development; valuable assets.
+
+Biotech vs Big Pharma: Biotechs innovate; big pharma commercializes and scales.
+
+Synergy: Cost savings or increased revenue expected post-merger.
+
+Valuation Multiples: P/E ratio, EV/EBITDA, and price-to-sales used to judge deal value.
+
+
+#### Questions to ask
+
+* What does the acquirer want
+* What is the target companies values for
+* Is the pricing reasonable 
+
+
+### Strategic rationale: why the deal?
+
+Core motivation behind the acquisition
+
+* **pipeline expansion**: access to new drug candidates, especially in late-stage clinical trials 
+* **therapeutic area** strengthening: deepening expertise in key areas (e.g. diabetes, neuroscience)
+* patent cliff defense: replace soon-to-expire blockbuster drugs
+* technology / platform acquisition
+* **geographic expansion**: entering new markets
+* synergies: cost savings, R&D integration, manufacturing efficiency
+
+
+### Deal structure and financial terms
+
+* deal size
+* type of deal: all-cash, stock-based, mixed
+* premium paid: how much over the target's market value (20-50% common)
+* contingent payments: milestone payments
+* financing: will the acquirer take on debt, use reserves or issue equity
+
+
+### Regulatory implications
+
+* FDA/EMA risk: will the acquired products be approved
+* pricing / access politics: expect scrutiny over pricing power
+
+
+### Market and investor reactions
+
+* stock movements
+* analyst commentary: is it strategic or desperate?
+* shareholder approvals
+
+
+
+# Case studies
+
+> Source: ChatGPT results. Fact checks pending.
+
+
+
+| Feature                  | **Roche – Genentech** (2009)                                   | **BMS – Celgene** (2019)                           | **Pfizer – Seagen** (2023)                   | **MSD – Prometheus** (2023)                          |
+| ------------------------ | -------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
+| **Deal Value**           | \~\$46.8B                                                      | \~\$74B                                            | \~\$43B                                      | \~\$10.8B                                            |
+| **Target Type**          | Large biotech with blockbuster biologics                       | Large biotech with mature pipeline                 | Mid-size biotech (ADC leader)                | Clinical-stage biotech (pre-commercial)              |
+| **Key Assets**           | Avastin, Herceptin, Rituxan                                    | Revlimid, Pomalyst, Otezla                         | Adcetris, Padcev, Tukysa, Tivdak             | PRA023 (anti-TL1A, IBD/UC)                           |
+| **Pipeline Stage**       | Marketed + R\&D pipeline                                       | Marketed + late-stage                              | Marketed + Phase II/III                      | Phase II (pre-revenue)                               |
+| **Sales at Acquisition** | \~\$9B/year                                                    | \~\$15B/year                                       | \~\$2B/year                                  | \$0                                                  |
+| **Deal Type**            | Buyout of remaining 44% shares (from majority to full control) | All-cash + stock merger                            | Full acquisition (cash)                      | Full acquisition (cash)                              |
+| **Strategic Goal**       | Full integration of biotech innovation, globalize biologics    | Replace lost revenue from LOEs, expand pipeline    | Enhance targeted oncology (ADC) capabilities | Build presence in immunology beyond oncology         |
+| **Was It “Expensive”?**  | Yes (controversial then), now seen as visionary                | Yes, but Revlimid justified value                  | High price, long-term ADC bet                | Risky early-stage bet with high upside               |
+| **Integration Outcome**  | Very successful, retained Genentech brand & R\&D culture       | Strong commercial synergy, helped BMS survive LOEs | Ongoing (2023–2025), not yet evaluated       | Still in clinical development, outcome TBD           |
+| **Unique Insight**       | Preserved innovation culture post-acquisition                  | Oncology + immunology mega-portfolio created       | ADC seen as the next wave in oncology        | Anti-TL1A space now heating up with multiple players |
+
+Strategic patterns
+
+* All but Prometheus focused heavily on **oncology** (esp. biologics or ADCs)
+* Big pharma increasingly relies on **biotech innovation** for pipeline sustainability
+* Roche-Genentech stands out for preserving autonomy; others leaned toward full absorption
+* Earlier-stage deals (Prometheus) = high potential, high uncertainty; later-stage = safer, pricier
+
+
+
+
+
+
+
+
+

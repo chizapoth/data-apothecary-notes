@@ -1,0 +1,20 @@
+---
+title: "Pharmaceutical industry"
+description: |
+  A beginner's guide
+author: "Chi Zhang"
+date: "2025-06-17"
+categories: [overview]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+
+---
+
+

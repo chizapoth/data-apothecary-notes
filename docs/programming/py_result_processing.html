@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="investigate-results" class="level3">
 <h3 class="anchored" data-anchor-id="investigate-results">Investigate results</h3>
 <p>Say that the results look like the following format.</p>
-<div id="46a57574" class="cell" data-execution_count="1">
+<div id="77166567" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -295,27 +295,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Quick glance: <code>results.items()</code>, <code>results.keys()</code></p>
-<div id="f7184934" class="cell" data-execution_count="2">
+<div id="6477880c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>results.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>dict_keys(['model1', 'model2'])</code></pre>
 </div>
 </div>
-<div id="2e2364cb" class="cell" data-execution_count="3">
+<div id="10331b2d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>results.items()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>dict_items([('model1', {'accuracy': 0.95, 'yhat': array([1, 3, 5])}), ('model2', {'accuracy': 0.97, 'yhat': array([1, 4, 6])})])</code></pre>
 </div>
 </div>
 <p>Get all the results from the first key (‘model1’)</p>
-<div id="8848a335" class="cell" data-execution_count="4">
+<div id="60227ddf" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>results[<span class="st">'model1'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>{'accuracy': 0.95, 'yhat': array([1, 3, 5])}</code></pre>
 </div>
 </div>
 <p>More specific, just get <code>accuracy</code>.</p>
-<div id="25911fc5" class="cell" data-execution_count="5">
+<div id="dd4f4397" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>results[<span class="st">'model1'</span>][<span class="st">'accuracy'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>0.95</code></pre>
@@ -325,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="extract-results-with-dictionary-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="extract-results-with-dictionary-comprehension">Extract results with dictionary comprehension</h3>
 <p>Here we need to use <strong>list comprehension</strong> and <strong>dictionary comprehension</strong>. Recall that with LC, the syntax goes like <code>[&lt;expression&gt; for &lt;item&gt; in &lt;iterable&gt;]</code>.</p>
-<div id="79cae7bc" class="cell" data-execution_count="6">
+<div id="2382f025" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all the elements</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> results.values()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -334,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Combine with dictionary syntax (the expression), to get <code>model_x['accuracy']</code> for both models:</p>
-<div id="821d2e4c" class="cell" data-execution_count="7">
+<div id="8bfcda98" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># certain item only</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>[x[<span class="st">'accuracy'</span>] <span class="cf">for</span> x <span class="kw">in</span> results.values()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -342,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>This can also be presented as a dataframe too.</p>
-<div id="f9aec527" class="cell" data-execution_count="8">
+<div id="e5aa2f22" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> pd.DataFrame([x[<span class="st">'accuracy'</span>] <span class="cf">for</span> x <span class="kw">in</span> results.values()])</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>accuracy <span class="co"># can do accuracy.T  to change the layout</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -374,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Can do it to arrays too.</p>
-<div id="a186ad03" class="cell" data-execution_count="9">
+<div id="2956919e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>[x[<span class="st">'yhat'</span>] <span class="cf">for</span> x <span class="kw">in</span> results.values()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[array([1, 3, 5]), array([1, 4, 6])]</code></pre>
@@ -384,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="changing-names-for-the-result-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="changing-names-for-the-result-dataframe">Changing names for the result dataframe</h3>
 <p>Do it with <code>df.rename(columns = {'old':'new'})</code></p>
-<div id="6e88a001" class="cell" data-execution_count="10">
+<div id="7cce368c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>accuracy.rename(columns <span class="op">=</span> {<span class="dv">0</span>:<span class="st">'accuracies'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -418,14 +418,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dictionary-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="dictionary-comprehension">Dictionary comprehension</h3>
 <p>Dictionary comprehension is similar to LC, and it’s more handy when keys are involved for later. Note that here we are extracting from <code>results.items()</code> rather than <code>values()</code>.</p>
-<div id="4cb732d7" class="cell" data-execution_count="11">
+<div id="02ac0517" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>{key: {<span class="st">'accuracy'</span>: value[<span class="st">'accuracy'</span>]} <span class="cf">for</span> key, value <span class="kw">in</span> results.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>{'model1': {'accuracy': 0.95}, 'model2': {'accuracy': 0.97}}</code></pre>
 </div>
 </div>
 <p>The results here can be put directly into a dataframe.</p>
-<div id="09515303" class="cell" data-execution_count="12">
+<div id="48726e27" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> {key: {<span class="st">'accuracy'</span>: value[<span class="st">'accuracy'</span>]} <span class="cf">for</span> key, value <span class="kw">in</span> results.items()}</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -454,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="a706ae69" class="cell" data-execution_count="13">
+<div id="e9680aca" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>yhats <span class="op">=</span> pd.DataFrame({key: {<span class="st">'yhat'</span>: value[<span class="st">'yhat'</span>]} <span class="cf">for</span> key, value <span class="kw">in</span> results.items()})</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>yhats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -487,7 +487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="visualize-results" class="level1">
 <h1>Visualize results</h1>
-<div id="43ee0337" class="cell" data-execution_count="14">
+<div id="fb14782b" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_blobs</span>
@@ -513,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="decision-tree-example" class="level3">
 <h3 class="anchored" data-anchor-id="decision-tree-example">Decision tree example</h3>
-<div id="7c82526f" class="cell" data-execution_count="15">
+<div id="0bdfe78e" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split the data</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>Xtrain, Xtest, ytrain, ytest <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>,random_state<span class="op">=</span><span class="dv">42</span>)</span>
@@ -530,7 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now we try to visualise the results. First put the predictions along with the original data, and then add a label for whether there is a mismatch.</p>
-<div id="76c3b0ff" class="cell" data-execution_count="16">
+<div id="5cd47f7a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tt = pd.DataFrame(Xtest, columns=['x1', 'x2'])</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tt['new'] = ytest</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -605,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now visualize</p>
-<div id="68b5b40a" class="cell" data-execution_count="17">
+<div id="90370e67" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualize based on mismatch status</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>sns.relplot(data <span class="op">=</span> test_df,</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">'x1'</span>,</span>
@@ -623,7 +623,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Another way to visualize</p>
-<div id="ab980de1" class="cell" data-execution_count="18">
+<div id="24f8a5a6" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> test_df,</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                x <span class="op">=</span> <span class="st">'x1'</span>,</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">'x2'</span>,</span>

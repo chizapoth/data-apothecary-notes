@@ -1,0 +1,37 @@
+---
+title: "Drugs and companies"
+description: |
+  Familiarise with the names
+author: "Chi Zhang"
+date: "2025-06-19"
+categories: [overview]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+| Company  | Top Drugs (EN / 中文名)  | Indication  | 
+| ------ | -------------------------- | --------------------------| 
+| Johnson & Johnson    | Darzalex / 达雷妥尤单抗<br>Imbruvica / 伊布替尼             | Multiple myeloma<br>CLL/MCL                                                     |                                                                                
+| Roche                | Ocrevus / 奥克瑞珠单抗<br>Perjeta / 帕妥珠单抗<br>Tecentriq / 特仙利珠单抗             | Multiple sclerosis<br>HER2+ breast cancer<br>Several solid tumors                                         |                                                                                
+| Pfizer               | Eliquis / 艾乐妥<br>Prevnar 13 / 沛儿13价肺炎疫苗<br>Xeljanz / 捷抑炎              | Anticoagulation<br>Pneumococcal prevention<br>Rheumatoid arthritis / Ulcerative colitis                   |                                                                                
+| AbbVie               | Humira / 修美乐<br>Skyrizi / 喜开悦 （利生奇珠单抗）<br>Rinvoq / 乌帕替尼                     | Rheumatoid arthritis, Crohn’s disease, psoriasis<br>Plaque psoriasis<br>Rheumatoid arthritis / Dermatitis |                                                                                
+| Merck & Co.          | Keytruda / 吉舒达-帕博利珠单抗<br>Gardasil 9 / 加卫苗9价<br>Januvia / 捷诺维              | Multiple cancers<br>HPV prevention<br>Type 2 diabetes                                                     |                                                                                
+| Novartis             | Cosentyx / 可善挺<br>Entresto / 诺欣妥<br>Zolgensma / 诺健生                  | Psoriasis<br>Heart failure<br>Spinal muscular atrophy (SMA)                                               |                                                                                
+| AstraZeneca          | Tagrisso / 泰瑞沙<br>Farxiga / 达格列净<br>Imfinzi / 英飞凡                   | EGFR+ lung cancer<br>Type 2 diabetes & heart failure<br>Non-small cell lung cancer & bladder cancer       |                                                                                
+| Sanofi               | Dupixent / 杜避炎-杜普利尤单抗<br>Beyfortus / 贝福替<br>Lantus / 来得时               | Atopic dermatitis / Asthma<br>RSV prevention in infants<br>Type 1 & 2 diabetes                            |                                                                                
+| Bristol-Myers Squibb | Opdivo / 欧狄沃<br>Eliquis / 艾乐妥 (co-promote)<br>Zeposia / 捷保舒          | Various cancers<br>Atrial fibrillation prevention<br>Multiple sclerosis                                   |                                                                                
+| GSK                  | Shingrix / 欣安立适<br>Trelegy Ellipta / 肺乐喜易利达气雾剂<br>Advair (Ellipta) / 舒利迭 | Shingles<br>Chronic obstructive pulmonary disease / Asthma<br>Asthma                                      |                                                                                
+| Takeda               | Entyvio / 安溃悠，维得利珠单抗<br>Ninlaro / 免瘤诺<br>Mydayis / 美达力思          | Inflammatory bowel disease<br>Multiple myeloma<br>Attention deficit hyperactivity disorder                |                                                                                
+| Bayer                | Xarelto / 利伐沙班<br>Eylea / 艾力雅<br>Copaxone / 克帕松 (from Sanofi)        | Anticoagulation<br>Wet age-related macular degeneration / Diabetic macular edema<br>Multiple sclerosis    |                                                                                
+| Eli Lilly            | Trulicity / 度易达<br>Mounjaro / 替尔泊肽<br>Humalog / 优泌乐                | Type 2 diabetes<br>Type 2 diabetes weight loss<br>Rapid-acting insulin                                    |                                                                                
+| Novo Nordisk         | Ozempic(司美格魯肽) / 諾和泰<br>Wegovy / 諾和盈<br>Victoza / 诺和力                       | Type 2 diabetes<br>Obesity<br>Type 2 diabetes                        |                                                         
+
+

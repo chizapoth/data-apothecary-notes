@@ -139,5 +139,12 @@
     "items": [
       "/gc_mle/cloud_overview.html"
     ]
+  },
+  {
+    "listing": "/industry/index.html",
+    "items": [
+      "/industry/business_pharma_ma.html",
+      "/industry/business_drugs.html"
+    ]
   }
 ]
