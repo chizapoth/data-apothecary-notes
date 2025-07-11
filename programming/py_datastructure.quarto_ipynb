@@ -29,7 +29,7 @@
         "\n",
         "### Strings"
       ],
-      "id": "b8c92377"
+      "id": "c93c319d"
     },
     {
       "cell_type": "code",
@@ -37,7 +37,7 @@
       "source": [
         "print('Winter' + 'Park')"
       ],
-      "id": "0897ce9a",
+      "id": "a34c197c",
       "execution_count": null,
       "outputs": []
     },
@@ -47,7 +47,7 @@
       "source": [
         "Check data types"
       ],
-      "id": "6475779f"
+      "id": "98e70cc3"
     },
     {
       "cell_type": "code",
@@ -56,7 +56,7 @@
         "movie = 'Matrix'\n",
         "print(type(movie))"
       ],
-      "id": "6c84e4a9",
+      "id": "be55edeb",
       "execution_count": null,
       "outputs": []
     },
@@ -70,7 +70,7 @@
         "print(channel.find('c')) # first\n",
         "print(len(channel)) "
       ],
-      "id": "7ec22e32",
+      "id": "fc04cd73",
       "execution_count": null,
       "outputs": []
     },
@@ -80,7 +80,7 @@
       "source": [
         "### Useful functions"
       ],
-      "id": "57066db0"
+      "id": "98ce59ac"
     },
     {
       "cell_type": "code",
@@ -91,7 +91,7 @@
         "movies.insert(2, 'Terminator')\n",
         "print(movies[3])"
       ],
-      "id": "0ff2e5c7",
+      "id": "fbaa315d",
       "execution_count": null,
       "outputs": []
     },
@@ -108,7 +108,7 @@
         "srt_players = sorted(players)\n",
         "print(srt_players)"
       ],
-      "id": "f6479eb8",
+      "id": "bb22211a",
       "execution_count": null,
       "outputs": []
     },
@@ -130,7 +130,7 @@
         "\n",
         "Square brackets"
       ],
-      "id": "50874a2a"
+      "id": "b30a5ac3"
     },
     {
       "cell_type": "code",
@@ -143,7 +143,7 @@
         "list2 = ['tea', 20, True]\n",
         "list2"
       ],
-      "id": "7f9f82f8",
+      "id": "acf78372",
       "execution_count": null,
       "outputs": []
     },
@@ -153,7 +153,7 @@
       "source": [
         "Index starts from 0"
       ],
-      "id": "d3cc8f16"
+      "id": "abe266bd"
     },
     {
       "cell_type": "code",
@@ -161,7 +161,7 @@
       "source": [
         "list1[0]"
       ],
-      "id": "d9027920",
+      "id": "aa4d033c",
       "execution_count": null,
       "outputs": []
     },
@@ -171,7 +171,7 @@
       "source": [
         "Lists are **mutable**, you can change the values in the list after it's created."
       ],
-      "id": "7b14263a"
+      "id": "c3af40b2"
     },
     {
       "cell_type": "code",
@@ -180,7 +180,7 @@
         "list1[0] = 'milk'\n",
         "list1"
       ],
-      "id": "165fca2b",
+      "id": "aa432b0c",
       "execution_count": null,
       "outputs": []
     },
@@ -190,7 +190,7 @@
       "source": [
         "Index can also be used on a **string**. However strings are **immutable**: we can not replace a character with another."
       ],
-      "id": "169eb28e"
+      "id": "5c889313"
     },
     {
       "cell_type": "code",
@@ -199,7 +199,7 @@
         "string = 'milk'\n",
         "string[3] # prints the 4th character"
       ],
-      "id": "3496b952",
+      "id": "84157368",
       "execution_count": null,
       "outputs": []
     },
@@ -211,7 +211,7 @@
         "\n",
         "The stopping index is exclusive: `[0:2]` prints out the 1st and 2nd element. "
       ],
-      "id": "88bb517f"
+      "id": "0f1ef38e"
     },
     {
       "cell_type": "code",
@@ -221,7 +221,7 @@
         "print(animals[0:2]) # excludes 0, takes 1st and 2nd\n",
         "print(animals[1:3]) # excludes 1, takes 2nd and 3rd"
       ],
-      "id": "f02f0db5",
+      "id": "0130a7b1",
       "execution_count": null,
       "outputs": []
     },
@@ -231,7 +231,7 @@
       "source": [
         "The immediate two indices prints out only one value."
       ],
-      "id": "4c13b2e7"
+      "id": "49630291"
     },
     {
       "cell_type": "code",
@@ -240,7 +240,7 @@
         "print(animals[0:1]) # 1st\n",
         "print(animals[2:3]) # 3rd"
       ],
-      "id": "dc2d317b",
+      "id": "9d6a4a22",
       "execution_count": null,
       "outputs": []
     },
@@ -252,7 +252,7 @@
         "\n",
         "Ignoring the starting index or stopping index"
       ],
-      "id": "68df6527"
+      "id": "58ef1e85"
     },
     {
       "cell_type": "code",
@@ -262,7 +262,7 @@
         "print(cart[:2]) # stopping at 2nd\n",
         "print(cart[1:]) # starting at 2nd"
       ],
-      "id": "26623628",
+      "id": "c86f318e",
       "execution_count": null,
       "outputs": []
     },
@@ -272,7 +272,7 @@
       "source": [
         "Negative indexing"
       ],
-      "id": "29d08770"
+      "id": "d02174fe"
     },
     {
       "cell_type": "code",
@@ -281,7 +281,7 @@
         "print(cart[-1]) # last one\n",
         "print(cart[-3:]) # last 3"
       ],
-      "id": "284c5937",
+      "id": "febd27cd",
       "execution_count": null,
       "outputs": []
     },
@@ -292,7 +292,7 @@
         "cart = ['lamp', 'candles', 'chair', 'carpet']\n",
         "print(cart[1:-1])"
       ],
-      "id": "31d6ed98",
+      "id": "242cc125",
       "execution_count": null,
       "outputs": []
     },
@@ -309,7 +309,7 @@
         "  i += 5\n",
         "  print(i)"
       ],
-      "id": "7f806fc1",
+      "id": "04cc2e83",
       "execution_count": null,
       "outputs": []
     },
@@ -321,7 +321,7 @@
         "\n",
         "Syntax: `<variable> = [<expression> for <item> in <iterable>]`\n"
       ],
-      "id": "b4a9a59d"
+      "id": "16d30994"
     },
     {
       "cell_type": "code",
@@ -336,7 +336,7 @@
         "nums = [x for x in range(1, 11)]\n",
         "nums"
       ],
-      "id": "bd303284",
+      "id": "89fcfbd2",
       "execution_count": null,
       "outputs": []
     },
@@ -346,7 +346,7 @@
       "source": [
         "`<variable> = [<expression> for <item> in <iterable>]`"
       ],
-      "id": "b0d30cac"
+      "id": "3ca0e1ef"
     },
     {
       "cell_type": "code",
@@ -363,7 +363,7 @@
         "Tags = [x.capitalize() for x in tags]\n",
         "Tags"
       ],
-      "id": "a763c009",
+      "id": "43c831e2",
       "execution_count": null,
       "outputs": []
     },
@@ -373,7 +373,7 @@
       "source": [
         "Can combine conditions too "
       ],
-      "id": "4550b031"
+      "id": "ebb3eb2c"
     },
     {
       "cell_type": "code",
@@ -383,7 +383,7 @@
         "group = [x for x in users if x[0] == \"B\"]\n",
         "print(group)"
       ],
-      "id": "d63c8986",
+      "id": "fa3085de",
       "execution_count": null,
       "outputs": []
     },
@@ -395,7 +395,7 @@
         "\n",
         "Use parentheses. Tuples are **immutable**, they are useful when data shouldn't be accidentally modified. Therefore you can not use `append` functions on tuples."
       ],
-      "id": "e4c99fc6"
+      "id": "28d77650"
     },
     {
       "cell_type": "code",
@@ -404,7 +404,7 @@
         "b_date = (21, 'May', 2004)\n",
         "b_date[1]"
       ],
-      "id": "e4f91bfb",
+      "id": "8dca294f",
       "execution_count": null,
       "outputs": []
     },
@@ -416,7 +416,7 @@
         "print('# of 7:', scores.count(7))\n",
         "print('# of 9:', scores.count(9))"
       ],
-      "id": "4c91d494",
+      "id": "97ee11bf",
       "execution_count": null,
       "outputs": []
     },
@@ -426,7 +426,7 @@
       "source": [
         "**Unpacking** in tuple. The length needs to be matched; however if you want to deal with unknown number of elements, can use `*`. After unpacking, the elements becomes a `list []`. "
       ],
-      "id": "18a05035"
+      "id": "0408df60"
     },
     {
       "cell_type": "code",
@@ -438,7 +438,7 @@
         "math, *others = grades\n",
         "print(others)"
       ],
-      "id": "3949c69c",
+      "id": "a8e66513",
       "execution_count": null,
       "outputs": []
     },
@@ -451,7 +451,7 @@
         "\n",
         "With curly brackets. Sets are **unordered** so does not support indexing or slicing. "
       ],
-      "id": "abf182fc"
+      "id": "4b078f7a"
     },
     {
       "cell_type": "code",
@@ -461,7 +461,7 @@
         "print(guests)\n",
         "# print(guests[0]) #error"
       ],
-      "id": "8e7e3e59",
+      "id": "3a661ad9",
       "execution_count": null,
       "outputs": []
     },
@@ -471,7 +471,7 @@
       "source": [
         "Sets can not have duplicates, and duplicates are automatically ignored"
       ],
-      "id": "4ace5e0d"
+      "id": "694a76a7"
     },
     {
       "cell_type": "code",
@@ -480,7 +480,7 @@
         "friends = {'Anna', 'Mery', 'Mery', 'Jonathan'}\n",
         "print(friends)"
       ],
-      "id": "dc05827b",
+      "id": "60aad347",
       "execution_count": null,
       "outputs": []
     },
@@ -490,7 +490,7 @@
       "source": [
         "Sets are mutable, so you can `add` and `remove` items. However, `append` does not work on sets since they are unordered."
       ],
-      "id": "b71b41ff"
+      "id": "e03dab6a"
     },
     {
       "cell_type": "code",
@@ -501,7 +501,7 @@
         "guests.remove('Mery')\n",
         "print(guests)"
       ],
-      "id": "e0b1cd9d",
+      "id": "d3b0632b",
       "execution_count": null,
       "outputs": []
     },
@@ -511,7 +511,7 @@
       "source": [
         "To clear the set, "
       ],
-      "id": "5b20d412"
+      "id": "dbea0573"
     },
     {
       "cell_type": "code",
@@ -520,7 +520,7 @@
         "guests.clear()\n",
         "print(guests)"
       ],
-      "id": "00c90337",
+      "id": "6de8d75e",
       "execution_count": null,
       "outputs": []
     },
@@ -530,7 +530,7 @@
       "source": [
         "To join sets, use `set1.union(set2)`. This ignores the duplicates. To find the element only in set 1 but not set 2, use `set1.difference(set2)`"
       ],
-      "id": "2f080fe6"
+      "id": "48a0b195"
     },
     {
       "cell_type": "code",
@@ -544,7 +544,7 @@
         "unique_2 = set2.difference(set1)\n",
         "print([unique_1, unique_2]) # print toether"
       ],
-      "id": "02c37108",
+      "id": "cd2eb63d",
       "execution_count": null,
       "outputs": []
     },
@@ -556,7 +556,7 @@
         "\n",
         "The values can be of any type, including a list. The keys has to be immutable."
       ],
-      "id": "81cf4368"
+      "id": "add1672c"
     },
     {
       "cell_type": "code",
@@ -569,7 +569,7 @@
         "}\n",
         "print(product)"
       ],
-      "id": "f01343ed",
+      "id": "d517c151",
       "execution_count": null,
       "outputs": []
     },
@@ -579,7 +579,7 @@
       "source": [
         "When the key is a string, it needs to go with quotation. "
       ],
-      "id": "cf581f07"
+      "id": "c5bb7ef3"
     },
     {
       "cell_type": "code",
@@ -591,7 +591,7 @@
         "}\n",
         "dancer"
       ],
-      "id": "31fae226",
+      "id": "69529c3e",
       "execution_count": null,
       "outputs": []
     },
@@ -601,7 +601,7 @@
       "source": [
         "The key has to be unique. If duplicate, the values will be overwritten. "
       ],
-      "id": "89740f3a"
+      "id": "054fdae4"
     },
     {
       "cell_type": "code",
@@ -614,7 +614,7 @@
         "}\n",
         "contact"
       ],
-      "id": "cc784e59",
+      "id": "62892f86",
       "execution_count": null,
       "outputs": []
     },
@@ -624,7 +624,7 @@
       "source": [
         "To access the values, use `['key']`"
       ],
-      "id": "5931a768"
+      "id": "560ba9e4"
     },
     {
       "cell_type": "code",
@@ -634,7 +634,7 @@
         "contact.get('company')\n",
         "contact.get('baba', 'puff') # if baba does not exist, returns puff "
       ],
-      "id": "1aeb4759",
+      "id": "9a80c3c7",
       "execution_count": null,
       "outputs": []
     },
@@ -646,7 +646,7 @@
         "contact.values()\n",
         "contact.items() # all pairs"
       ],
-      "id": "2fdd7699",
+      "id": "60724506",
       "execution_count": null,
       "outputs": []
     },
@@ -656,7 +656,7 @@
       "source": [
         "Change values for dictionary with `update()`"
       ],
-      "id": "e800f74d"
+      "id": "12f43bf7"
     },
     {
       "cell_type": "code",
@@ -670,7 +670,7 @@
         "print(user['age'])\n",
         "print(user.items())"
       ],
-      "id": "10ae8d95",
+      "id": "b9d4a9fc",
       "execution_count": null,
       "outputs": []
     },
@@ -680,7 +680,7 @@
       "source": [
         "`pop()` removes item with specified key name"
       ],
-      "id": "7419188b"
+      "id": "b890a4a8"
     },
     {
       "cell_type": "code",
@@ -697,7 +697,7 @@
         "# check if values are in the dictionary\n",
         "'mustang' in car.values()"
       ],
-      "id": "366842c1",
+      "id": "008bea0c",
       "execution_count": null,
       "outputs": []
     },
@@ -707,7 +707,7 @@
       "source": [
         "Combined with loops, it returns the keys (not values)"
       ],
-      "id": "5e301d3f"
+      "id": "51b9a6b7"
     },
     {
       "cell_type": "code",
@@ -727,7 +727,7 @@
         "for i in car.items(): # this prints the pairs\n",
         "  print(i)"
       ],
-      "id": "a88c0bc5",
+      "id": "5014e969",
       "execution_count": null,
       "outputs": []
     },
@@ -737,7 +737,7 @@
       "source": [
         "Unpack dictionary with `**`"
       ],
-      "id": "be6e200f"
+      "id": "800404a7"
     },
     {
       "cell_type": "code",
@@ -748,7 +748,7 @@
         "merged_dict = {**dict1, **dict2}\n",
         "print(merged_dict)"
       ],
-      "id": "07b06975",
+      "id": "424dc8d0",
       "execution_count": null,
       "outputs": []
     }

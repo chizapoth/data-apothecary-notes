@@ -1,0 +1,102 @@
+---
+title: "NEST - Teal"
+description: |
+  An overview of Teal project
+author: "Chi Zhang"
+date: "2025-07-11"
+categories: [Teal]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+
+### Useful material
+
+[Getting started with Teal](https://insightsengineering.github.io/teal/latest-tag/articles/getting-started-with-teal.html)
+
+[Teal workshop PHUSE CSS 2025](https://pharmaverse.github.io/tealworkshop-phusecss2025/exercise_1.html)
+
+
+[Teal gallery](https://insightsengineering.github.io/teal.gallery/):  sample apps based on teal framework
+
+
+[Teal technical blueprint](https://insightsengineering.github.io/teal/latest-tag/articles/blueprint/index.html)
+
+
+
+## Running my first app 
+
+Loads: 
+
+- `shiny` 
+- `teal.data`
+- `teal.code`
+- `teal.slice`
+
+
+Main panel (**Active Module Content)**): 
+
+- shows two modules that loads IRIS data 
+- can have multiple
+
+
+
+Side (right) (**Filter Panel**): 
+
+- active filter summary: number of observations
+- active filter variables
+
+
+### Details
+
+Mandatory arguments: `data`, `module`
+
+
+### Teal packages
+
+- `teal.data`: defines data of teal app
+- `teal.slice`: defines data filtering before passing into modules
+
+And others
+
+
+## Pharmaverse
+
+How does `teal` fit in the pharmaverse ecosystem? ([Examples](https://pharmaverse.github.io/examples/))
+
+### SDTM
+
+
+### ADaM
+
+
+### TLG
+
+
+Calculation and analysis
+
+- tern: analysis functions for tables and graphs in clinical trial reporting
+- osprey: 
+- goshawk
+
+
+### Interactive (teal)
+
+
+
+
+
+
+
+
+
+
+

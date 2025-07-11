@@ -146,5 +146,12 @@
       "/industry/business_pharma_ma.html",
       "/industry/business_drugs.html"
     ]
+  },
+  {
+    "listing": "/nest/index.html",
+    "items": [
+      "/nest/shiny_101.html",
+      "/nest/teal_101.html"
+    ]
   }
 ]

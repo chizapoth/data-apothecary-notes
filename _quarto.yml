@@ -16,6 +16,9 @@ website:
 
       - href: programming/index.qmd
         text: Programming
+        
+      - href: nest/index.qmd
+        text: NEST
   
       - href: industry/index.qmd
         text: Industry

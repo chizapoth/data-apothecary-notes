@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Chi Zhang">
+<meta name="dcterms.date" content="2025-07-11">
+<meta name="description" content="An overview of Teal project">
 
-<title>Data Apothecary’s Notes</title>
+<title>NEST - Teal – Data Apothecary’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2575636bf12bba71c1c5b79222bd7450.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-448433c25e1cbf028921a8f42e0d2e85.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2575636bf12bba71c1c5b79222bd7450.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4f6908d20055c2cb5766c9ded489fcff.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,14 +74,14 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data Apothecary’s Notes</span>
     </a>
   </div>
@@ -88,31 +92,31 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./method/index.html"> 
+    <a class="nav-link" href="../method/index.html"> 
 <span class="menu-text">Methods</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./programming/index.html"> 
+    <a class="nav-link" href="../programming/index.html"> 
 <span class="menu-text">Programming</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./nest/index.html"> 
+    <a class="nav-link" href="../nest/index.html"> 
 <span class="menu-text">NEST</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./industry/index.html"> 
+    <a class="nav-link" href="../industry/index.html"> 
 <span class="menu-text">Industry</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./gc_mle/index.html"> 
+    <a class="nav-link" href="../gc_mle/index.html"> 
 <span class="menu-text">GC MLE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./random/index.html"> 
+    <a class="nav-link" href="../random/index.html"> 
 <span class="menu-text">Random tests</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -133,53 +137,132 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#running-my-first-app" id="toc-running-my-first-app" class="nav-link active" data-scroll-target="#running-my-first-app">Running my first app</a></li>
+  <li><a href="#pharmaverse" id="toc-pharmaverse" class="nav-link" data-scroll-target="#pharmaverse">Pharmaverse</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="misc/logo_dan.png" class="about-image
-  rectangle " style="width: 20em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Apothecary’s Notes</h1>
+<h1 class="title">NEST - Teal</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Teal</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>An overview of Teal project</p>
+  </div>
 </div>
+
+
 <div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Chi Zhang </p>
+          </div>
   </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 11, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/chizapoth/data-apothecary-notes" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="hero-heading">
-<p>Hello, welcome!</p>
-<p>This is the note repository for <strong>modern data science skills with a focus on real-world data (observational studies) and clinical trials</strong>.</p>
-<p>Content will be gradually added while I learn the topics, and mostly for personal use. Therefore, it is <u>by no means</u> a complete guide by the time you read it!</p>
-<p>I try to organize the content in a modular way: these should cover the important aspects in which a data scientist / modern statistician should know.</p>
+
+
+<section id="useful-material" class="level3">
+<h3 class="anchored" data-anchor-id="useful-material">Useful material</h3>
+<p><a href="https://insightsengineering.github.io/teal/latest-tag/articles/getting-started-with-teal.html">Getting started with Teal</a></p>
+<p><a href="https://pharmaverse.github.io/tealworkshop-phusecss2025/exercise_1.html">Teal workshop PHUSE CSS 2025</a></p>
+<p><a href="https://insightsengineering.github.io/teal.gallery/">Teal gallery</a>: sample apps based on teal framework</p>
+<p><a href="https://insightsengineering.github.io/teal/latest-tag/articles/blueprint/index.html">Teal technical blueprint</a></p>
+</section>
+<section id="running-my-first-app" class="level2">
+<h2 class="anchored" data-anchor-id="running-my-first-app">Running my first app</h2>
+<p>Loads:</p>
 <ul>
-<li>study design</li>
-<li>inference</li>
-<li>models</li>
-<li>programming</li>
+<li><code>shiny</code></li>
+<li><code>teal.data</code></li>
+<li><code>teal.code</code></li>
+<li><code>teal.slice</code></li>
 </ul>
-<p>Any feedback / mistake corrections are welcome, you can find me <a href="https://chizapoth.github.io">here</a>. Thank you!</p>
-</div></div>
-</div>
+<p>Main panel (<strong>Active Module Content)</strong>):</p>
+<ul>
+<li>shows two modules that loads IRIS data</li>
+<li>can have multiple</li>
+</ul>
+<p>Side (right) (<strong>Filter Panel</strong>):</p>
+<ul>
+<li>active filter summary: number of observations</li>
+<li>active filter variables</li>
+</ul>
+<section id="details" class="level3">
+<h3 class="anchored" data-anchor-id="details">Details</h3>
+<p>Mandatory arguments: <code>data</code>, <code>module</code></p>
+</section>
+<section id="teal-packages" class="level3">
+<h3 class="anchored" data-anchor-id="teal-packages">Teal packages</h3>
+<ul>
+<li><code>teal.data</code>: defines data of teal app</li>
+<li><code>teal.slice</code>: defines data filtering before passing into modules</li>
+</ul>
+<p>And others</p>
+</section>
+</section>
+<section id="pharmaverse" class="level2">
+<h2 class="anchored" data-anchor-id="pharmaverse">Pharmaverse</h2>
+<p>How does <code>teal</code> fit in the pharmaverse ecosystem? (<a href="https://pharmaverse.github.io/examples/">Examples</a>)</p>
+<section id="sdtm" class="level3">
+<h3 class="anchored" data-anchor-id="sdtm">SDTM</h3>
+</section>
+<section id="adam" class="level3">
+<h3 class="anchored" data-anchor-id="adam">ADaM</h3>
+</section>
+<section id="tlg" class="level3">
+<h3 class="anchored" data-anchor-id="tlg">TLG</h3>
+<p>Calculation and analysis</p>
+<ul>
+<li>tern: analysis functions for tables and graphs in clinical trial reporting</li>
+<li>osprey:</li>
+<li>goshawk</li>
+</ul>
+</section>
+<section id="interactive-teal" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-teal">Interactive (teal)</h3>
 
 
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

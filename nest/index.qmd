@@ -1,0 +1,46 @@
+---
+title: "NEST"
+listing:
+  - id: shiny
+    max-description-length: 500
+    image-height: 150px
+    fields: [title, description]
+    contents: 
+      - "shiny_101.qmd"
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    sort: date
+    filter-ui: false
+    categories: true
+    
+  - id: teal
+    max-description-length: 500
+    image-height: 150px
+    fields: [title, description]
+    contents: 
+      - "teal_101.qmd"
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    sort: date
+    filter-ui: false
+    categories: true
+---
+
+This doc holds 
+
+
+## Shiny
+
+::: {#shiny}
+:::
+
+
+## Teal
+
+::: {#teal}
+:::
+
+
+

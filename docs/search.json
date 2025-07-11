@@ -4107,5 +4107,117 @@
     "title": "Drugs and companies",
     "section": "",
     "text": "Company\nTop Drugs (EN / 中文名)\nIndication\n\n\n\n\nJohnson & Johnson\nDarzalex / 达雷妥尤单抗Imbruvica / 伊布替尼\nMultiple myelomaCLL/MCL\n\n\nRoche\nOcrevus / 奥克瑞珠单抗Perjeta / 帕妥珠单抗Tecentriq / 特仙利珠单抗\nMultiple sclerosisHER2+ breast cancerSeveral solid tumors\n\n\nPfizer\nEliquis / 艾乐妥Prevnar 13 / 沛儿13价肺炎疫苗Xeljanz / 捷抑炎\nAnticoagulationPneumococcal preventionRheumatoid arthritis / Ulcerative colitis\n\n\nAbbVie\nHumira / 修美乐Skyrizi / 喜开悦 （利生奇珠单抗）Rinvoq / 乌帕替尼\nRheumatoid arthritis, Crohn’s disease, psoriasisPlaque psoriasisRheumatoid arthritis / Dermatitis\n\n\nMerck & Co.\nKeytruda / 吉舒达-帕博利珠单抗Gardasil 9 / 加卫苗9价Januvia / 捷诺维\nMultiple cancersHPV preventionType 2 diabetes\n\n\nNovartis\nCosentyx / 可善挺Entresto / 诺欣妥Zolgensma / 诺健生\nPsoriasisHeart failureSpinal muscular atrophy (SMA)\n\n\nAstraZeneca\nTagrisso / 泰瑞沙Farxiga / 达格列净Imfinzi / 英飞凡\nEGFR+ lung cancerType 2 diabetes & heart failureNon-small cell lung cancer & bladder cancer\n\n\nSanofi\nDupixent / 杜避炎-杜普利尤单抗Beyfortus / 贝福替Lantus / 来得时\nAtopic dermatitis / AsthmaRSV prevention in infantsType 1 & 2 diabetes\n\n\nBristol-Myers Squibb\nOpdivo / 欧狄沃Eliquis / 艾乐妥 (co-promote)Zeposia / 捷保舒\nVarious cancersAtrial fibrillation preventionMultiple sclerosis\n\n\nGSK\nShingrix / 欣安立适Trelegy Ellipta / 肺乐喜易利达气雾剂Advair (Ellipta) / 舒利迭\nShinglesChronic obstructive pulmonary disease / AsthmaAsthma\n\n\nTakeda\nEntyvio / 安溃悠，维得利珠单抗Ninlaro / 免瘤诺Mydayis / 美达力思\nInflammatory bowel diseaseMultiple myelomaAttention deficit hyperactivity disorder\n\n\nBayer\nXarelto / 利伐沙班Eylea / 艾力雅Copaxone / 克帕松 (from Sanofi)\nAnticoagulationWet age-related macular degeneration / Diabetic macular edemaMultiple sclerosis\n\n\nEli Lilly\nTrulicity / 度易达Mounjaro / 替尔泊肽Humalog / 优泌乐\nType 2 diabetesType 2 diabetes weight lossRapid-acting insulin\n\n\nNovo Nordisk\nOzempic(司美格魯肽) / 諾和泰Wegovy / 諾和盈Victoza / 诺和力\nType 2 diabetesObesityType 2 diabetes"
+  },
+  {
+    "objectID": "nest/index.html",
+    "href": "nest/index.html",
+    "title": "NEST",
+    "section": "",
+    "text": "This doc holds"
+  },
+  {
+    "objectID": "nest/index.html#shiny",
+    "href": "nest/index.html#shiny",
+    "title": "NEST",
+    "section": "Shiny",
+    "text": "Shiny\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nShiny and shiny modules\n\n\nUnderstand the basic behaviors \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "nest/index.html#teal",
+    "href": "nest/index.html#teal",
+    "title": "NEST",
+    "section": "Teal",
+    "text": "Teal\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nNEST - Teal\n\n\nAn overview of Teal project \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "nest/shiny_101.html",
+    "href": "nest/shiny_101.html",
+    "title": "Shiny and shiny modules",
+    "section": "",
+    "text": "Some new technology related to shiny"
+  },
+  {
+    "objectID": "nest/shiny_101.html#setting-things-up",
+    "href": "nest/shiny_101.html#setting-things-up",
+    "title": "Shiny modules, serverless shiny",
+    "section": "Setting things up",
+    "text": "Setting things up"
+  },
+  {
+    "objectID": "nest/shiny_101.html#shiny-modules",
+    "href": "nest/shiny_101.html#shiny-modules",
+    "title": "Shiny modules, serverless shiny",
+    "section": "Shiny modules",
+    "text": "Shiny modules"
+  },
+  {
+    "objectID": "nest/shiny_101.html#serverless-shiny",
+    "href": "nest/shiny_101.html#serverless-shiny",
+    "title": "Shiny and shiny modules",
+    "section": "Serverless shiny",
+    "text": "Serverless shiny\nMaking use of webR\nshinylive::export(from_here, to_there)\nUse GHA to deploy the app\nPublic! No secrets"
+  },
+  {
+    "objectID": "nest/teal_101.html",
+    "href": "nest/teal_101.html",
+    "title": "NEST - Teal",
+    "section": "",
+    "text": "Getting started with Teal\nTeal workshop PHUSE CSS 2025\nTeal gallery: sample apps based on teal framework\nTeal technical blueprint"
+  },
+  {
+    "objectID": "nest/teal_101.html#setting-things-up",
+    "href": "nest/teal_101.html#setting-things-up",
+    "title": "Shiny modules, serverless shiny",
+    "section": "Setting things up",
+    "text": "Setting things up"
+  },
+  {
+    "objectID": "nest/teal_101.html#shiny-modules",
+    "href": "nest/teal_101.html#shiny-modules",
+    "title": "Shiny modules, serverless shiny",
+    "section": "Shiny modules",
+    "text": "Shiny modules"
+  },
+  {
+    "objectID": "nest/teal_101.html#serverless-shiny",
+    "href": "nest/teal_101.html#serverless-shiny",
+    "title": "Shiny modules, serverless shiny",
+    "section": "Serverless shiny",
+    "text": "Serverless shiny\nMaking use of webR\nshinylive::export(from_here, to_there)\nUse GHA to deploy the app\nPublic! No secrets"
+  },
+  {
+    "objectID": "nest/teal_101.html#running-my-first-app",
+    "href": "nest/teal_101.html#running-my-first-app",
+    "title": "NEST - Teal",
+    "section": "Running my first app",
+    "text": "Running my first app\nLoads:\n\nshiny\nteal.data\nteal.code\nteal.slice\n\nMain panel (Active Module Content)):\n\nshows two modules that loads IRIS data\ncan have multiple\n\nSide (right) (Filter Panel):\n\nactive filter summary: number of observations\nactive filter variables\n\n\nDetails\nMandatory arguments: data, module\n\n\nTeal packages\n\nteal.data: defines data of teal app\nteal.slice: defines data filtering before passing into modules\n\nAnd others"
+  },
+  {
+    "objectID": "nest/teal_101.html#pharmaverse",
+    "href": "nest/teal_101.html#pharmaverse",
+    "title": "NEST - Teal",
+    "section": "Pharmaverse",
+    "text": "Pharmaverse\nHow does teal fit in the pharmaverse ecosystem? (Examples)\n\nSDTM\n\n\nADaM\n\n\nTLG\nCalculation and analysis\n\ntern: analysis functions for tables and graphs in clinical trial reporting\nosprey:\ngoshawk\n\n\n\nInteractive (teal)"
+  },
+  {
+    "objectID": "nest/shiny_101.html#get-started",
+    "href": "nest/shiny_101.html#get-started",
+    "title": "Shiny and shiny modules",
+    "section": "Get started",
+    "text": "Get started\nIn an empty R script, type shiny, then a snippet should pop up to provide you with a template that contains to key components.\nTips\n\nrun the entire script\n\nAnatomy of a standard shiny app: 3 components\n\nui function\nserver function\nshinyApp function that combines the two parts above\n\n\n# load the package\nlibrary(shiny)\n\n# ui\nui &lt;- page_fluid()\n\n# server\nserver &lt;- function(input, output, session){}\n\n# combines the two\nshinyApp(ui = ui, server = server)\n# shinyApp(ui = app$ui, server = app$server)\n\nServer functions\n\ninside ui, we have defined variables with inputID = x, outputID = 'scatterplot'; in the server these are called upon\nobjects to be displayed should be saved to outputs$\ninput values should be referred to with inputs$\nreactive objects should be built with render*() functions (renderPlot, renderText, renderTable etc)"
+  },
+  {
+    "objectID": "nest/shiny_101.html#reactivity",
+    "href": "nest/shiny_101.html#reactivity",
+    "title": "Shiny and shiny modules",
+    "section": "Reactivity",
+    "text": "Reactivity\nReactive programming\nUsual way in R: procedural. You tell what to do and when.\n\nn &lt;- 1\nresult &lt;- 1 + n\nn &lt;- 2\nresult &lt;- 1 + n\n\nReactive programming: define how to do something\n\nresult &lt;- reactive({\n  1 + input$n\n})"
+  },
+  {
+    "objectID": "nest/shiny_101.html#modules",
+    "href": "nest/shiny_101.html#modules",
+    "title": "Shiny and shiny modules",
+    "section": "Modules",
+    "text": "Modules\nMake the code more organized. Essentially wrapping components of UI / server into functions, then call the functions in the app.\n\nVery useful tutorial by Jonas Hagenberg: Structure your app: introduction to Shiny modules\n(More advanced) Talk by Eric Nantz: Effective use of Shiny modules in application development\n\nCareful design: what does the module do? what is it trying to accomplish?\nInput and return values: static or reactive inputs? complexity of return values; which outputs serve as inputs for other modules?\n\nModule structure\nThis is how the shiny app with modules look like\n\n# ui\nui &lt;- page_fluid(\n  \n  # other UI elements\n  # ...\n  #\n  # module UI\n  module_UI(id = 'id_1')\n  # can have more than one\n)\n\n# server\nserver &lt;- function(input, output, session){\n  \n  # other server part\n  # ...\n  # module \n  module_server(id = 'id_1')\n  # can have more than one\n}\n\n# combines the two\nshinyApp(ui = ui, server = server)\n\nDefine the modules\n\n# define the UI part\nmodule_UI &lt;- function(id){\n  \n  # namespaced id for input and output\n  ns &lt;- NS(id)\n  \n  # this is just a fancy list\n  tagList(\n    # your UI elements\n  )\n}\n\n# define the server part\nmodule_server &lt;- function(id){\n  moduleServer(\n    id, \n    function(input, output, session){\n      \n    }\n  )\n  \n}"
   }
 ]

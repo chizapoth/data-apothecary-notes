@@ -1,0 +1,192 @@
+---
+title: "Shiny and shiny modules"
+description: |
+  Understand the basic behaviors
+author: "Chi Zhang"
+date: "2025-07-11"
+categories: [Shiny]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+Some new technology related to shiny
+
+### Useful material
+
+Book: [Mastering Shiny](https://mastering-shiny.org)
+
+
+
+
+## Get started 
+
+In an empty R script, type `shiny`, then a snippet should pop up to provide you with a template that contains to key components.
+
+
+Tips
+
+- run the entire script
+
+
+Anatomy of a standard shiny app: 3 components
+
+- `ui` function
+- `server` function
+- `shinyApp` function that combines the two parts above
+
+
+```{r}
+#| eval: false
+
+# load the package
+library(shiny)
+
+# ui
+ui <- page_fluid()
+
+# server
+server <- function(input, output, session){}
+
+# combines the two
+shinyApp(ui = ui, server = server)
+# shinyApp(ui = app$ui, server = app$server)
+
+```
+
+Server functions
+
+* inside **ui**, we have defined variables with `inputID = x`, `outputID = 'scatterplot'`; in the **server** these are called upon
+* objects to be displayed should be saved to `outputs$`
+* input values should be referred to with `inputs$`
+* reactive objects should be built with `render*()` functions (`renderPlot`, `renderText`, `renderTable` etc)
+
+
+
+
+## Reactivity
+
+Reactive programming 
+
+Usual way in R: procedural. You tell what to do and when.
+
+```{r}
+#| eval: false
+n <- 1
+result <- 1 + n
+n <- 2
+result <- 1 + n
+```
+
+Reactive programming: define how to do something
+
+```{r}
+#| eval: false
+result <- reactive({
+  1 + input$n
+})
+```
+
+
+
+
+
+
+## Modules
+
+Make the code more organized. Essentially wrapping components of UI / server into functions, then call the functions in the app.
+
+- Very useful tutorial by Jonas Hagenberg: [Structure your app: introduction to Shiny modules](https://www.youtube.com/watch?v=oOYaHsPXLvs&t=77s)
+- (More advanced) Talk by Eric Nantz: [Effective use of Shiny modules in application development](https://www.youtube.com/watch?v=ylLLVo2VL50&t=33s)
+
+Careful design: what does the module do? what is it trying to accomplish?
+
+Input and return values: static or reactive inputs? complexity of return values; which outputs serve as inputs for other modules?
+
+
+### Module structure
+
+This is how the shiny app with modules look like
+
+```{r}
+#| eval: false
+
+# ui
+ui <- page_fluid(
+  
+  # other UI elements
+  # ...
+  #
+  # module UI
+  module_UI(id = 'id_1')
+  # can have more than one
+)
+
+# server
+server <- function(input, output, session){
+  
+  # other server part
+  # ...
+  # module 
+  module_server(id = 'id_1')
+  # can have more than one
+}
+
+# combines the two
+shinyApp(ui = ui, server = server)
+```
+
+
+Define the modules
+
+```{r}
+#| eval: false
+# define the UI part
+module_UI <- function(id){
+  
+  # namespaced id for input and output
+  ns <- NS(id)
+  
+  # this is just a fancy list
+  tagList(
+    # your UI elements
+  )
+}
+
+# define the server part
+module_server <- function(id){
+  moduleServer(
+    id, 
+    function(input, output, session){
+      
+    }
+  )
+  
+}
+
+```
+
+
+## Serverless shiny
+
+Making use of webR
+
+`shinylive::export(from_here, to_there)`
+
+Use GHA to deploy the app
+
+Public! No secrets
+
+
+
+
+
+
+
+

@@ -34,7 +34,7 @@
         "\n",
         "### For loop "
       ],
-      "id": "3f7c95aa"
+      "id": "830155e5"
     },
     {
       "cell_type": "code",
@@ -43,7 +43,7 @@
         "for i in range(3):\n",
         "    print('hello')"
       ],
-      "id": "e3dd9838",
+      "id": "8cb7c197",
       "execution_count": null,
       "outputs": []
     },
@@ -57,7 +57,7 @@
         "}\n",
         "```"
       ],
-      "id": "171adff2"
+      "id": "5afef6e9"
     },
     {
       "cell_type": "code",
@@ -67,7 +67,7 @@
         "for i in range(5):\n",
         "    print(i)"
       ],
-      "id": "b3d384c8",
+      "id": "f64a26d9",
       "execution_count": null,
       "outputs": []
     },
@@ -77,7 +77,7 @@
       "source": [
         "Combined with lists"
       ],
-      "id": "7cab9552"
+      "id": "c7cb7088"
     },
     {
       "cell_type": "code",
@@ -87,7 +87,7 @@
         "  for j in range(2,4):\n",
         "    print(i, j)"
       ],
-      "id": "f590bc53",
+      "id": "1372c633",
       "execution_count": null,
       "outputs": []
     },
@@ -101,7 +101,7 @@
         "  if score >= 70:\n",
         "    print(score)"
       ],
-      "id": "729a0f96",
+      "id": "7b86540c",
       "execution_count": null,
       "outputs": []
     },
@@ -111,7 +111,7 @@
       "source": [
         "Combined with counter"
       ],
-      "id": "d492d64a"
+      "id": "c546d9f2"
     },
     {
       "cell_type": "code",
@@ -124,7 +124,7 @@
         "    count +=1\n",
         "print(count)"
       ],
-      "id": "11c3a4f7",
+      "id": "80acff9b",
       "execution_count": null,
       "outputs": []
     },
@@ -134,7 +134,7 @@
       "source": [
         "### While loop"
       ],
-      "id": "4d5a7d54"
+      "id": "c41cbffe"
     },
     {
       "cell_type": "code",
@@ -145,7 +145,7 @@
         "  print('continue')\n",
         "  n = n-1"
       ],
-      "id": "08d32b41",
+      "id": "5af6e360",
       "execution_count": null,
       "outputs": []
     },
@@ -169,7 +169,7 @@
         "\n",
         "Conditions"
       ],
-      "id": "f7b62d34"
+      "id": "3eea3df9"
     },
     {
       "cell_type": "code",
@@ -180,7 +180,7 @@
         "print(rating>70 and views > 5000)\n",
         "print(rating>70 or views > 6000)"
       ],
-      "id": "edf7c0a1",
+      "id": "9503e172",
       "execution_count": null,
       "outputs": []
     },
@@ -196,7 +196,7 @@
         "else:\n",
         "  print('original price')"
       ],
-      "id": "6263ceb5",
+      "id": "14681b62",
       "execution_count": null,
       "outputs": []
     },
@@ -208,7 +208,7 @@
         "\n",
         "`break` needs to be inside the loop. Typically used with **while**"
       ],
-      "id": "255acae9"
+      "id": "a3633652"
     },
     {
       "cell_type": "code",
@@ -222,7 +222,7 @@
         "    print(\"Playing \" + song)\n",
         "    break"
       ],
-      "id": "dff8f843",
+      "id": "52d58171",
       "execution_count": null,
       "outputs": []
     },
@@ -232,7 +232,7 @@
       "source": [
         "`continue` skips when the condition is not met"
       ],
-      "id": "717310e8"
+      "id": "5e07ca09"
     },
     {
       "cell_type": "code",
@@ -244,7 +244,7 @@
         "    continue\n",
         "  print(age)"
       ],
-      "id": "5c46d256",
+      "id": "d9811773",
       "execution_count": null,
       "outputs": []
     },
@@ -266,7 +266,7 @@
         "\n",
         "`except` block: handle the error"
       ],
-      "id": "e120384f"
+      "id": "7b27dc78"
     },
     {
       "cell_type": "code",
@@ -277,7 +277,7 @@
         "except:\n",
         "  print('an exception')"
       ],
-      "id": "280fa3dc",
+      "id": "539e6a0e",
       "execution_count": null,
       "outputs": []
     },
@@ -287,7 +287,7 @@
       "source": [
         "If we do not know what kind of exception we are expecting, "
       ],
-      "id": "0b8d6075"
+      "id": "3cb2bc18"
     },
     {
       "cell_type": "code",
@@ -298,7 +298,7 @@
         "except:\n",
         "  print('Something is wrong')"
       ],
-      "id": "5d4e782d",
+      "id": "6e9f800e",
       "execution_count": null,
       "outputs": []
     },
@@ -313,7 +313,7 @@
         "except:\n",
         "  print(\"Something else went wrong\")"
       ],
-      "id": "9667345f",
+      "id": "4a81195e",
       "execution_count": null,
       "outputs": []
     },
@@ -328,7 +328,7 @@
         "except TypeError:\n",
         "  print(\"Type mismatch error\")"
       ],
-      "id": "f0c9ba9c",
+      "id": "d3ee4cac",
       "execution_count": null,
       "outputs": []
     },
@@ -340,7 +340,7 @@
         "\n",
         "`finally` block: execute code regardless of result of the try/except blocks\n"
       ],
-      "id": "e0c27ada"
+      "id": "793243b1"
     },
     {
       "cell_type": "code",
@@ -354,7 +354,7 @@
         "finally:\n",
         "  print('happy reading')"
       ],
-      "id": "ff333ca0",
+      "id": "6a73100e",
       "execution_count": null,
       "outputs": []
     },
@@ -378,7 +378,7 @@
         "  raise TypeError('needs to be an integer')\n",
         "```"
       ],
-      "id": "9d61cc78"
+      "id": "b18b45d1"
     }
   ],
   "metadata": {

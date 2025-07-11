@@ -155,7 +155,7 @@
         "\n",
         "### Create a dataframe by **combining Series**"
       ],
-      "id": "c2732c6b"
+      "id": "ff3ba140"
     },
     {
       "cell_type": "code",
@@ -187,7 +187,7 @@
         "})\n",
         "states"
       ],
-      "id": "0d7c5568",
+      "id": "1626d29b",
       "execution_count": null,
       "outputs": []
     },
@@ -203,7 +203,7 @@
         "\n",
         "### Create a df from dictionary"
       ],
-      "id": "43b230fb"
+      "id": "41454a7c"
     },
     {
       "cell_type": "code",
@@ -211,7 +211,7 @@
       "source": [
         "pd.DataFrame([{'a': 1, 'b': 2}, {'b': 3, 'c': 4}])"
       ],
-      "id": "9aee6241",
+      "id": "c91771d7",
       "execution_count": null,
       "outputs": []
     },
@@ -221,7 +221,7 @@
       "source": [
         "### Create a df from a 2-d array"
       ],
-      "id": "2f095d95"
+      "id": "aada8e35"
     },
     {
       "cell_type": "code",
@@ -231,7 +231,7 @@
         "             columns=['foo', 'bar'],\n",
         "             index=['a', 'b', 'c'])"
       ],
-      "id": "21acb320",
+      "id": "fb6abddb",
       "execution_count": null,
       "outputs": []
     },
@@ -296,7 +296,7 @@
         "states.loc[data.density > 100, ['pop', 'density']]\n",
         "```\n"
       ],
-      "id": "2355ddfa"
+      "id": "0ee2e085"
     }
   ],
   "metadata": {

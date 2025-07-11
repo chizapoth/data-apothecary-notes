@@ -34,7 +34,7 @@
         "\n",
         "`__init__` method, the first is always `self`"
       ],
-      "id": "d40ca0f7"
+      "id": "5d9b4bdf"
     },
     {
       "cell_type": "code",
@@ -52,7 +52,7 @@
         "\n",
         "print(my_car)"
       ],
-      "id": "e435b43a",
+      "id": "b96897ac",
       "execution_count": null,
       "outputs": []
     },
@@ -62,7 +62,7 @@
       "source": [
         "Access the attributes using `.`"
       ],
-      "id": "09816bc7"
+      "id": "c99392c5"
     },
     {
       "cell_type": "code",
@@ -71,7 +71,7 @@
         "print(my_car.brand)\n",
         "print(my_car.color)"
       ],
-      "id": "496afccc",
+      "id": "b47241c2",
       "execution_count": null,
       "outputs": []
     },
@@ -81,7 +81,7 @@
       "source": [
         "Add custom behaviors to a class. Must always have `self` as the first argument\n"
       ],
-      "id": "ba5e2ce2"
+      "id": "d2e9d4d9"
     },
     {
       "cell_type": "code",
@@ -102,7 +102,7 @@
         "print(my_car)\n",
         "my_car.honk()"
       ],
-      "id": "54d45104",
+      "id": "544d1f0b",
       "execution_count": null,
       "outputs": []
     },
@@ -112,7 +112,7 @@
       "source": [
         "Difference between a function and a method: function can be called on its own, and method has to be called with the object\n"
       ],
-      "id": "f693b14e"
+      "id": "57b455e1"
     },
     {
       "cell_type": "code",
@@ -137,7 +137,7 @@
         "print(type(city))\n",
         "print(type(is_open))"
       ],
-      "id": "59c4726a",
+      "id": "07f712ae",
       "execution_count": null,
       "outputs": []
     },
@@ -149,7 +149,7 @@
         "\n",
         "From an existing class `Animal`, the class `Dog` inherits the method `move`, and also has its own method `bark`.\n"
       ],
-      "id": "2df19e87"
+      "id": "0b5a25b0"
     },
     {
       "cell_type": "code",
@@ -178,7 +178,7 @@
         "# Specific behavior\n",
         "my_dog.bark()"
       ],
-      "id": "47bfef25",
+      "id": "20cd9e4e",
       "execution_count": null,
       "outputs": []
     },
@@ -188,7 +188,7 @@
       "source": [
         "Add more attributes on the child class in addition to the ones inherited from the parent class: use `super.__init__()` to inherit\n"
       ],
-      "id": "a6097868"
+      "id": "1e5ddf5e"
     },
     {
       "cell_type": "code",
@@ -214,7 +214,7 @@
         "print(my_dog.breed)\n",
         "print(my_dog.age)"
       ],
-      "id": "1ce12202",
+      "id": "e0bf896d",
       "execution_count": null,
       "outputs": []
     },
@@ -229,7 +229,7 @@
         "\n",
         "Values of attributes can be modified. The code below modifies the value of `odometer`"
       ],
-      "id": "e6fcdfe4"
+      "id": "9a89ee28"
     },
     {
       "cell_type": "code",
@@ -257,7 +257,7 @@
         "\n",
         "my_car.read_odometer()"
       ],
-      "id": "9c834eb3",
+      "id": "0b8ee34e",
       "execution_count": null,
       "outputs": []
     },
@@ -267,7 +267,7 @@
       "source": [
         "To hide the values, the first way is to use `_` before the attribute. This indicates the attribute is for **internal use** only. They can still be accessed by calling `class._attribute`\n"
       ],
-      "id": "1b6bd7a5"
+      "id": "093b69db"
     },
     {
       "cell_type": "code",
@@ -293,7 +293,7 @@
         "# access the protected attribute\n",
         "print(my_car._odometer)"
       ],
-      "id": "1310593b",
+      "id": "fc96eb72",
       "execution_count": null,
       "outputs": []
     },
@@ -314,7 +314,7 @@
         "\n",
         "It is possible via name mangling, to access a private member of a class.\n"
       ],
-      "id": "bf241d61"
+      "id": "d97eaaaf"
     },
     {
       "cell_type": "code",
@@ -342,7 +342,7 @@
         "#error when accessing a privet method\n",
         "#my_car.__read_odometer()"
       ],
-      "id": "fd914bf6",
+      "id": "e723132f",
       "execution_count": null,
       "outputs": []
     },
@@ -357,7 +357,7 @@
         "* regular method: self\n",
         "* class method: cls\n"
       ],
-      "id": "9be457e7"
+      "id": "417048e4"
     },
     {
       "cell_type": "code",
@@ -386,7 +386,7 @@
         "# Using the class method to display information about the series\n",
         "Book.books_in_series(\"Harry Potter\", 7)"
       ],
-      "id": "75c8f827",
+      "id": "7c30b780",
       "execution_count": null,
       "outputs": []
     },
@@ -396,7 +396,7 @@
       "source": [
         "Can also call the class method from the instance."
       ],
-      "id": "2d8a5326"
+      "id": "c4995a3b"
     },
     {
       "cell_type": "code",
@@ -405,7 +405,7 @@
         "# calling the class method on the instance\n",
         "my_book.books_in_series(\"Harry Potter\", 7)"
       ],
-      "id": "972ba22c",
+      "id": "530440c8",
       "execution_count": null,
       "outputs": []
     },
@@ -425,7 +425,7 @@
         "Book.books_in_series(\"Harry Potter\", 7)\n",
         "```"
       ],
-      "id": "504928a5"
+      "id": "38949080"
     }
   ],
   "metadata": {
