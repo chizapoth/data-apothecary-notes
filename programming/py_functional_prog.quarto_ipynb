@@ -30,7 +30,7 @@
         "\n",
         "A function can be assigned to another. The same functionality exists in R. "
       ],
-      "id": "a311b419"
+      "id": "118c84df"
     },
     {
       "cell_type": "code",
@@ -44,7 +44,7 @@
         "Add_One = add_one\n",
         "Add_One(10)"
       ],
-      "id": "04ee64b9",
+      "id": "35801d39",
       "execution_count": null,
       "outputs": []
     },
@@ -54,7 +54,7 @@
       "source": [
         "A function can be the argument of another function\n"
       ],
-      "id": "50f60d04"
+      "id": "f0144f53"
     },
     {
       "cell_type": "code",
@@ -69,7 +69,7 @@
         "add_value_string(10, add_one)\n",
         "add_value_string(10, add_two)"
       ],
-      "id": "bd5f4377",
+      "id": "d2e3cc42",
       "execution_count": null,
       "outputs": []
     },
@@ -86,7 +86,7 @@
         "lambda x:x+5\n",
         "```"
       ],
-      "id": "f6b98242"
+      "id": "bb2f99ad"
     },
     {
       "cell_type": "code",
@@ -95,7 +95,7 @@
         "add_five = lambda x:x+5\n",
         "add_five(3)"
       ],
-      "id": "764fca57",
+      "id": "a66ee0e4",
       "execution_count": null,
       "outputs": []
     },
@@ -110,7 +110,7 @@
         "print(greet('Puff'))\n",
         "print(greet('Ponpon'))"
       ],
-      "id": "7897caa5",
+      "id": "fd18584b",
       "execution_count": null,
       "outputs": []
     },
@@ -126,7 +126,7 @@
         "\n",
         "Execute "
       ],
-      "id": "d23131ca"
+      "id": "59422976"
     },
     {
       "cell_type": "code",
@@ -135,7 +135,7 @@
         "res = (lambda x, y: x+y)(2, 3)\n",
         "res"
       ],
-      "id": "43c05dc2",
+      "id": "cd0ea320",
       "execution_count": null,
       "outputs": []
     },
@@ -145,7 +145,7 @@
       "source": [
         "Lambda expressions are useful as a function factory,"
       ],
-      "id": "b7a25b45"
+      "id": "c89249c3"
     },
     {
       "cell_type": "code",
@@ -160,7 +160,7 @@
         "print(doubler(5))\n",
         "print(tripler(5))"
       ],
-      "id": "68ced5f0",
+      "id": "fffce03e",
       "execution_count": null,
       "outputs": []
     },
@@ -176,7 +176,7 @@
         "\n",
         "### On lists"
       ],
-      "id": "1e5f0732"
+      "id": "cc81b1f7"
     },
     {
       "cell_type": "code",
@@ -197,7 +197,7 @@
         "\n",
         "print(capitalized)"
       ],
-      "id": "a49ea265",
+      "id": "89a3819f",
       "execution_count": null,
       "outputs": []
     },
@@ -207,7 +207,7 @@
       "source": [
         "Combined with lambdas"
       ],
-      "id": "2dcbe11e"
+      "id": "998fe60a"
     },
     {
       "cell_type": "code",
@@ -217,7 +217,7 @@
         "doubled = list(map(lambda x: x*2, numbers)) # first part is function\n",
         "doubled"
       ],
-      "id": "6927c5e8",
+      "id": "c69e723b",
       "execution_count": null,
       "outputs": []
     },
@@ -227,7 +227,7 @@
       "source": [
         "Filters on a list"
       ],
-      "id": "21eda107"
+      "id": "4d0e1449"
     },
     {
       "cell_type": "code",
@@ -240,7 +240,7 @@
         "\n",
         "print(filtered_prod)"
       ],
-      "id": "97df94ef",
+      "id": "0a8f4640",
       "execution_count": null,
       "outputs": []
     },
@@ -250,7 +250,7 @@
       "source": [
         "### On dictionary"
       ],
-      "id": "e922c029"
+      "id": "fbe970fc"
     },
     {
       "cell_type": "code",
@@ -263,7 +263,7 @@
         "\n",
         "print(filtered_products)"
       ],
-      "id": "8f23ab0a",
+      "id": "ad8b6a0f",
       "execution_count": null,
       "outputs": []
     },
@@ -275,7 +275,7 @@
         "\n",
         "The difference between `*args` and `**kwargs` is that the former receives a tuple, the later receives a dictionary."
       ],
-      "id": "cf0e8730"
+      "id": "e1239977"
     },
     {
       "cell_type": "code",
@@ -291,7 +291,7 @@
         "nums = [1,2,3,4]\n",
         "print(total(nums))"
       ],
-      "id": "c87d36b5",
+      "id": "8a76e609",
       "execution_count": null,
       "outputs": []
     },
@@ -303,7 +303,7 @@
         "\n",
         "`*args` allows any number of arguments without creating a list before calling. It receives arguments as a **tuple** (an iterable)"
       ],
-      "id": "959d0aee"
+      "id": "7f12a9e8"
     },
     {
       "cell_type": "code",
@@ -318,7 +318,7 @@
         "print(total(1,2,3)) # no need to create a list, here we have 3 arguments instead of a list\n",
         "print(total(201,23))"
       ],
-      "id": "a71e2601",
+      "id": "d1167d60",
       "execution_count": null,
       "outputs": []
     },
@@ -328,7 +328,7 @@
       "source": [
         "Recall **unpacking** in tuples, use `*` operator. It unpacks a tuple as a list"
       ],
-      "id": "92106eee"
+      "id": "5007b2b5"
     },
     {
       "cell_type": "code",
@@ -340,7 +340,7 @@
         "arg1, *args = three_args # this is where args is\n",
         "print(args)"
       ],
-      "id": "295cfe4e",
+      "id": "1af237b6",
       "execution_count": null,
       "outputs": []
     },
@@ -350,7 +350,7 @@
       "source": [
         "The *args* does not have to be `args`, it can take any name as long as the operator is there."
       ],
-      "id": "85be8a72"
+      "id": "6e48269b"
     },
     {
       "cell_type": "code",
@@ -364,7 +364,7 @@
         "display('word1', 'word3', 'word4')\n",
         "display('word1', 3, 24.1) # doesn't have to be a string"
       ],
-      "id": "d7879af3",
+      "id": "76ab0234",
       "execution_count": null,
       "outputs": []
     },
@@ -376,7 +376,7 @@
         "\n",
         "`def<func> (<argument>, <*args>)`"
       ],
-      "id": "c3621618"
+      "id": "3567fcb5"
     },
     {
       "cell_type": "code",
@@ -389,7 +389,7 @@
         "\n",
         "show_items(\"Electronics\", \"Laptop\", \"Smartphone\", \"Tablet\") # the first is the category"
       ],
-      "id": "2ff2fddd",
+      "id": "084c7823",
       "execution_count": null,
       "outputs": []
     },
@@ -401,7 +401,7 @@
         "\n",
         "This one receives argument in the form of a **dictionary** that have key:value pairs. The `**` operator unpacks dictionaries into arguments."
       ],
-      "id": "a3fce8a3"
+      "id": "95b1ed20"
     },
     {
       "cell_type": "code",
@@ -415,7 +415,7 @@
         "\n",
         "display_info(name=\"Alice\", age=30, city=\"New York\")"
       ],
-      "id": "930d32bb",
+      "id": "50f99265",
       "execution_count": null,
       "outputs": []
     },
@@ -426,7 +426,7 @@
         "person = {'name':\"Alice\", 'age':30, 'city':\"New York\"}\n",
         "person.items() # all pairs"
       ],
-      "id": "93fa3e29",
+      "id": "927b6c5b",
       "execution_count": null,
       "outputs": []
     },
@@ -443,7 +443,7 @@
         "\n",
         "Functions can be nested"
       ],
-      "id": "08d17e87"
+      "id": "a9638026"
     },
     {
       "cell_type": "code",
@@ -461,7 +461,7 @@
         "\n",
         "print(greet(\"Bob\"))"
       ],
-      "id": "9df0d50f",
+      "id": "ec60a3fe",
       "execution_count": null,
       "outputs": []
     },
@@ -471,7 +471,7 @@
       "source": [
         "Decorator modifies a function's original behavior without changing it"
       ],
-      "id": "78cfb8bd"
+      "id": "e7fb2960"
     },
     {
       "cell_type": "code",
@@ -493,7 +493,7 @@
         "greet_upper = uppercase(greet)\n",
         "print(greet_upper())"
       ],
-      "id": "9735da15",
+      "id": "34da77cf",
       "execution_count": null,
       "outputs": []
     },
@@ -503,7 +503,7 @@
       "source": [
         "Use `@`"
       ],
-      "id": "ec3a34c3"
+      "id": "10ca3dd2"
     },
     {
       "cell_type": "code",
@@ -523,7 +523,7 @@
         "# Using the decorated function\n",
         "print(greet())"
       ],
-      "id": "1dcab1cd",
+      "id": "457d071d",
       "execution_count": null,
       "outputs": []
     },
@@ -533,7 +533,7 @@
       "source": [
         "Use different decorators for the same function"
       ],
-      "id": "ca2eb43c"
+      "id": "6c686ce4"
     },
     {
       "cell_type": "code",
@@ -557,7 +557,7 @@
         "print(restock_item(\"Laptop\"))\n",
         "print(sell_item(\"Smartphone\"))"
       ],
-      "id": "e0d2a6fa",
+      "id": "38ecdf66",
       "execution_count": null,
       "outputs": []
     }

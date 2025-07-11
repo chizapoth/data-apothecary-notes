@@ -42,7 +42,7 @@
         "\n",
         "Afterwards, can try to render "
       ],
-      "id": "42b854b8"
+      "id": "a11a9180"
     },
     {
       "cell_type": "code",
@@ -54,7 +54,7 @@
         "plt.plot(x, np.sin(x))\n",
         "plt.show()"
       ],
-      "id": "40ac1651",
+      "id": "2e1934cc",
       "execution_count": null,
       "outputs": []
     },
@@ -64,7 +64,7 @@
       "source": [
         "To check what packages are installed, can use `pip list`.\n"
       ],
-      "id": "f7c8a25c"
+      "id": "9890cb71"
     }
   ],
   "metadata": {
