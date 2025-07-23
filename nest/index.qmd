@@ -7,6 +7,7 @@ listing:
     fields: [title, description]
     contents: 
       - "shiny_101.qmd"
+      - "shiny_reactivity.qmd"
     type: table
     grid-item-border: false
     sort-ui: false

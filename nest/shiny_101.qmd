@@ -57,7 +57,6 @@ server <- function(input, output, session){}
 # combines the two
 shinyApp(ui = ui, server = server)
 # shinyApp(ui = app$ui, server = app$server)
-
 ```
 
 Server functions
@@ -66,34 +65,6 @@ Server functions
 * objects to be displayed should be saved to `outputs$`
 * input values should be referred to with `inputs$`
 * reactive objects should be built with `render*()` functions (`renderPlot`, `renderText`, `renderTable` etc)
-
-
-
-
-## Reactivity
-
-Reactive programming 
-
-Usual way in R: procedural. You tell what to do and when.
-
-```{r}
-#| eval: false
-n <- 1
-result <- 1 + n
-n <- 2
-result <- 1 + n
-```
-
-Reactive programming: define how to do something
-
-```{r}
-#| eval: false
-result <- reactive({
-  1 + input$n
-})
-```
-
-
 
 
 

@@ -4120,7 +4120,7 @@
     "href": "nest/index.html#shiny",
     "title": "NEST",
     "section": "Shiny",
-    "text": "Shiny\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nShiny and shiny modules\n\n\nUnderstand the basic behaviors \n\n\n\n\n\n\nNo matching items"
+    "text": "Shiny\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nShiny and shiny modules\n\n\nUnderstand the basic behaviors \n\n\n\n\n\n\nShiny reactivity\n\n\nLearn about reactivity \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "nest/index.html#teal",
@@ -4162,7 +4162,7 @@
     "href": "nest/teal_101.html",
     "title": "NEST - Teal",
     "section": "",
-    "text": "Getting started with Teal\nTeal workshop PHUSE CSS 2025\nTeal gallery: sample apps based on teal framework\nTeal technical blueprint"
+    "text": "Getting started with Teal\nTeal workshop PHUSE CSS 2025\nTeal gallery: sample apps based on teal framework\nTeal technical blueprint\nVideo: a complete guide to getting started with teal. This video breaks down the components in a teal app, very useful"
   },
   {
     "objectID": "nest/teal_101.html#setting-things-up",
@@ -4190,14 +4190,14 @@
     "href": "nest/teal_101.html#running-my-first-app",
     "title": "NEST - Teal",
     "section": "Running my first app",
-    "text": "Running my first app\nLoads:\n\nshiny\nteal.data\nteal.code\nteal.slice\n\nMain panel (Active Module Content)):\n\nshows two modules that loads IRIS data\ncan have multiple\n\nSide (right) (Filter Panel):\n\nactive filter summary: number of observations\nactive filter variables\n\n\nDetails\nMandatory arguments: data, module\n\n\nTeal packages\n\nteal.data: defines data of teal app\nteal.slice: defines data filtering before passing into modules\n\nAnd others"
+    "text": "Running my first app\nMandatory arguments: data, module\nLoads:\n\nshiny\nteal.data\nteal.code\nteal.slice\n\nMain panel (Active Module Content)):\n\nshows two modules that loads IRIS data\ncan have multiple\n\nSide (right) (Filter Panel):\n\nactive filter summary: number of observations\nactive filter variables\n\n\nTeal packages\n\nteal.data: defines data of teal app\nteal.slice: defines data filtering before passing into modules\n\nAnd others"
   },
   {
     "objectID": "nest/teal_101.html#pharmaverse",
     "href": "nest/teal_101.html#pharmaverse",
     "title": "NEST - Teal",
     "section": "Pharmaverse",
-    "text": "Pharmaverse\nHow does teal fit in the pharmaverse ecosystem? (Examples)\n\nSDTM\n\n\nADaM\n\n\nTLG\nCalculation and analysis\n\ntern: analysis functions for tables and graphs in clinical trial reporting\nosprey:\ngoshawk\n\n\n\nInteractive (teal)"
+    "text": "Pharmaverse\nHow does teal fit in the pharmaverse ecosystem? (Examples)\n\nSDTM\n\n\nADaM\n\n\nTLG\nCalculation and analysis\n\ntern: analysis functions for tables and graphs in clinical trial reporting\nosprey:\ngoshawk\nhermes\n\n\n\nInteractive (teal)\nCalculations above link to the teal modules to add interactivity. In addition to teal.moduels.general, we have\n\ntern -&gt; teal.modules.clinical\nosprey -&gt; teal.osprey\ngoshawk -&gt; teal.goshawk\nhermes -&gt; teal.modules.hermes"
   },
   {
     "objectID": "nest/shiny_101.html#get-started",
@@ -4219,5 +4219,26 @@
     "title": "Shiny and shiny modules",
     "section": "Modules",
     "text": "Modules\nMake the code more organized. Essentially wrapping components of UI / server into functions, then call the functions in the app.\n\nVery useful tutorial by Jonas Hagenberg: Structure your app: introduction to Shiny modules\n(More advanced) Talk by Eric Nantz: Effective use of Shiny modules in application development\n\nCareful design: what does the module do? what is it trying to accomplish?\nInput and return values: static or reactive inputs? complexity of return values; which outputs serve as inputs for other modules?\n\nModule structure\nThis is how the shiny app with modules look like\n\n# ui\nui &lt;- page_fluid(\n  \n  # other UI elements\n  # ...\n  #\n  # module UI\n  module_UI(id = 'id_1')\n  # can have more than one\n)\n\n# server\nserver &lt;- function(input, output, session){\n  \n  # other server part\n  # ...\n  # module \n  module_server(id = 'id_1')\n  # can have more than one\n}\n\n# combines the two\nshinyApp(ui = ui, server = server)\n\nDefine the modules\n\n# define the UI part\nmodule_UI &lt;- function(id){\n  \n  # namespaced id for input and output\n  ns &lt;- NS(id)\n  \n  # this is just a fancy list\n  tagList(\n    # your UI elements\n  )\n}\n\n# define the server part\nmodule_server &lt;- function(id){\n  moduleServer(\n    id, \n    function(input, output, session){\n      \n    }\n  )\n  \n}"
+  },
+  {
+    "objectID": "nest/teal_101.html#creating-a-teal-app",
+    "href": "nest/teal_101.html#creating-a-teal-app",
+    "title": "NEST - Teal",
+    "section": "Creating a teal app",
+    "text": "Creating a teal app\nThe bare bone structure is like this below:\n\nlibrary(teal)\n\napp &lt;- init(\n    data = data, \n    modules = modules)\n\nshinyApp(ui = app$ui, server = app$server)\n\nData\n\nInput: data.frame, cdisc data format data.frame, multi-asset objects\nteal_data(), if data is common across modules\nteal_data_module() if data is different\n\nModules\n\nteal.modules.general(): data.frame\nteal.modules.clinical(): cdisc data\nteal.modules.hermes(): multi-asset objects (check out TLG.catelog, biomarker.catelog)\n\n\nPart 1: teal_data()\nCreates an S4 object, &lt;teal_data&gt;\nSlots: env, datanames, code, verified, join_keys (only useful for cdisc)\nMethods: …\n\n# create a single data object \ndata &lt;- teal_data(\n  MTCARS = head(mtcars)\n)"
+  },
+  {
+    "objectID": "nest/shiny_reactivity.html",
+    "href": "nest/shiny_reactivity.html",
+    "title": "Shiny reactivity",
+    "section": "",
+    "text": "Reactive programming\nKey idea: specify a graph of dependencies, so that when an input changes, all related output are updated automatically.\nUsual way in R: procedural. You tell what to do and when. Imperative programming\nn &lt;- 1\nresult &lt;- 1 + n\nn &lt;- 2\nresult &lt;- 1 + n\nReactive programming: define how to do something; when the right condition meets. Declarative programming\nresult &lt;- reactive({\n  1 + input$n\n})"
+  },
+  {
+    "objectID": "nest/shiny_reactivity.html#reactivity",
+    "href": "nest/shiny_reactivity.html#reactivity",
+    "title": "Shiny reactivity",
+    "section": "Reactivity",
+    "text": "Reactivity\n\nui &lt;- fluidPage(\n  textInput(\"name\", \"What's your name?\"),\n  textOutput(\"greeting\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$greeting &lt;- renderText({\n    paste0(\"Hello \", input$name, \"!\")\n  })\n}\n\nRun the app\nEvery time the input$name changes, the output also changes. The reactivity simply means that every time a user updates the browser input, the developer does not need to re-run the program. The output is automatically updated by itself.\nMy understanding: the developer only needs to develop the reactive code, then leaves everything to the user. The program reacts to the input\n\nOrder of execution\nReactive graph: describes how inputs and outputs are connected.\n\n\nReactive context\nReactive values can only be used inside reactive contexts. Access reactive values outside reactive context will lead to an error. E.g.\n\nserver &lt;- function(input, output){\n  print(input$num)\n}\n# this results in an error, as 'print' is not a reactive context\n\n\nAny render*() is a reactive context\nUse observe({...}) access reactive variable: it is a reactive context\n\n\n# this is the correct way to print\nserver &lt;- function(input, output){\n  observe({ \n    print(input$num) # put in the reactive context\n  })\n  \n}\n\n\n\nReactive expressions / variables\nCan create a reactive variable using reactive({}), which is a reactive context.\nThe order of these two lines below doesn’t matter.\n\nserver &lt;- function(input, output, session) {\n  \n  # define a reactive expression here\n  string &lt;- reactive(paste0(\"Hello \", input$name, \"!\"))\n  # can not simply do the line below:\n  # paste0(\"Hello \", input$name, \"!\")\n  \n  # call it \n  output$greeting &lt;- renderText(string())\n}\n\nAccess custom reactive variables like a function: need the (). For example, call string() rather than string.\n\nserver &lt;- function(input, output){\n  # create a reactive variable\n  x &lt;- reactive({\n    input$num + 1\n  })  \n\n  observe({\n    print(input$num)\n    print(x()) # with ()\n  })\n}"
   }
 ]

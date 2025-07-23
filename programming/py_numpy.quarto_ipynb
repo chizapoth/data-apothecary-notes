@@ -176,7 +176,7 @@
         "\n",
         "Higher-D array"
       ],
-      "id": "c396aba6"
+      "id": "43cbba13"
     },
     {
       "cell_type": "code",
@@ -192,7 +192,7 @@
         "print(x[0]) # entire row\n",
         "print(x[:2, :3])"
       ],
-      "id": "36eeed52",
+      "id": "4b07d669",
       "execution_count": null,
       "outputs": []
     },
@@ -204,7 +204,7 @@
         "\n",
         "Always pay attention to where the index starts, typically 0."
       ],
-      "id": "f32ee872"
+      "id": "e4097e81"
     },
     {
       "cell_type": "code",
@@ -214,7 +214,7 @@
         "ind = [3, 7, 2]\n",
         "x[ind]"
       ],
-      "id": "75ecd6e8",
+      "id": "a734d90e",
       "execution_count": null,
       "outputs": []
     },
@@ -234,7 +234,7 @@
         "\n",
         "Spliting "
       ],
-      "id": "842dde53"
+      "id": "6fb7d9ab"
     },
     {
       "cell_type": "code",
@@ -244,7 +244,7 @@
         "x1, x2, x3 = np.split(x, [2, 4])\n",
         "print(x1, x2, x3)"
       ],
-      "id": "aad4470b",
+      "id": "50c5a5b3",
       "execution_count": null,
       "outputs": []
     },
@@ -294,7 +294,7 @@
         "* `loc` refers to the index user defined, typically starts from 1.\n",
         "* `iloc` refers to the implicit python index, starting from 0."
       ],
-      "id": "f921ad5b"
+      "id": "949ad98f"
     },
     {
       "cell_type": "code",
@@ -312,7 +312,7 @@
         "print(data.iloc[1]) # 2nd\n",
         "print(data.iloc[1:3]) # 2,3rd"
       ],
-      "id": "f5b74d54",
+      "id": "007b4782",
       "execution_count": null,
       "outputs": []
     },
@@ -326,7 +326,7 @@
         " \n",
         "Detect null values with `isnull(), notnull()`\n"
       ],
-      "id": "27761683"
+      "id": "538946f6"
     }
   ],
   "metadata": {

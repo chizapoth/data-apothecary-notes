@@ -1,0 +1,181 @@
+---
+title: "Shiny reactivity"
+description: |
+  Learn about reactivity
+author: "Chi Zhang"
+date: "2025-07-14"
+categories: [Shiny]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+Reactive programming 
+
+
+Key idea: specify a graph of dependencies, so that when an input changes, all related output are updated automatically.
+
+Usual way in R: procedural. You tell what to do and when. **Imperative programming**
+
+```{r}
+#| eval: false
+n <- 1
+result <- 1 + n
+n <- 2
+result <- 1 + n
+```
+
+Reactive programming: define how to do something; when the right condition meets. **Declarative programming**
+
+```{r}
+#| eval: false
+result <- reactive({
+  1 + input$n
+})
+```
+
+
+
+### Server function 
+
+This is how a skeleton of shiny app looks like:
+
+```{r}
+#| eval: false
+
+library(shiny)
+
+ui <- fluidPage(
+  # front end interface
+)
+
+server <- function(input, output, session) {
+  # back end logic
+}
+
+shinyApp(ui, server)
+```
+
+
+In the UI part, every user gets the same UI. Not every user gets the same server: user A moves a slider doesn't affect user B. Each session has a unique state, isolating the variables created inside the function. Almost all the reactive programming are inside the server function. 
+
+## Reactivity
+
+```{r}
+#| eval: false
+ui <- fluidPage(
+  textInput("name", "What's your name?"),
+  textOutput("greeting")
+)
+
+server <- function(input, output, session) {
+  output$greeting <- renderText({
+    paste0("Hello ", input$name, "!")
+  })
+}
+```
+
+[Run the app](https://hadley.shinyapps.io/ms-connection/)
+
+Every time the `input$name` changes, the output also changes. The **reactivity** simply means that every time a user updates the browser input, the developer does not need to re-run the program. The output is automatically updated by itself. 
+
+*My understanding: the developer only needs to develop the reactive code, then leaves everything to the user. The program reacts to the input*
+
+
+### Order of execution 
+
+ **Reactive graph**: describes how inputs and outputs are connected.
+
+
+### Reactive context
+
+Reactive values can only be used inside reactive contexts. Access reactive values outside reactive context will lead to an error. E.g. 
+
+```{r}
+#| eval: false
+
+server <- function(input, output){
+  print(input$num)
+}
+# this results in an error, as 'print' is not a reactive context
+```
+
+- Any `render*()` is a reactive context
+- Use `observe({...})` access reactive variable: it is a reactive context
+
+
+```{r}
+#| eval: false
+
+# this is the correct way to print
+server <- function(input, output){
+  observe({ 
+    print(input$num) # put in the reactive context
+  })
+  
+}
+```
+
+
+### Reactive expressions / variables
+
+Can create a reactive variable using `reactive({})`, which is a **reactive context**.
+
+The order of these two lines below doesn't matter.
+
+```{r}
+#| eval: false
+server <- function(input, output, session) {
+  
+  # define a reactive expression here
+  string <- reactive(paste0("Hello ", input$name, "!"))
+  # can not simply do the line below:
+  # paste0("Hello ", input$name, "!")
+  
+  # call it 
+  output$greeting <- renderText(string())
+}
+```
+
+
+
+Access custom reactive variables **like a function**: need the `()`. For example, call `string()` rather than `string`.
+
+
+```{r}
+#| eval: false
+
+server <- function(input, output){
+  # create a reactive variable
+  x <- reactive({
+    input$num + 1
+  })  
+
+  observe({
+    print(input$num)
+    print(x()) # with ()
+  })
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

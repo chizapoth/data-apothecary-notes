@@ -84,7 +84,7 @@
         "\n",
         "Say that the results look like the following format. "
       ],
-      "id": "3be80add"
+      "id": "5bd209ad"
     },
     {
       "cell_type": "code",
@@ -108,7 +108,7 @@
         "}\n",
         "results"
       ],
-      "id": "2535f597",
+      "id": "5209a3c0",
       "execution_count": null,
       "outputs": []
     },
@@ -118,7 +118,7 @@
       "source": [
         "Quick glance: `results.items()`, `results.keys()`"
       ],
-      "id": "3594977f"
+      "id": "1d980a0f"
     },
     {
       "cell_type": "code",
@@ -126,7 +126,7 @@
       "source": [
         "results.keys()"
       ],
-      "id": "abda668a",
+      "id": "0ee083a4",
       "execution_count": null,
       "outputs": []
     },
@@ -136,7 +136,7 @@
       "source": [
         "results.items()"
       ],
-      "id": "7bee64a0",
+      "id": "358d9838",
       "execution_count": null,
       "outputs": []
     },
@@ -146,7 +146,7 @@
       "source": [
         "Get all the results from the first key ('model1')"
       ],
-      "id": "5549d75e"
+      "id": "49f426bf"
     },
     {
       "cell_type": "code",
@@ -154,7 +154,7 @@
       "source": [
         "results['model1']"
       ],
-      "id": "6fc096eb",
+      "id": "6629ab3b",
       "execution_count": null,
       "outputs": []
     },
@@ -164,7 +164,7 @@
       "source": [
         "More specific, just get `accuracy`."
       ],
-      "id": "3d2e089e"
+      "id": "5fc59492"
     },
     {
       "cell_type": "code",
@@ -172,7 +172,7 @@
       "source": [
         "results['model1']['accuracy']"
       ],
-      "id": "4bc92110",
+      "id": "0da37eca",
       "execution_count": null,
       "outputs": []
     },
@@ -184,7 +184,7 @@
         "\n",
         "Here we need to use **list comprehension** and **dictionary comprehension**. Recall that with LC, the syntax goes like `[<expression> for <item> in <iterable>]`."
       ],
-      "id": "7aac811d"
+      "id": "c12ccf6a"
     },
     {
       "cell_type": "code",
@@ -193,7 +193,7 @@
         "# all the elements\n",
         "[x for x in results.values()]"
       ],
-      "id": "dc2880cf",
+      "id": "89df134c",
       "execution_count": null,
       "outputs": []
     },
@@ -203,7 +203,7 @@
       "source": [
         "Combine with dictionary syntax (the expression), to get `model_x['accuracy']` for both models:"
       ],
-      "id": "df8c798c"
+      "id": "6647affe"
     },
     {
       "cell_type": "code",
@@ -212,7 +212,7 @@
         "# certain item only\n",
         "[x['accuracy'] for x in results.values()]"
       ],
-      "id": "d82df37d",
+      "id": "fe8c2af7",
       "execution_count": null,
       "outputs": []
     },
@@ -222,7 +222,7 @@
       "source": [
         "This can also be presented as a dataframe too."
       ],
-      "id": "c3cb0f40"
+      "id": "aac60eb6"
     },
     {
       "cell_type": "code",
@@ -231,7 +231,7 @@
         "accuracy = pd.DataFrame([x['accuracy'] for x in results.values()])\n",
         "accuracy # can do accuracy.T  to change the layout"
       ],
-      "id": "e3c1480b",
+      "id": "a33c6278",
       "execution_count": null,
       "outputs": []
     },
@@ -241,7 +241,7 @@
       "source": [
         "Can do it to arrays too."
       ],
-      "id": "999217be"
+      "id": "a5f4d03c"
     },
     {
       "cell_type": "code",
@@ -249,7 +249,7 @@
       "source": [
         "[x['yhat'] for x in results.values()]"
       ],
-      "id": "fa0fd192",
+      "id": "8d354cf0",
       "execution_count": null,
       "outputs": []
     },
@@ -261,7 +261,7 @@
         "\n",
         "Do it with `df.rename(columns = {'old':'new'})`"
       ],
-      "id": "a7c28db5"
+      "id": "6c3c74bd"
     },
     {
       "cell_type": "code",
@@ -269,7 +269,7 @@
       "source": [
         "accuracy.rename(columns = {0:'accuracies'})"
       ],
-      "id": "30194fd6",
+      "id": "3bb35864",
       "execution_count": null,
       "outputs": []
     },
@@ -281,7 +281,7 @@
         "\n",
         "Dictionary comprehension is similar to LC, and it's more handy when keys are involved for later. Note that here we are extracting from `results.items()` rather than `values()`. "
       ],
-      "id": "573837b8"
+      "id": "efb78f05"
     },
     {
       "cell_type": "code",
@@ -289,7 +289,7 @@
       "source": [
         "{key: {'accuracy': value['accuracy']} for key, value in results.items()}"
       ],
-      "id": "fa5bd274",
+      "id": "2523d61a",
       "execution_count": null,
       "outputs": []
     },
@@ -299,7 +299,7 @@
       "source": [
         "The results here can be put directly into a dataframe."
       ],
-      "id": "5d628665"
+      "id": "9fe8e137"
     },
     {
       "cell_type": "code",
@@ -308,7 +308,7 @@
         "a = {key: {'accuracy': value['accuracy']} for key, value in results.items()}\n",
         "pd.DataFrame(a)"
       ],
-      "id": "1414f6b5",
+      "id": "94cd1830",
       "execution_count": null,
       "outputs": []
     },
@@ -319,7 +319,7 @@
         "yhats = pd.DataFrame({key: {'yhat': value['yhat']} for key, value in results.items()})\n",
         "yhats"
       ],
-      "id": "7d8c92d3",
+      "id": "e6aa8255",
       "execution_count": null,
       "outputs": []
     },
@@ -329,7 +329,7 @@
       "source": [
         "# Visualize results "
       ],
-      "id": "765df569"
+      "id": "fe76874d"
     },
     {
       "cell_type": "code",
@@ -351,7 +351,7 @@
         "sns.scatterplot(x = X[:,0], y = X[:,1], hue=y, palette=sns.color_palette(\"hls\", 4))\n",
         "plt.show();"
       ],
-      "id": "c640d6b1",
+      "id": "10781cda",
       "execution_count": null,
       "outputs": []
     },
@@ -361,7 +361,7 @@
       "source": [
         "### Decision tree example"
       ],
-      "id": "7566aa7c"
+      "id": "392c1f77"
     },
     {
       "cell_type": "code",
@@ -379,7 +379,7 @@
         "ytest_pred = tree.predict(Xtest)\n",
         "ytest_pred[0:5]"
       ],
-      "id": "e072908b",
+      "id": "6a8759a6",
       "execution_count": null,
       "outputs": []
     },
@@ -389,7 +389,7 @@
       "source": [
         "Now we try to visualise the results. First put the predictions along with the original data, and then add a label for whether there is a mismatch."
       ],
-      "id": "be1feded"
+      "id": "4d49e200"
     },
     {
       "cell_type": "code",
@@ -405,7 +405,7 @@
         "test_df['mismatch'] = np.where(test_df['y'] != test_df['pred'], 1, 0)\n",
         "test_df.head()"
       ],
-      "id": "084d3188",
+      "id": "bec9d3fe",
       "execution_count": null,
       "outputs": []
     },
@@ -415,7 +415,7 @@
       "source": [
         "Now visualize"
       ],
-      "id": "788ff435"
+      "id": "7abb14d2"
     },
     {
       "cell_type": "code",
@@ -430,7 +430,7 @@
         "            palette=sns.color_palette(\"hls\", 4))\n",
         "plt.show();"
       ],
-      "id": "cef0f53c",
+      "id": "669ba92c",
       "execution_count": null,
       "outputs": []
     },
@@ -440,7 +440,7 @@
       "source": [
         "Another way to visualize\n"
       ],
-      "id": "46c9488f"
+      "id": "f5673f64"
     },
     {
       "cell_type": "code",
@@ -454,7 +454,7 @@
         "                palette=sns.color_palette(\"hls\", 4))\n",
         "plt.show();"
       ],
-      "id": "0a0910d6",
+      "id": "c1e370e7",
       "execution_count": null,
       "outputs": []
     }
