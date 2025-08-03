@@ -74,7 +74,7 @@
     "href": "programming/index.html",
     "title": "Programming",
     "section": "",
-    "text": "This page hosts study notes on programming.\n\nR programming\n\n\n\n\n\nTitle\n\n\n\n\n\n\nData manipulation with data.table\n\n\n\n\nFunctions\n\n\n\n\nOOP in R: S3\n\n\n\n\nProcessing text and characters\n\n\n\n\nRun formulae in loops and handle error\n\n\n\n\n\nNo matching items\n\n\n\n\nPython\n\n\n\n\n\nTitle\n\n\n\n\n\n\nCheatsheet: NumPy, Pandas Series\n\n\n\n\nCheatsheet: Pandas DataFrame\n\n\n\n\nCheatsheet: Result processing\n\n\n\n\nCheatsheet: Scikit-learn\n\n\n\n\nControl flow, exceptions\n\n\n\n\nFunctions, functional programming\n\n\n\n\nPython data structure\n\n\n\n\n\nNo matching items\n\n\n\n\nAI/ML\n\n\n\n\n\nTitle\n\n\n\n\n\n\nChatGPT in R\n\n\n\n\nCheatsheet: ML parameters\n\n\n\n\nEntropy and cross-entropy loss\n\n\n\n\nGenerative AI\n\n\n\n\nGoogle 5-Day Gen AI Intensive\n\n\n\n\n\nNo matching items\n\n\n\n\nDatabase and cloud\n\n\n\n\n\nTitle\n\n\n\n\n\n\nGoogle BigQuery and GCP (Google Cloud Platform)\n\n\n\n\nSQL basics\n\n\n\n\nSQL: my workflow\n\n\n\n\n\nNo matching items\n\n\n\n\nR package\n\n\n\n\n\nTitle\n\n\n\n\n\n\nDependencies\n\n\n\n\nMy workflow in working with functions in a package\n\n\n\n\nR package Engineering Workflow\n\n\n\n\nR package: tests\n\n\n\n\n\nNo matching items\n\n\n\n\nWeb and quarto\n\n\n\n\n\nTitle\n\n\n\n\n\n\nMake slides with reveal.js\n\n\n\n\nWeb basics\n\n\n\n\nWebR: Use with an existing quarto website\n\n\n\n\n\nNo matching items\n\n\n\n\nSetting things up\n\n\n\n\n\nTitle\n\n\n\n\n\n\nAutomation with GitHub Action\n\n\n\n\nInstall R packages that require compilation\n\n\n\n\nPython set up via pyenv\n\n\n\n\nPython set up with Quarto\n\n\n\n\nSet up version control\n\n\n\n\nShiny modules, serverless shiny\n\n\n\n\n\nNo matching items"
+    "text": "This page hosts study notes on programming.\n\nR programming\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nData manipulation with data.table\n\n\n\n\n\n\nFunctions\n\n\n\n\n\n\nOOP in R: S3\n\n\n\n\n\n\nProcessing text and characters\n\n\n\n\n\n\nRun formulae in loops and handle error\n\n\n\n\n\n\nNo matching items\n\n\n\nPython\nThe python section is temporarily put under dev/py_notebooks.\n\n\nAI/ML\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nChatGPT in R\n\n\n\n\n\n\nEntropy and cross-entropy loss\n\n\n\n\n\n\nGenerative AI\n\n\n\n\n\n\nGoogle 5-Day Gen AI Intensive\n\n\n\n\n\n\nNo matching items\n\n\n\nDatabase and cloud\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nGoogle BigQuery and GCP (Google Cloud Platform)\n\n\n\n\n\n\nSQL basics\n\n\n\n\n\n\nSQL: my workflow\n\n\n\n\n\n\nNo matching items\n\n\n\nR package\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nDependencies\n\n\n\n\n\n\nMy workflow in working with functions in a package\n\n\n\n\n\n\nR package Engineering Workflow\n\n\n\n\n\n\nR package: tests\n\n\n\n\n\n\nNo matching items\n\n\n\nWeb and quarto\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nMake slides with reveal.js\n\n\n\n\n\n\nWeb basics\n\n\n\n\n\n\nWebR: Use with an existing quarto website\n\n\n\n\n\n\nNo matching items\n\n\n\nSetting things up\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAutomation with GitHub Action\n\n\n\n\n\n\nInstall R packages that require compilation\n\n\n\n\n\n\nSet up version control\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "programming/understand_data.html",
@@ -1796,21 +1796,21 @@
     "href": "method/index.html",
     "title": "Inference and models",
     "section": "",
-    "text": "Different settings to apply methods.\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nReal-world Data, Real-world Evidence\n\n\nRWD, RWE \n\n\n\n\nGenomics in Drug Discovery\n\n\nUse of machine learning techniques \n\n\n\n\nAntibiotics\n\n\nBackground of antimicrobial drugs and resistance \n\n\n\n\nRWD EHR Vendor Engagement\n\n\nOverview of vendor engagement \n\n\n\n\nNutritional Epidemiology\n\n\nAbout Food \n\n\n\n\n\nNo matching items"
+    "text": "Different settings to apply methods.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nReal-world Data, Real-world Evidence\n\n\nRWD, RWE \n\n\n\n\n\n\nGenomics in Drug Discovery\n\n\nUse of machine learning techniques \n\n\n\n\n\n\nAntibiotics\n\n\nBackground of antimicrobial drugs and resistance \n\n\n\n\n\n\nRWD EHR Vendor Engagement\n\n\nOverview of vendor engagement \n\n\n\n\n\n\nNutritional Epidemiology\n\n\nAbout Food \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/index.html#settings",
     "href": "method/index.html#settings",
     "title": "Inference and models",
     "section": "",
-    "text": "Different settings to apply methods.\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nReal-world Data, Real-world Evidence\n\n\nRWD, RWE \n\n\n\n\nGenomics in Drug Discovery\n\n\nUse of machine learning techniques \n\n\n\n\nAntibiotics\n\n\nBackground of antimicrobial drugs and resistance \n\n\n\n\nRWD EHR Vendor Engagement\n\n\nOverview of vendor engagement \n\n\n\n\nNutritional Epidemiology\n\n\nAbout Food \n\n\n\n\n\nNo matching items"
+    "text": "Different settings to apply methods.\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nReal-world Data, Real-world Evidence\n\n\nRWD, RWE \n\n\n\n\n\n\nGenomics in Drug Discovery\n\n\nUse of machine learning techniques \n\n\n\n\n\n\nAntibiotics\n\n\nBackground of antimicrobial drugs and resistance \n\n\n\n\n\n\nRWD EHR Vendor Engagement\n\n\nOverview of vendor engagement \n\n\n\n\n\n\nNutritional Epidemiology\n\n\nAbout Food \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/index.html#study-design",
     "href": "method/index.html#study-design",
     "title": "Inference and models",
     "section": "Study design",
-    "text": "Study design\n\nSurvey\nClinical trial design\n\nPhase I, II, III\nadaptive design\n\nSample size calculation\n\ncomparing a few groups (visualization TBD)\nregression (LR, GLM)\nmore advanced model (e.g. GLMM)\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nClinical trial design: overview\n\n\nNotes related to clinical trial design. \n\n\n\n\nSample size (part I)\n\n\nOverview, mean and proportion comparison \n\n\n\n\nSample size (part II)\n\n\nRegression \n\n\n\n\nAdaptive design: overview\n\n\nIntro to adaptive design \n\n\n\n\nSurvey, stratification\n\n\nSurvey sampling \n\n\n\n\nStudy design and statistical inference\n\n\nTerminology and examples \n\n\n\n\nObservational study design\n\n\nCohort, case control and related metrics \n\n\n\n\n\nNo matching items"
+    "text": "Study design\n\nSurvey\nClinical trial design\n\nPhase I, II, III\nadaptive design\n\nSample size calculation\n\ncomparing a few groups (visualization TBD)\nregression (LR, GLM)\nmore advanced model (e.g. GLMM)\n\n\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nClinical trial design: overview\n\n\nNotes related to clinical trial design. \n\n\n\n\n\n\nSample size (part I)\n\n\nOverview, mean and proportion comparison \n\n\n\n\n\n\nSample size (part II)\n\n\nRegression \n\n\n\n\n\n\nAdaptive design: overview\n\n\nIntro to adaptive design \n\n\n\n\n\n\nSurvey, stratification\n\n\nSurvey sampling \n\n\n\n\n\n\nStudy design and statistical inference\n\n\nTerminology and examples \n\n\n\n\n\n\nObservational study design\n\n\nCohort, case control and related metrics \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/index.html#inference",
@@ -1824,14 +1824,14 @@
     "href": "method/index.html#models",
     "title": "Inference and models",
     "section": "Models",
-    "text": "Models\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nRegression\n\n\nLinear, logistic, Cox proportional hazard \n\n\n\n\nMixed models for repeted measurements\n\n\n\n\n\n\n\nSurvival\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Models\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nRegression\n\n\nLinear, logistic, Cox proportional hazard \n\n\n\n\n\n\nMixed models for repeted measurements\n\n\n\n\n\n\n\n\n\nSurvival\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/index.html#case-studies",
     "href": "method/index.html#case-studies",
     "title": "Inference and models",
     "section": "Case studies",
-    "text": "Case studies\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nLength of hospital stay: Part I\n\n\nPart 1: EDA \n\n\n\n\nLength of hospital stay: Part II\n\n\nPart 2: time-to-event analysis \n\n\n\n\nLinear regression example: prestige\n\n\nLinear regression \n\n\n\n\nLogistic regression example: lung\n\n\nLogistic regression \n\n\n\n\n\nNo matching items"
+    "text": "Case studies\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLength of hospital stay: Part I\n\n\nPart 1: EDA \n\n\n\n\n\n\nLength of hospital stay: Part II\n\n\nPart 2: time-to-event analysis \n\n\n\n\n\n\nLinear regression example: prestige\n\n\nLinear regression \n\n\n\n\n\n\nLogistic regression example: lung\n\n\nLogistic regression \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/rwd_rwe.html",
@@ -2377,14 +2377,14 @@
     "href": "method/index.html#causal-inference",
     "title": "Inference and models",
     "section": "Causal inference",
-    "text": "Causal inference\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nEffects and Estimands\n\n\nAn overview of key terminology \n\n\n\n\nMatching and weighting\n\n\nPropensity score \n\n\n\n\nG-Computation\n\n\nG-Computation \n\n\n\n\nNotes from book: What If (Part 1)\n\n\nCausal inference notes: chapter 1 to 10 \n\n\n\n\nNotes from book: What if (Part 2)\n\n\nIP weighting, standardization (g-computation) \n\n\n\n\nNotes from book: What if (Part 3)\n\n\nOutcome regression, propensity score \n\n\n\n\nNotes from book: What if (Part x)\n\n\nInstrumental variables \n\n\n\n\nCausal Inference in Data Science\n\n\nSome topics that need to be reviewed \n\n\n\n\nCausal Inference in Aggregated Time Series\n\n\nBSTS, ITS, Synthetic Control, difference-in-difference \n\n\n\n\n\nNo matching items"
+    "text": "Causal inference\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nEffects and Estimands\n\n\nAn overview of key terminology \n\n\n\n\n\n\nMatching and weighting\n\n\nPropensity score \n\n\n\n\n\n\nG-Computation\n\n\nG-Computation \n\n\n\n\n\n\nNotes from book: What If (Part 1)\n\n\nCausal inference notes: chapter 1 to 10 \n\n\n\n\n\n\nNotes from book: What if (Part 2)\n\n\nIP weighting, standardization (g-computation) \n\n\n\n\n\n\nNotes from book: What if (Part 3)\n\n\nOutcome regression, propensity score \n\n\n\n\n\n\nNotes from book: What if (Part x)\n\n\nInstrumental variables \n\n\n\n\n\n\nCausal Inference in Data Science\n\n\nSome topics that need to be reviewed \n\n\n\n\n\n\nCausal Inference in Aggregated Time Series\n\n\nBSTS, ITS, Synthetic Control, difference-in-difference \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/index.html#other-topics",
     "href": "method/index.html#other-topics",
     "title": "Inference and models",
     "section": "Other topics",
-    "text": "Other topics\nTopics on inference in general, missing value handling\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nMissing data and imputation\n\n\nOverview of multiple imputation \n\n\n\n\nMultiple imputation in R\n\n\nMICE, regression, PMM \n\n\n\n\nIntervals\n\n\nConfidence, credible and prediction intervals \n\n\n\n\n\nNo matching items"
+    "text": "Other topics\nTopics on inference in general, missing value handling\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nMissing data and imputation\n\n\nOverview of multiple imputation \n\n\n\n\n\n\nMultiple imputation in R\n\n\nMICE, regression, PMM \n\n\n\n\n\n\nIntervals\n\n\nConfidence, credible and prediction intervals \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/book_whatif_part4_iv.html",
@@ -2699,7 +2699,7 @@
     "href": "method/index.html#interview-preparation",
     "title": "Inference and models",
     "section": "Interview preparation",
-    "text": "Interview preparation\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nInterview: clinical trial statistician\n\n\nKnowledge framework \n\n\n\n\nInterview: behavior\n\n\nList of questions \n\n\n\n\nInterview: statistics used in my work\n\n\nCase studies \n\n\n\n\n\nNo matching items"
+    "text": "Interview preparation\n\n\n\n\n\n\nTitle\n\n\n\nDescription\n\n\n\n\n\n\n\n\nInterview: clinical trial statistician\n\n\nKnowledge framework \n\n\n\n\n\n\nInterview: behavior\n\n\nList of questions \n\n\n\n\n\n\nInterview: statistics used in my work\n\n\nCase studies \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "method/interview_behavior.html",
@@ -2916,7 +2916,7 @@
     "href": "random/index.html",
     "title": "Random things",
     "section": "",
-    "text": "This page is a dumpster for random things I test out.\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\nDashboard with ojs: Penguins\n\n\n\n\nQuarto Live (webR)\n\n\n\n\nQuarto Live (webR) and ojs: Penguins\n\n\n\n\nClinical trial: reporting results\n\n\n\n\n\nNo matching items"
+    "text": "This page is a dumpster for random things I test out.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nDashboard with ojs: Penguins\n\n\n\n\n\n\nQuarto Live (webR)\n\n\n\n\n\n\nQuarto Live (webR) and ojs: Penguins\n\n\n\n\n\n\nClinical trial: reporting results\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "random/reporting_overview.html",

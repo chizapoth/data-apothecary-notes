@@ -31,17 +31,9 @@
     "listing": "/programming/index.html",
     "items": [
       "/programming/ai_in_rstudio.html",
-      "/programming/ml_parameters.html",
       "/programming/ml_entropy.html",
       "/programming/ai_genai.html",
       "/programming/ai_google_genai.html",
-      "/programming/py_numpy.html",
-      "/programming/py_pandas.html",
-      "/programming/py_result_processing.html",
-      "/programming/py_sklearn.html",
-      "/programming/py_exceptions.html",
-      "/programming/py_functional_prog.html",
-      "/programming/py_datastructure.html",
       "/programming/db_gcp.html",
       "/programming/db_sql_1.html",
       "/programming/db_sql_myworkflow.html",
@@ -59,10 +51,7 @@
       "/programming/webr.html",
       "/programming/automation.html",
       "/programming/install_pkg_compilation.html",
-      "/programming/py_setup.html",
-      "/programming/py_quarto.html",
-      "/programming/git_setup.html",
-      "/programming/shiny.html"
+      "/programming/git_setup.html"
     ]
   },
   {

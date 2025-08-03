@@ -10,3 +10,4 @@ dev/oldnotes_programming/*
 dev/oldnotes_stat/*
 dev/graphs/*
 data/data_mixedmodel/*
+programming/*.quarto_ipynb

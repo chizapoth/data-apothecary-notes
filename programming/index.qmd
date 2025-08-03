@@ -7,7 +7,7 @@ listing:
       - "ai_genai.qmd"
       - "ai_in_rstudio.qmd"
       - "ai_google_genai.qmd"
-      - "ml_parameters.qmd"
+      # - "ml_parameters.qmd" # under dev/py_notebooks
       - "ml_entropy.qmd"
     type: table
     sort: "title"
@@ -15,22 +15,22 @@ listing:
     sort-ui: false
     categories: true
 
-  - id: python
-    fields: [title]
-    contents: 
+#  - id: python
+#    fields: [title]
+#    contents: 
       #- "py_setup.qmd"
-      - "py_datastructure.qmd"
-      - "py_exceptions.qmd"
-      - "py_functional_prog.qmd"
-      - "py_numpy.qmd"
-      - "py_pandas.qmd"
-      - "py_sklearn.qmd"
-      - "py_result_processing.qmd"
-    type: table
-    sort: "title"
-    filter-ui: false
-    sort-ui: false
-    categories: true
+      #- "py_datastructure.qmd"
+      #- "py_exceptions.qmd"
+      #- "py_functional_prog.qmd"
+      #- "py_numpy.qmd"
+      #- "py_pandas.qmd"
+      #- "py_sklearn.qmd"
+     # - "py_result_processing.qmd"
+#    type: table
+#    sort: "title"
+#    filter-ui: false
+#    sort-ui: false
+#    categories: true
 
   - id: db-cloud
     fields: [title]
@@ -111,8 +111,9 @@ This page hosts study notes on programming.
 
 ### Python
 
-::: {#python}
-:::
+The python section is temporarily put under `dev/py_notebooks`.
+
+
 
 ### AI/ML
 

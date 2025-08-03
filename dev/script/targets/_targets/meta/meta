@@ -1,8 +1,0 @@
-name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-fit_model|function|982677e5c5b1c4d7
-get_data|function|caaab029510d896a
-plot_model|function|53e93a3f92656367
-file|stem|8c700c112b509791|0d4b7516032e01d0|ef46db3751d8e999|-1301001980|data.csv|t19649.5560577353s|44327dbf2133fe9e|2889|file|local|vector|||0.291||
-data|stem|2bacb678c17cbb39|4525b922227c51ac|5b46e9f39015452e|1588979285||t19649.583826914s|b0d2515205666d53|1355|rds|local|vector|||0.204||
-model|stem|19491c1625529712|f3249b4ecf290e96|64901e02193aad0a|1816327236||t19649.5838270298s|c4a62f0a1301ecbc|111|rds|local|vector|||0.003||
-plot|stem|57e38ab8f9de6af7|1239c97928298b18|93e8245cefcac168|1931196220||t19649.5838276357s|47946ae00c473e95|45333|rds|local|vector|||0.022||

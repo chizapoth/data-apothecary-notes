@@ -1,7 +1,10 @@
 project:
   type: website
   output-dir: docs
-
+  render:
+    - "*.qmd" # first render all qmd files
+    - "!dev/py_notebooks/*.qmd" # but ignore everything python
+    - "!dev/do_not_render/*.qmd" # and old case studies
 website:
   page-navigation: true
   title: "Data Apothecary's Notes"

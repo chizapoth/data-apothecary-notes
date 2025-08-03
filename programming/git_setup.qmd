@@ -132,3 +132,17 @@ Paste the public key.
 
 
 
+# SSH in a new host (e.g. GitLab)
+
+If you want to do it for a new host, but don't know the hostname: try the following: `git@ssh.YOURCOMPANY.com` 
+
+![](fig/ssh-gl.png)
+
+
+
+
+
+
+
+
+
