@@ -74,7 +74,7 @@
     "href": "programming/index.html",
     "title": "Programming",
     "section": "",
-    "text": "This page hosts study notes on programming.\n\nR programming\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nData manipulation with data.table\n\n\n\n\n\n\nFunctions\n\n\n\n\n\n\nOOP in R: S3\n\n\n\n\n\n\nProcessing text and characters\n\n\n\n\n\n\nRun formulae in loops and handle error\n\n\n\n\n\n\nNo matching items\n\n\n\nPython\nThe python section is temporarily put under dev/py_notebooks.\n\n\nAI/ML\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nChatGPT in R\n\n\n\n\n\n\nEntropy and cross-entropy loss\n\n\n\n\n\n\nGenerative AI\n\n\n\n\n\n\nGoogle 5-Day Gen AI Intensive\n\n\n\n\n\n\nNo matching items\n\n\n\nDatabase and cloud\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nGoogle BigQuery and GCP (Google Cloud Platform)\n\n\n\n\n\n\nSQL basics\n\n\n\n\n\n\nSQL: my workflow\n\n\n\n\n\n\nNo matching items\n\n\n\nR package\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nDependencies\n\n\n\n\n\n\nMy workflow in working with functions in a package\n\n\n\n\n\n\nR package Engineering Workflow\n\n\n\n\n\n\nR package: tests\n\n\n\n\n\n\nNo matching items\n\n\n\nWeb and quarto\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nMake slides with reveal.js\n\n\n\n\n\n\nWeb basics\n\n\n\n\n\n\nWebR: Use with an existing quarto website\n\n\n\n\n\n\nNo matching items\n\n\n\nSetting things up\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAutomation with GitHub Action\n\n\n\n\n\n\nInstall R packages that require compilation\n\n\n\n\n\n\nSet up version control\n\n\n\n\n\n\nNo matching items"
+    "text": "This page hosts study notes on programming.\n\nR programming\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nData manipulation with data.table\n\n\n\n\n\n\nFunctions\n\n\n\n\n\n\nOOP in R: S3\n\n\n\n\n\n\nProcessing text and characters\n\n\n\n\n\n\nRun formulae in loops and handle error\n\n\n\n\n\n\nNo matching items\n\n\n\nPython\nThe python section is temporarily put under dev/py_notebooks.\n\n\nAI/ML\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nChatGPT in R\n\n\n\n\n\n\nEntropy and cross-entropy loss\n\n\n\n\n\n\nGenerative AI\n\n\n\n\n\n\nGoogle 5-Day Gen AI Intensive\n\n\n\n\n\n\nNo matching items\n\n\n\nDatabase and cloud\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nGoogle BigQuery and GCP (Google Cloud Platform)\n\n\n\n\n\n\nSQL basics\n\n\n\n\n\n\nSQL: my workflow\n\n\n\n\n\n\nNo matching items\n\n\n\nR package\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nDependencies\n\n\n\n\n\n\nMy workflow in working with functions in a package\n\n\n\n\n\n\nR package Engineering Workflow\n\n\n\n\n\n\nR package: tests\n\n\n\n\n\n\nNo matching items\n\n\n\nWeb and quarto\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nMake slides with reveal.js\n\n\n\n\n\n\nWeb basics\n\n\n\n\n\n\nWebR: Use with an existing quarto website\n\n\n\n\n\n\nNo matching items\n\n\n\nSetting things up\n\n\n\n\n\n\nTitle\n\n\n\n\n\n\n\n\nAutomation with GitHub Action\n\n\n\n\n\n\nInstall R packages that require compilation\n\n\n\n\n\n\nSet up VSCode with R\n\n\n\n\n\n\nSet up version control\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "programming/understand_data.html",
@@ -4240,5 +4240,40 @@
     "title": "Shiny reactivity",
     "section": "Reactivity",
     "text": "Reactivity\n\nui &lt;- fluidPage(\n  textInput(\"name\", \"What's your name?\"),\n  textOutput(\"greeting\")\n)\n\nserver &lt;- function(input, output, session) {\n  output$greeting &lt;- renderText({\n    paste0(\"Hello \", input$name, \"!\")\n  })\n}\n\nRun the app\nEvery time the input$name changes, the output also changes. The reactivity simply means that every time a user updates the browser input, the developer does not need to re-run the program. The output is automatically updated by itself.\nMy understanding: the developer only needs to develop the reactive code, then leaves everything to the user. The program reacts to the input\n\nOrder of execution\nReactive graph: describes how inputs and outputs are connected.\n\n\nReactive context\nReactive values can only be used inside reactive contexts. Access reactive values outside reactive context will lead to an error. E.g.\n\nserver &lt;- function(input, output){\n  print(input$num)\n}\n# this results in an error, as 'print' is not a reactive context\n\n\nAny render*() is a reactive context\nUse observe({...}) access reactive variable: it is a reactive context\n\n\n# this is the correct way to print\nserver &lt;- function(input, output){\n  observe({ \n    print(input$num) # put in the reactive context\n  })\n  \n}\n\n\n\nReactive expressions / variables\nCan create a reactive variable using reactive({}), which is a reactive context.\nThe order of these two lines below doesn’t matter.\n\nserver &lt;- function(input, output, session) {\n  \n  # define a reactive expression here\n  string &lt;- reactive(paste0(\"Hello \", input$name, \"!\"))\n  # can not simply do the line below:\n  # paste0(\"Hello \", input$name, \"!\")\n  \n  # call it \n  output$greeting &lt;- renderText(string())\n}\n\nAccess custom reactive variables like a function: need the (). For example, call string() rather than string.\n\nserver &lt;- function(input, output){\n  # create a reactive variable\n  x &lt;- reactive({\n    input$num + 1\n  })  \n\n  observe({\n    print(input$num)\n    print(x()) # with ()\n  })\n}"
+  },
+  {
+    "objectID": "programming/vscode_setup.html",
+    "href": "programming/vscode_setup.html",
+    "title": "Set up VSCode with R",
+    "section": "",
+    "text": "This is the very first Quarto document written in VSCode."
+  },
+  {
+    "objectID": "programming/vscode_setup.html#motivation",
+    "href": "programming/vscode_setup.html#motivation",
+    "title": "Set up VSCode with R",
+    "section": "",
+    "text": "the reaosn"
+  },
+  {
+    "objectID": "programming/vscode_setup.html#set-up-r-inside-vscode",
+    "href": "programming/vscode_setup.html#set-up-r-inside-vscode",
+    "title": "Set up VSCode with R",
+    "section": "Set up R inside VSCode",
+    "text": "Set up R inside VSCode\nInstall R. This step can be done from CRAN; or if you already have an existing installation, that works.\nInstall VScode.\n\nWithin R, install this package.\n\ninstall.packages(‘languageserver’)\n\nIn Marketplace, find the R extension\n\nOpen R terminal: this is the drop-down menu on the bottom right.\n\nNow your R environment should be set.\n\nTry to make a visualization, the code works but the figure looks quite bad. We try to make it better in the next section."
+  },
+  {
+    "objectID": "programming/vscode_setup.html#customization",
+    "href": "programming/vscode_setup.html#customization",
+    "title": "Set up VSCode with R",
+    "section": "Customization",
+    "text": "Customization\nFirst, make it light themed.\n\n\nRadian\nRadian is an R console that’s an alternative to the default R. Follow the guide to install it.\nMight need homebrew and pip.\nOnce the installation finished, configure within VSCode. Note that you need to specify the path to radian - if you don’t know where it is installed, run which radian to find out.\n\nTurn VSCode off and on again to activate. Now it should look slightly different than before.\n\n\n\nBetter graphics with httpgd\nFirst install the R package httpgd:\n\ninstall.packages(‘httpgd’)\n# if unavailable on CRAN for your R version, \n# remotes::install_github(\"nx10/httpgd\")\n\nAfterwards, enable it in VSCode. You need to restart VSCode for the change to take effect.\n\nTry the plot again, it should look better now!"
+  },
+  {
+    "objectID": "programming/vscode_setup.html#quarto-in-vscode",
+    "href": "programming/vscode_setup.html#quarto-in-vscode",
+    "title": "Set up VSCode with R",
+    "section": "Quarto in VSCode",
+    "text": "Quarto in VSCode\nQuarto is a very important tool for my personal use and work.\nTo set it up within a new computer (and VSCode), need to download it first. You can NOT simply install the Quarto package in R.\nSearch for Quarto extension in VSCode. After installation, it’ll prompt the Get started with Quarto. You can follow the guide and try to run the example document.\n\n\n\nSo far so good!"
   }
 ]

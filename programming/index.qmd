@@ -89,11 +89,9 @@ listing:
     contents: 
       #- "intv_rdev_topics.qmd"
       - "git_setup.qmd"
-      - "py_setup.qmd"
       - "install_pkg_compilation.qmd"
       - "automation.qmd"
-      - "py_quarto.qmd"
-      - "shiny.qmd"
+      - "vscode_setup.qmd"
      # - "misc_software_papers.qmd"
     type: table
     sort: "title"
