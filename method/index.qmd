@@ -50,6 +50,7 @@ listing:
       - "book_whatif_part3_propensity.qmd"
       - "book_whatif_part4_iv.qmd"
       - "ci_matching_weighting.qmd"
+      - 'ci_psmatching.qmd'
       - "ci_g_computation.qmd"
       - "ci_ds.qmd"
       - "ci_ts.qmd"
