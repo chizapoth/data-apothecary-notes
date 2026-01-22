@@ -1,0 +1,193 @@
+---
+title: "Sample size (part I)"
+description: |
+  Overview, mean and proportion comparison
+author: "Chi Zhang"
+date: "2023-08-20"
+categories: [Clinical Trials]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+(This is the part I on sample size calculation)
+
+
+Sample size calculation is to determine the **smallest** number of subjects required, to detect a clinical meaningful effect. Why not recruiting as many as possible? Too expensive; or unethical (i.e. more people will be having potentially harmful or futile treatments). 
+
+## Relevant concepts
+
+Study design
+
+* parallel: group 1 TxA, group 2 TxB
+* crossover: requires fewer ssample than parallel; but requires wash-out period. Group 1 TxA -> TxB; group 2 TxB -> TxA 
+
+Tests
+
+* $\mu_T, \mu_s$: mean of new Tx or standard procedure
+* $\delta$: minimum clinically important difference
+* $\delta_{NI}$: non-inferiority margin
+
+| Test for |  H0    |   H1    | 
+|:--------:|:------:|:-------:|
+| Equality | $\mu_T - \mu_s = 0$| $\mu_T - \mu_s \neq 0$ |
+| Equivalence | $|\mu_T - \mu_s| \geq 0$ | $|\mu_T - \mu_s| < 0$ | 
+| Superiority | $\mu_T - \mu_s \geq 0$ | $\mu_T - \mu_s < 0$ | 
+| Non-inferiority | $\mu_T - \mu_s \leq -\delta_{NI}$ |  $\mu_T - \mu_s \geq -\delta_{NI}$| 
+
+
+Errors
+
+* Type I error, significance level $\alpha$. P(reject H0 |H0). Usually set to 0.05
+* Type II error $\beta$. P(not reject H0 |H1). 
+* Power, $1 - \beta$. P(reject H0 |H1). Usually set to 80% or 90%
+
+Primary outcome
+
+* can be categorical or continuous
+* Minimal meaningful detecable difference MD: the smallest difference to be considered as clinically meaningful in the primary outcome
+
+Dropout rate: need to be adjusted. 
+
+Allocation ratio: unequal sample size. 
+
+Effect size (Cohen's d, f) should be found in the literature. In general, 
+
+* very small, d = 0.01
+* small, d = 0.2
+* medium, d = 0.5
+* large, d = 0.8
+* very large, d = 1.2
+* huge, d = 2
+
+
+# Continuous outcome
+
+Parametric: t-tests, ANOVA
+
+Non-parametric: Wilcoxon tests, Kruskal-Wallis
+
+A rule of thumb for the sample size of non-parametric tests: compute the parametric alternative, then add 15%.
+
+## One sample t-test
+
+```{r}
+#| label: ttest-onesample
+#| warning: false
+#| echo: true
+
+# effect size: 0.5
+pwr::pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8, type = 'one.sample', alternative = 'two.sided')
+
+# command for paired t-test is the same; but d is computued differently
+# pwr::pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8, type = 'paired', alternative = 'two.sided')
+```
+
+
+## Two sample t-test
+
+Note that this result is for one group: in total it's times two.
+
+```{r}
+#| label: ttest-twosample
+#| warning: false
+#| echo: true
+
+# effect size: 0.5
+pwr::pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8, type = 'two.sample', alternative = 'two.sided')
+```
+
+
+## ANOVA
+
+Result is for each group.
+
+```{r}
+#| label: anova
+#| warning: false
+#| echo: true
+
+# k: number of groups; f: effect ssize
+pwr::pwr.anova.test(k = 3, f = 0.25, sig.level = 0.05, power = 0.8)
+```
+
+
+
+# Categorical outcome
+
+## Proportions
+
+Cohen's h is used as the effect size, $h = 2arcsin(\sqrt{p_1} - 2arcsin(\sqrt{p_2}))$. Use 0.2, 0.5, 0.8 for small, medium and large effect sizes.
+
+
+```{r}
+#| label: proportions
+#| warning: false
+#| echo: true
+
+# one group
+pwr::pwr.p.test(h = 0.5, sig.level = 0.05, power = 0.8, alternative = 'two.sided')
+
+# two groups
+pwr::pwr.2p.test(h = 0.5, sig.level = 0.05, power = 0.8, alternative = 'two.sided')
+```
+
+
+## Chi-square test
+
+Cohen's w. Use $l, k$ to compute degrees of freedom.
+
+```{r}
+#| label: chisq
+#| warning: false
+#| echo: true
+
+# k: number of groups; f: effect ssize
+pwr::pwr.chisq.test(w = 0.3, df = (2-1)*(3-1), sig.level = 0.05, power = 0.8)
+```
+
+
+## Exact test
+
+Need to specify the proportion in each group (control, treatment). Allocation ratio 1:1
+
+```{r}
+#| label: exact2x2
+#| warning: false
+#| echo: true
+
+exact2x2::ss2x2(p0 = 0.2, p1 = 0.8, n1.over.n0 = 1, sig.level = 0.05, power = 0.8, 
+                approx = F, print.steps = T, paired = F)
+```
+
+
+
+
+
+
+# Correlation
+
+
+# Linear regression 
+
+
+# GLM
+
+
+
+
+
+
+
+
+
+### Resources 
+
+* Sample size calculation in clinical trial using R.  
+Park et al. 2023. https://doi.org/10.7602/jmis.2023.26.1.9
+
+* Bulus, M (2023) pwrss: Statistical Power and Sample Size Calculation Tools. R package version 0.3.1. https://CRAN.R-project.org/package=pwrss. [Vignette documentation](https://cran.r-project.org/web/packages/pwrss/vignettes/examples.html)

@@ -1,0 +1,94 @@
+---
+title: "Sample size (part II)"
+description: |
+  Regression
+author: "Chi Zhang"
+date: "2023-08-20"
+categories: [Clinical Trials]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+(This is the part II on sample size calculation)
+
+
+
+
+
+# Correlation
+
+Correlation coefficient is used for effect size measure. Usse 0.1, 0.3, 0.5 to represent small, medium and large sizes.
+
+```{r}
+#| label: corr
+#| warning: false
+#| echo: true
+
+# correlation coeff
+pwr::pwr.r.test(r = 0.3, sig.level = 0.05, power = 0.8, alternative = 'two.sided')
+```
+
+
+
+# Linear regression (F-test)
+
+F-test for linear regression is testinng whether $R^2$ is greater than zero (one-sided). $R^2$ is the explained variance by using the predictors, $R^2 = 0.3$ means that 30% of the variance are explained by the model.
+
+Cohen's f2, based on $R^2$, goodness of fit ($f2 = R^2/(1-R^2)$). use 0.02, 0.15, 0.35 to represent small, medium and large effect sizes.
+
+* u: number of predictors
+* v: n-u-1
+* as a result, sample size n = v+u+1
+
+```{r}
+#| label: lm
+#| warning: false
+#| echo: true
+
+# effect size f2 = 0.15; use u=3 predictors
+pwr::pwr.f2.test(u = 3, f2 = 0.3, sig.level = 0.05, power = 0.8)
+```
+
+Here v = 73, sample size is 73+3+1 = 77.
+
+Alternatively, can use `pwrss::pwrss.f.reg()`. The parameter is r2 rather than f2 (but can also use f2).
+
+```{r}
+#| label: lm-2
+#| warning: false
+#| echo: true
+
+pwrss::pwrss.f.reg(r2 = 0.3, k = 0.3, power = 0.8, alpha = 0.05)
+# should be equivalent to
+# pwr::pwr.f2.test(u = 3, f2 = 0.3/0.7, sig.level = 0.05, power = 0.8)
+```
+
+
+
+
+# GLM
+
+
+
+
+
+
+
+
+
+### Resources 
+
+* Sample size calculation in clinical trial using R.  
+Park et al. 2023. https://doi.org/10.7602/jmis.2023.26.1.9
+
+* Bulus, M (2023) pwrss: Statistical Power and Sample Size Calculation Tools. R package version 0.3.1. https://CRAN.R-project.org/package=pwrss. [Vignette documentation](https://cran.r-project.org/web/packages/pwrss/vignettes/examples.html)
+
+
+
+

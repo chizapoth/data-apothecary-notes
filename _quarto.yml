@@ -3,14 +3,10 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
-    - "old_notes/*.qmd"
-    - "!dev/**/*.qmd"
-    - "!gc_mle/**/*.qmd"
-    - "!random/**/*.qmd"
+    - "notes/*.qmd"
 
 website:
   title: "Data Apothecary's Notes"
-  description: "Notes on data science, causal inference, and clinical trials"
   
   navbar:
     background: "#bb5c54"
@@ -18,10 +14,8 @@ website:
     right:
       - href: notes.qmd
         text: Notes
-      - href: about.qmd
-        text: About
       - icon: github
-        href: https://github.com/andreaczhang/data-apothecary-notes
+        href: https://github.com/chizapoth/data-apothecary-notes
 
   page-footer:
     center: "Made with [Quarto](https://quarto.org)"

@@ -1,0 +1,145 @@
+---
+title: "Study design and statistical inference"
+description: |
+  Terminology and examples
+date: "2024-10-02"
+categories: [Statistics]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+
+
+# Basic statistical concepts
+
+> What, purpose or importance, example
+
+LLN
+
+* Given a sample of independent and identically distributed values, sample mean converges to the true mean.
+* Monte Carlo methods, simulation
+* example: flip a fair coin where each side has probability of 0.5, by throwing it for hundreds of times, the proportion of Heads and Tails should be roughly 50%.
+
+CLT
+
+* central limit theorem, sample mean is normally distributed, even if the original variables are not normally distributed
+* CLT is used to in statistical inference, for example to derive confidence intervals
+* example: row a dice for many times, the distribution of the sum (or average) is approximately a normal distribution
+
+
+P-value
+
+* a concept in hypothesis testing, it is the probability of observing the test statistic at least as extreme when the NULL HYPOTHESIS IS TRUE
+* usually the H0 suggests no difference or no effect. If p-value is small, it means that it is very unlikely to observe what has been - indicating that H0 is highly unlikely to be true, hence rejecting H0
+
+
+Significance level alpha 
+
+* P(reject H0 when H0 is true), usually at 5%, set before data collection
+* if the P-val is less than the predetermined significance level alpha, result is statistically significant
+* type I error
+
+Power
+
+* P(correctly reject H0), or P(reject H0 when H0 is not true), identifying the effect when the effect exists
+* Underpowered: probability of identifying a real effect is low
+* 1 - type II error
+* What affects power: 
+  * sample size
+  * effect size (difference and variability), 
+  * significance: the more strict (smaller alpha, less false positives) would reduce the power and increase the chance of false negatives
+
+
+```{r}
+#| label: power
+#| warning: false
+#| echo: true
+
+# find power with different values of n, d, alpha
+pwr::pwr.t.test(n=30, d=0.2, sig.level = 0.05, type = 'one.sample') # default
+pwr::pwr.t.test(n=30, d=0.5, sig.level = 0.05, type = 'one.sample') # larger effect size
+pwr::pwr.t.test(n=30, d=0.2, sig.level = 0.01, type = 'one.sample') # smaller significance level
+pwr::pwr.t.test(n=100, d=0.2, sig.level = 0.05, type = 'one.sample') # larger n
+```
+
+
+Sensitivity and specificity
+
+* concepts commonly used in diagnostic testing and classification
+* TP / P, all real positives
+* TN / N, all real negatives
+* TP / (TP + FP), positive predictive value, affected by prevalence
+* TPR: same as sensitivity, TP / P
+* FPR (false positive rate): FP / N, 1 - specificity. These two are the ones plotted in ROC curves.
+* FDR (false discovery rate): FP / (FP + TP). It is 1 - PPV
+
+
+Multiple testing
+
+* family-wise error rate FWER: probability of making at least one type I error when conducting multiple tests
+* example: a clinical trial that evaluates a new drug across three end points: reduction in blood pressure, improvement of cholesterol levels, weight loss. By conducting three independent tests, each on has significance level alpha of 0.05. The probability of making at least one false discovery increases.
+* solutions
+  * **Bonferroni correction** (more conservative, avoid FP): new significance level, alpha divided by number of tests. Compare p-value with the new alpha (or equivalently, p-value multiplied by the number of tests). Suitable when you have a small number of tests and want a very conservative approach. Increased risk of type II errors as it fails to identify real effects, but good when a FP leads to harmful consequences.
+  * Control for **False discovery rate FDR** with Benjamin-Hochberg procedure. Good balance for discovery and false positives. Has **more power** (as a consequence for less type II error compared to above). More suitable for **higher numbers of tests**, and when some FPs are tolerable.
+  * conceptual difference between the two: BC controls FWER, the probability of at least one type I error; FDR controls proportion of FP in positives (rejected H0s, TP + FP)
+
+
+```{r}
+#| label: mt
+#| warning: false
+#| echo: true
+
+# original pv
+p_values <- c(0.03, 0.02, 0.08, 0.01)
+# bonferroni, essentially multiply by number of tests
+p.adjust(p_values, method = "bonferroni")
+
+# control for fdr
+p.adjust(p_values, method = "BH")
+```
+
+BC rejects one, FDR rejects three -> rejection means more discoveries (accepted H1)
+
+
+### Details in multiple testing
+
+#### Control for FDR
+
+FDR is the expected proportion of false positives among the rejected hypotheses (H1).
+
+FDR = FP / (TP + FP)
+
+The Benjamini-Hochberg (BH) procedure adjusts the significance threshold in a less stringent way. It sorts the p-values in ascending order and compares each p-value to an increasing threshold. The steps are:
+
+1. rank the p-values from smallest to largest, $p_1 \leq p_2 \leq ... \leq p_m$
+2. compute the BH critical values, $\frac{k}{m} \times \alpha$ where k is the rank, m is the number of tests. (essentially the relative location from 0 to 1)
+3. find the largest k for which $p_{k} \leq \frac{k}{m} \times \alpha$
+4. reject all null hypotheses with p-val smaller than $p_{k}$
+
+
+
+# Interview questions
+
+
+* Can you explain Type I and Type II errors and how they impact clinical trial results?
+* How would you calculate power in a clinical trial, and why is it important?
+* How do you address multiple testing problems in a clinical trial with multiple endpoints?
+* What is an intent-to-treat (ITT) analysis, and why is it important?
+* How would you design a Phase III randomized controlled trial to compare two cancer treatments?
+* Can you explain the difference between superiority, non-inferiority, and equivalence trials?
+* What are the key differences between Phase I, II, and III clinical trials?
+* What factors do you consider when determining the appropriate sample size for a clinical trial?
+* How would you explain the importance of randomization and blinding in a clinical trial?
+
+> Put these questions in a case I've dealt with. Explain the term, purpose and example
+
+
+

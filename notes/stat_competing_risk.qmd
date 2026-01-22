@@ -1,0 +1,85 @@
+---
+title: "Competing risks"
+date: "2024-04-23"
+categories: [Survival, Statistics]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+Links 
+
+- https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html
+- https://www.danieldsjoberg.com/ggsurvfit/
+- jmpost: combines survival analysis, mixed effect model https://genentech.github.io/jmpost/main/
+
+
+
+Subdistribution hazards: modifies the traditional hazard function to account for probability of NOT experiencing the event of interest due to competing risks
+
+Cumulative incidence function: used to estimate the probability of experiencing each type of event over time
+
+Aalen-Johansen estimators $\hat{P}(T<=t, X_T = j), j = 1, 2$ add up to 1 minus Kaplan-Meier estimator $\hat{P}(T>t)$
+
+Independence assumption: assuming competing events are mutually exclusive
+
+
+### Nonparametric estimation
+
+Cause-specific hazards $\alpha_{0j}(t), j = 1,2$ are key quantities of the competing risk model, its specification suffice to generate competing risk data (except censoring).
+
+Nelson-Aalen estimator of the **cumulative** cause-specific hazards $A_{0j}(t) = \int_0^t \alpha_{0j}(u) du, j = 1,2$ 
+
+
+
+
+
+
+
+
+
+## Multi-state modeling
+
+Multi-state modeling is not only for time-to-event data. Competing risk is a special case for MS.
+
+Models the transition between states: healthy to diseased, diseased to death, healthy to death etc
+
+Transition probabilities
+
+Transition hazards
+
+State occupancy probabilities 
+
+Use package `msm`, `mstate`, etc
+
+### Use `msm`
+
+Time of transition is unknown. The time in the dataset is *observed* state
+
+Transition structure: defined by a matrix with $r, s$ entry. For example, for transitions allowed below
+
+- 1 to 2
+- 2 to 3
+- 3 to 4
+
+the transition matrix would be 
+
+```{r}
+#| eval: false
+Q <- rbind(c(0, 1, 0, 0), 
+           c(0, 0, 1, 0), 
+           c(0, 0, 0, 1),
+           c(0, 0, 0, 0))
+```
+
+Transitions should only be allowed in adjacent states in continuous time. For example, even if we observe 1 -> 3 without seeing the state 2, we know that patients have been through 1 -> 2 -> 3. The transition matrix should NOT be selected based on what we observe in the data!
+
+
+Mean sojourn time (waiting time): $-1/q_{rr}$ is the expected time to stay in the same state (hence the $rr$). 
+
+

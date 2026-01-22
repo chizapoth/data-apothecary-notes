@@ -1,0 +1,28 @@
+---
+title: "Make slides with `reveal.js`"
+description: |
+  Mostly for the possibility to embed in quarto website
+author: "Chi Zhang"
+date: "2023-10-04"
+categories: [Quarto]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+    code-line-numbers: true
+---
+
+
+## Embed in your own web page 
+
+`iframe` stands for inline frame. It is an HTML element that loads another HTML page within the document.
+
+<iframe class="slide-deck" style="width:800px; height:600px" src="https://andreaczhang.github.io/slides-02quarto/"></iframe>
+
+
+

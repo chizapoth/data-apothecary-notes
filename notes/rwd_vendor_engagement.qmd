@@ -1,0 +1,68 @@
+---
+title: "RWD EHR Vendor Engagement"
+bibliography: biblio.bib
+author: "Chi Zhang"
+date: "2024-03-25"
+categories: [Real World Data]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+## What is vendor engagement
+
+Vendor engagement (VE) in the context of Real-world data and Electronic Health Records (EHR/EMR) is the collaboration between various healthcare organizations (such as hospitals, clinics and medical practices) and vendors that provide EHR systems. VE is essential for successful EHR implementation and ongoing use in healthcare organizations. This partnership ensures that EHR systems meet the needs of healthcare providers and improves patient care.
+
+
+A few EHR vendors: 
+
+* [EpicCare](https://www.epic.com)
+* [Oracle Health EHR](https://www.oracle.com/health/clinical-suite/electronic-health-record/)
+* [athenahealth](https://www.athenahealth.com)
+* [eClinicalWorks](https://www.eclinicalworks.com)
+
+## Implemention
+
+
+### Selection process
+
+Healthcare organisations engage with EHR vendors to select EHR systems that best fits their needs. This involves evaluating the products, features, pricing and support services. 
+
+
+### Implementation 
+
+This process involves data migration, software installation, customization to meet specific workflow requirements, and staff training. The customization could be to support specialized clinical workflows, integrate with other software solutions or implementing additional features and modules.
+
+### After implementation
+
+VE continues after the EHR system is implemented. Healthcare organizations rely on vendors for ongoing technical support, software updates and maintenance to ensure that the systems function smoothly and remains compliant with regulatory requirements.
+
+Feedback and collaboration between healthcare organizations and the vendor is crucial. Feedbacks on usability, functionality and performance of the EHR system can inform future updates and improvements for the vendor.
+
+
+
+### Regulation and compliance 
+
+Regulatory compliance in the context of electronic health records (EHRs) typically includes adherence to laws and regulations aimed at protecting patient privacy, ensuring data security, and promoting the interoperability of health information. Some of the key regulations that healthcare organizations and EHR vendors need to comply with include:
+
+[Health Insurance Portability and Accountability Act](https://www.hhs.gov/hipaa/index.html) (HIPAA): HIPAA sets the standard for protecting sensitive patient data. It includes the Privacy Rule, which governs the use and disclosure of protected health information (PHI), and the Security Rule, which outlines security standards for protecting electronic PHI (ePHI). HIPAA also includes the Breach Notification Rule, which requires covered entities to notify individuals affected by breaches of their PHI.
+
+[HITECH Act](https://www.hipaajournal.com/what-is-the-hitech-act/): The Health Information Technology for Economic and Clinical Health (HITECH) Act promotes the adoption and meaningful use of health information technology, including EHRs. It introduced incentives for healthcare providers to adopt EHRs and strengthened HIPAA's privacy and security requirements, including increased penalties for non-compliance.
+
+[Meaningful Use (now Promoting Interoperability) Program](https://www.cms.gov/medicare/regulations-guidance/promoting-interoperability-programs): The Centers for Medicare & Medicaid Services (CMS) previously administered the Meaningful Use program, which incentivized eligible healthcare providers to adopt and demonstrate meaningful use of certified EHR technology. This program has transitioned to the Promoting Interoperability program, which focuses on promoting the exchange of health information and improving interoperability.
+
+[FDA Regulations](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-electronic-health-record-data-clinical-investigations-guidance-industry): The U.S. Food and Drug Administration (FDA) regulates certain types of EHR software that meet the definition of a medical device. EHR vendors must comply with FDA regulations, particularly if their software includes features that are considered medical devices.
+
+
+
+
+
+
+

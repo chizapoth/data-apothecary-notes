@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Chi Zhang">
+<meta name="dcterms.date" content="2023-02-20">
+<meta name="description" content="A workflow that worked for me: when you have a few vignette documents, and want to display them nicely in a website format.">
 
-<title>Data Apothecary’s Notes</title>
+<title>R package website with pkgdown – Data Apothecary's Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2575636bf12bba71c1c5b79222bd7450.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-337f3f3728aa92b982839ec5f00e4e14.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2575636bf12bba71c1c5b79222bd7450.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0728db20de08e0ad78b6f33f76ac066a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data Apothecary’s Notes</span>
     </a>
   </div>
@@ -88,11 +92,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./notes.html"> 
+    <a class="nav-link" href="../notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/chizapoth/data-apothecary-notes"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/andreaczhang/data-apothecary-notes"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -110,43 +118,110 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
-  <li><a href="#about-data-apothecarys-notes" id="toc-about-data-apothecarys-notes" class="nav-link active" data-scroll-target="#about-data-apothecarys-notes">About Data Apothecary’s Notes</a></li>
+  <li><a href="#create-the-website-skeleton." id="toc-create-the-website-skeleton." class="nav-link active" data-scroll-target="#create-the-website-skeleton.">1. Create the website skeleton.</a></li>
+  <li><a href="#edit-the-vignette-documentation" id="toc-edit-the-vignette-documentation" class="nav-link" data-scroll-target="#edit-the-vignette-documentation">2. Edit the vignette documentation</a></li>
+  <li><a href="#build-and-preview-your-site" id="toc-build-and-preview-your-site" class="nav-link" data-scroll-target="#build-and-preview-your-site">3. Build and preview your site</a></li>
+  <li><a href="#deploy-site-with-github-pages" id="toc-deploy-site-with-github-pages" class="nav-link" data-scroll-target="#deploy-site-with-github-pages">4. Deploy site with GitHub Pages</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="misc/logo_dan.png" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block"></header>
-    <div class="about-links">
-  <a href="https://github.com/chizapoth/data-apothecary-notes/issues" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Report an issue</span>
-  </a>
-  <a href="https://chizapoth.github.io/" class="about-link" rel="" target="">
-    <i class="bi bi-globe"></i>
-     <span class="about-link-text">About the author</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<section id="about-data-apothecarys-notes" class="level1">
-<h1>About Data Apothecary’s Notes</h1>
-<p>This is a collection of notes on <strong>data science, programming and clinical trials</strong>.</p>
-<p>This is a work in progress — content may be incomplete or contain errors. Use with caution!</p>
-<p>If you spot mistakes or have suggestions, feel free to reach out.</p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">R package website with <code>pkgdown</code></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Quarto</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>A workflow that worked for me: when you have a few vignette documents, and want to display them nicely in a website format.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Chi Zhang </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 20, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="create-the-website-skeleton." class="level1">
+<h1>1. Create the website skeleton.</h1>
+<p>Before editing the details, we need to create the skeleton for the website. It can be done with <code>usethis</code> and <code>pkgdown</code> packages.</p>
+<p>In R, run this:</p>
+<pre><code>usethis::use_pkgdown()</code></pre>
+<p>This creates the <code>_pkgdown.yml</code> file, which is the place you configure your site.</p>
+<p>To view the initial package website, use the following command:</p>
+<pre><code>pkgdown::build_site()</code></pre>
+<p>This creates <code>docs/</code> directory containing a website</p>
+<ul>
+<li><code>README.md</code> becomes the homepage,</li>
+<li>documentation in <code>man/</code> generates a function reference,</li>
+<li>vignettes are rendered into <code>articles/</code>.</li>
+</ul>
+</section>
+<section id="edit-the-vignette-documentation" class="level1">
+<h1>2. Edit the vignette documentation</h1>
+<p>Make sure that the vignette index is consistent with <strong>Title</strong>, otherwise it will not render.</p>
+</section>
+<section id="build-and-preview-your-site" class="level1">
+<h1>3. Build and preview your site</h1>
+<p>Now check if the site looks good, and contents are correctly positioned.</p>
+<pre><code>pkgdown::preview_site()
+pkgdown::build_site()</code></pre>
+<p>You can also do this to build the site.</p>
+<pre><code>pkgdown::build_site_github_pages()</code></pre>
+</section>
+<section id="deploy-site-with-github-pages" class="level1">
+<h1>4. Deploy site with GitHub Pages</h1>
+<p>There seems to be two options:</p>
+<ul>
+<li><code>usethis::use_pkgdown_github_pages()</code>, this function should take care of everything after pushing changes to GH.</li>
+<li>if you used <code>pkgdown::build_site_github_pages()</code> and pushed everything to GitHub, it might not automatically deploy your site to GH pages. I tried to go to <em>Settings -&gt; Pages -&gt; Deploy from a branch -&gt; main -&gt; /docs</em>, this makes Action deploy your site from the <code>docs</code> folder.
+<ul>
+<li>double check if you have <code>.nojekyll</code> file</li>
+<li>if a website does not show, check whether you have <code>docs</code> in the <code>.gitignore</code> file; since you are deploying from that folder.</li>
+</ul></li>
+</ul>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

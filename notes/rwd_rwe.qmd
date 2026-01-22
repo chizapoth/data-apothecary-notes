@@ -1,0 +1,187 @@
+---
+title: "Real-world Data, Real-world Evidence"
+bibliography: biblio.bib
+description: |
+  RWD, RWE
+author: "Chi Zhang"
+date: "2023-09-04"
+categories: [Real World Data]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+RWD is any data collected outside clinical trial setting, can be combined with clinical trials.
+
+* pragmatic clinical trials, 
+* single-arm clinical trials with external control, 
+* observational studies,
+* phase IV trials,
+* target trial emulation,
+* ...
+
+(The general benefits and disadvantages of RWD is coherent with EHR data)
+
+Therapheutic areas: oncology, rare diseases, infectious diseases among others
+
+
+Traditionally regarded as inferior evidence: lack of randomization, limited information on potential relevant prognostic factors.
+
+FDA: (2016) 21st Century Cures Act, evaluate the use of RWD in support of regulatory approvals and post-approval safety studies.
+
+EMA (2017): HMA/EMA Joint Big Data Task Force, establish a roadmap for the use of RWD in regulatory assessments
+
+
+Challenges of using RCT
+
+* growing number of drugs for rare diseases
+* very small sub-populations: limited generalizability
+* individualized treatments
+* patient preferences
+* cost, duration
+
+
+Focus: whether RWD can be trusted to reliably measure treatment effects of new drugs, causal relationship. The main difference between RCT and RWD is the **confounding bias**.
+
+
+
+
+## Use cases for RWD
+
+A few examples
+
+* characerise health conditions, interventions, care pathways and patient outcomes
+* patient-reported outcomes, quality of life
+* estimate economic burden
+* estimate test accuracy or reproducibility of biomarker test results
+
+Rather than using RWD to replace RCT, there are a few ways to improve RCT in smaller populations. See [Wieseler 2023](doi: 10.1136/bmj-2022-073100
+Protected)
+
+
+
+### RWD in oncology
+
+Challenging to incorporate RWD in regulatory evidence, treatment decisions and efficacy results are dependent on clinical characteristics that are not normally observed in RWD sources:
+
+* disease staging
+* performance status
+* mutation tests
+* ...
+
+
+
+# Methods overview
+
+Since the most important difference between RWD and RCT is the presence of confounding bias, how to adjust it is the key to generate robust results.
+
+Systematic bias in RWD studies
+
+* selection bias
+* measurement bias
+* confounding bias
+
+
+### PICOT vs PROTECT
+
+PICOT criteria for RCT: population, intervention, comparison, outcome of interest, follow-up time
+
+PROTECT criteria for RWD
+
+* P: population (patients)
+* R/O: response (outcome)
+* T/E: treatment or exposure. Some RWD studies are not interventional
+* C: confounders
+* T: time
+
+
+### Target causal quantity, estimand
+
+Target causal quantity $\theta = E(Y^1) - E(Y^0)$
+
+Not estimable since it depends on counterfactual outcomes $Y^1, Y^0$
+
+Under identifiability conditions, the **statistical estimand** $\theta^* = E\{ E(Y|A=1,X) - E(Y|A=0,X)\}$ is estimable and equivalent to $\theta$.
+
+
+
+### Estimator
+
+Stratification methods
+
+* stratification, restriction, matching
+* usually based on propensity scores to reproduce the effects of randomization 
+* model treatment against confounders: $A \sim X$
+* may not generalize to complex longitudinal settings when time-varying treatments and confounding exist
+
+G-methods (generalized)
+
+* can be generalized to time-varying confounding
+* g-formula, inverse probability (IP) weighting
+* model $Y \sim A + X$ in g-formula
+* model $A \sim X$ in IP weighting
+ 
+Targeted learning methods
+
+* targeted MLE, based on g-formula
+
+
+### Sensitivity analysis 
+
+Evaluate how estimate would change if assumption of *no unmeasured confounding* were violated.
+
+(Refer to Greenland in Fang2020)
+
+
+# Training material
+
+Online courses
+
+* [Real-world evidence 1: Routinely collected data for clinical research](https://dkf.unibas.ch/en/training-and-education/md-phd-clinical-research/courses/real-world-evidence/) by University of Basel
+
+* [Real-world evidence 2: Pragmatic trials - study designs for real-world decision making](https://dkf.unibas.ch/en/training-and-education/md-phd-clinical-research/courses/real-world-evidence-2/) by University of Basel
+
+Keywords
+
+* routinely collected data for randomized trials (RCD-RCT)
+* meta-research
+* pragmatic trial
+* generalizability, applicability and external validity of RCT
+* optimal study design to support decision-making
+
+
+* [Real-world evidence in Pharmacoepidemiology](https://www.lshtm.ac.uk/study/courses/short-courses/real-world-evidence-in-pharmacoepidemiology#course-details) by LSHTM
+
+Keywords
+
+* sources of error, bias and confounding
+* quantitative bias analysis (QBA)
+* missing data
+* [confounding by indication](https://catalogofbias.org/biases/confounding-by-indication/)
+
+
+### References
+
+Fang 2019
+
+Sheffield 2020
+
+[@Jemielita2021]
+
+::: {#refs}
+:::
+
+
+
+
+
+
+
+

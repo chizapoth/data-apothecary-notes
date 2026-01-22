@@ -1,0 +1,176 @@
+---
+title: "Causal Inference in Aggregated Time Series"
+description: |
+    BSTS, ITS, Synthetic Control, difference-in-difference 
+author: "Chi Zhang"
+date: "2025-02-19"
+categories: [Statistics, Causal Inference]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+:::{.callout-note}
+## Familiar examples
+
+* excess mortality: we computed it using methods similar to BSTS; it can also be done with SCM
+* commodity prices
+
+:::
+
+
+|Aspect |Synthetic control method |Bayesian Structured time series, Interrupted time series|DiD|
+|--|--|--|--|
+|Requires a **control group** |Yes |No |Yes|
+|Works with a single TS |No |Yes |No|
+|Handles multiple predictors |No, only treated unit |Yes |No|
+|Time series trends and seasonality |No, needs pre-trend matching |Yes, models trends and shocks |-|
+
+
+These methods are different in the way they construct the counterfactuals:
+
+* DiD: does not require constructing counterfactual
+* SCM: search in parallel: find other series that are similar
+* BSTS: search in history: model the series of itself, can be with or without other predictor series
+* ITS: similar to BSTS, but less advanced.
+
+
+## Difference in difference
+
+Parallel trends assumption: without a treatment, the trends in control and treatment groups are the same.  
+
+It is **not designed for TS**, but in practice can be used in TS. It can be considered as a **two-sample t-test**. 
+
+
+DiD estimate = (post - pre treated) - (post - pre control)
+
+
+Compare with others:
+
+* DiD and ITS: **DiD requires a control**, while ITS does not - it compares with its own history.
+* DiD and SCM: both require control group. However DiD does not require constructing the synthetic control, SCM does need to construct them. 
+
+
+
+
+## Synthetic control 
+
+Use-case: when an existing control group does not exist, but it's possible to find a good synthetic control group. 
+
+
+:::{.callout-note}
+
+* How to find good controls, any technique or metrics? measure correlation? 
+* It would appear that no predictors are involved, only the outcome
+
+:::
+
+
+#### Public health example
+
+* outcome: deaths
+* exposure: severity of covid
+* treated: country A with severe covid outbreak (treatment 1)
+* control: neighboring countries (B, C, D) with similar outcome trend (death) pre-2020, but had strict lockdowns hence minimal covid spread (treatment 0)
+
+Create a synthetic control using B, C, D's outcomes, could be a weighted average as S.
+
+Causal estimate: difference in post-2020 outcomes between A and S. This becomes the **excess mortality** attributed to covid.
+
+* Ideal: if can find other region(s) with similar pre-covid trend in death (outcome), but low covid exposure (different treatment).
+* Not ideal: if all regions are affected by covid -> impossible to construct synthetic control
+* Not ideal: outcomes (deaths) before covid were not similar across regions
+* Not ideal: other confounders bring in bias
+
+
+#### Commodity price example 
+
+<span style = 'color:red'>this might be better case for SCM, as the trend itself is difficult to model statistically, and no good exogenous variable TS can be used to predict the outcome. so it would be useful to find other similar commodity series to construct the target. However BSTS can also do it; and war/covid does affect all commodities in different ways</span>
+
+
+### Compare with propensity score matching 
+
+The key difference is that SCM works best when working with **aggregates** (e.g. total number of deaths), and PSM works for individual level data where each subject has a few features to compute the PS.
+
+| | SCM|PSM |
+|--|--|--|
+|Treatment unit |one, or a few **aggregated values: country, city, company** |many units at **individual levels: patients, customers** |
+|Control group construction |synthetic control created by weighting multiple control units |matches treated units with similar control units based on propensity score |
+|Time series |pre-treatment trends used to create control group |no particular consideration |
+|Unobserved confounders |assumes pre-treatment trends capture all confounders (since it's aggregated values) |assumes all confounders are measured and accounted for in the PS model |
+|Matching process |optimisation and others(see above) |knn etc |
+
+
+
+
+
+### Control units selection and weight computation
+
+
+Select similar control units (**Donor Pool Selection**)
+
+* correlation-based: Pearson, Spearman, Kendall's Tau, appropriate versions for time series
+* distance-based: Euclidean, DTW, Mahalanobis
+* clustering: k-means, hierarchical clustering, DBSCAN
+* regression-based: use other series to predict A, select the significant ones 
+
+Compute weights
+
+* convex optimization (default SCM): assign non-negative weights that sum to 1, while solving for weights that minimizes the sum of squares difference between treated and weighted control combinations.
+* penalised regression: shrinks some weights to zero; or handles correlated series
+* Bayesian weighting. this provides uncertainty estimates.
+* ML based
+
+
+
+
+
+
+
+## Bayesian structured time series (and ITS)
+
+Interrupted time series analysis can be considered as a simplified version of BSTS.
+
+
+
+
+## (might move out) Instrument variable approach
+
+Does not need a control.
+
+Instead of modeling death using covid as covariate directly, find an instrument IV that **does not directly affect outcome** (death): 
+
+* policy: lockdown policies, mask mandates, mobility restrictions. Use this as an instrument for covid cases, then estimate effect on deaths.
+
+Two stage least squares
+
+* disease counts = a + delta Z, predict disease D hat
+* death = beta + gamma x D hat
+
+
+:::{.callout-note}
+
+The motivation for using IV is unclear. Does it work on aggregates? or individual counts?
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+

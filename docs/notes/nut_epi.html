@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Chi Zhang">
+<meta name="dcterms.date" content="2024-05-17">
+<meta name="description" content="About Food">
 
-<title>Data Apothecary’s Notes</title>
+<title>Nutritional Epidemiology – Data Apothecary’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2575636bf12bba71c1c5b79222bd7450.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-337f3f3728aa92b982839ec5f00e4e14.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2575636bf12bba71c1c5b79222bd7450.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-09d0c953d6409824d0661026445770df.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data Apothecary’s Notes</span>
     </a>
   </div>
@@ -88,11 +92,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./notes.html"> 
+    <a class="nav-link" href="../notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/chizapoth/data-apothecary-notes"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/andreaczhang/data-apothecary-notes"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -110,43 +118,142 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
-  <li><a href="#about-data-apothecarys-notes" id="toc-about-data-apothecarys-notes" class="nav-link active" data-scroll-target="#about-data-apothecarys-notes">About Data Apothecary’s Notes</a></li>
+  <li><a href="#study-designs" id="toc-study-designs" class="nav-link active" data-scroll-target="#study-designs">Study designs</a></li>
+  <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements">Measurements</a></li>
+  <li><a href="#dietary-assessment" id="toc-dietary-assessment" class="nav-link" data-scroll-target="#dietary-assessment">Dietary assessment</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="misc/logo_dan.png" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block"></header>
-    <div class="about-links">
-  <a href="https://github.com/chizapoth/data-apothecary-notes/issues" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Report an issue</span>
-  </a>
-  <a href="https://chizapoth.github.io/" class="about-link" rel="" target="">
-    <i class="bi bi-globe"></i>
-     <span class="about-link-text">About the author</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<section id="about-data-apothecarys-notes" class="level1">
-<h1>About Data Apothecary’s Notes</h1>
-<p>This is a collection of notes on <strong>data science, programming and clinical trials</strong>.</p>
-<p>This is a work in progress — content may be incomplete or contain errors. Use with caution!</p>
-<p>If you spot mistakes or have suggestions, feel free to reach out.</p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Nutritional Epidemiology</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>About Food</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Chi Zhang </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 17, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Reading notes from Chapter 29, Modern Epidemiology</p>
+</blockquote>
+<p>Nutritional epidemiology: determine relationships between dietary factors and occurrence of specific disease.</p>
+<p>Nutrition: could be nutrients, natural constituents of food, chemicals created in the cooking and preservation of food, or noninfectious food contaminants.</p>
+<p>In NE, exposure are aspects of diet, very complex set of variables. <strong>Measurements of dietary intake</strong> is key</p>
+<section id="study-designs" class="level3">
+<h3 class="anchored" data-anchor-id="study-designs">Study designs</h3>
+<p>Case control studies</p>
+<ul>
+<li>consistent valid results are difficult to obtain, due to methodological bias
+<ul>
+<li>selection bias, appropriate control group is difficult. Hospital based studies use patients from another disease, or from population; low participation rate, higher level of general health consciousness</li>
+<li>recall bias</li>
+</ul></li>
+</ul>
+<p>Experimental studies</p>
+<ul>
+<li>trials must be of long duration</li>
+<li>compliance with the treatment diet is likely to decrease, particularly if treatment involves a real change in food intake, comparison group may adopt diet of the treatment group if the treatment is beneficial</li>
+<li>higher health consciousness are likely to participate, hence those with highest potential risk are underrepresented</li>
+</ul>
+</section>
+<section id="measurements" class="level3">
+<h3 class="anchored" data-anchor-id="measurements">Measurements</h3>
+<p>In human diets, intake of different components tend to be correlated. All individuals are exposed (e.g.&nbsp;fat, fiber, vitamin A), hence dietary exposures can rarely be ‘present’ or ‘absent’. Continuous range, with limited range of variation between persons with a common culture or geographic location.</p>
+<p>Diet can be described in terms of</p>
+<ul>
+<li>foods</li>
+<li>food groups</li>
+<li>overall dietary patterns</li>
+</ul>
+<section id="using-food" class="level4">
+<h4 class="anchored" data-anchor-id="using-food">Using food</h4>
+<p>Measurement of total intake of a nutrient provides the most powerful test of a hypothesis, especially if many foods each contributes only modestly to intake of that nutrient.</p>
+<p>Use of <strong>food</strong> to represent diet has advantage when suspicion exists, but no specific hypothesis is formulated.</p>
+<p>Foods are not fully represented by their nutrient composition: milk vs yogurt produce different physiologic effects</p>
+<p>Analyses based on foods (rather than nutrients) are more directly related with dietary recommendations.</p>
+<p>Reciprocal relations emerge, promoting use of <strong>nutrient</strong></p>
+<ul>
+<li>dark bread eaters tend to not eat white bread</li>
+<li>margarine users tend to not use butter</li>
+</ul>
+</section>
+<section id="using-food-group" class="level4">
+<h4 class="anchored" data-anchor-id="using-food-group">Using food group</h4>
+<p>Fiber from grains, fiber from fruit and vegetables may have different association with risk of disease</p>
+</section>
+<section id="time-dimension" class="level4">
+<h4 class="anchored" data-anchor-id="time-dimension">Time dimension</h4>
+<p>Diet may be important during childhood, even though disease occurs decades later</p>
+<p>Diet may also act as a late-stage promoting or inhibiting factor, hence intake near the time before diagnosis may be important.</p>
+<p>Diets of individuals tend to be correlated from year to year, with decreasing correlation over longer intervals</p>
+</section>
+</section>
+<section id="dietary-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="dietary-assessment">Dietary assessment</h3>
+<p>Three approaches:</p>
+<ul>
+<li>food intake</li>
+<li>biochemical measurements of blood or body tissues</li>
+<li>measurement of body dimensions</li>
+</ul>
+<p>Short-term recall (24h)</p>
+<ul>
+<li>requires 10-20 minutes</li>
+<li>no training or literacy and minimal effort for the participants</li>
+<li>validity needs to be assessed</li>
+<li>most serious limitation: highly variable from day to day, only very commonly eaten food can be studied with this method</li>
+</ul>
+<p>Dietary records, food diaries</p>
+<ul>
+<li>typical 3-7 days</li>
+<li>burdern on the subject, only for those literate and highly motivated</li>
+</ul>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

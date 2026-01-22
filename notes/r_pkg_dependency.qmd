@@ -1,0 +1,104 @@
+---
+title: "Dependencies"
+description: |
+  When and how to import
+author: "Chi Zhang"
+date: "2023-11-07"
+categories: [R]
+sidebar: false
+code-block-bg: false
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+Resources: 
+
+* Chapter 10, 11 from the [R package book (2e)](https://r-pkgs.org/dependencies-in-practice.html) by Hadley Wickham
+
+::: {.callout-note}
+
+## Ongoing notes
+
+Some of the content are being added as I go.
+
+:::
+
+
+## Packages in `Imports` and `Depends`
+
+Inside `DESCRIPTION`, there are three categories of dependencies: imports, suggests and depends. For now focus on imports and depends.
+
+Generally, three ways to call a function in a dependency: 
+
+* use `deppkg::function()`;
+* use Roxygen2 tag `@importFrom deppkg function`, then call this particular function directly;
+* use Roxygen2 tag `@import deppkg` and call anything directly.
+
+
+### `Imports`
+
+Packages are required to make functions run, but are NOT loaded when loading your own package.
+
+When a pkg is listed in `DESCRIPTION` under `Imports`: recommended to call with `deppkg::function()` syntax. 
+
+```{r}
+#| echo: true
+#| eval: false
+
+my_function <- function(x,y){
+  z <- dplyr::select(...)
+}
+```
+
+Avoid importing anything with `@import` tag, so that it is easier to understand what function is not local. 
+
+
+### `Depends`
+
+Very similar to `Imports`, but loaded when your package is loaded.
+
+However, even after putting pkg (such as `ggplot2`) under `Depends`, you still need to call the functions in a correct way (the three options above). 
+
+
+## Common error, warning and notes
+
+### Error: could not find function `xyz`
+
+Where the function `xyz` is from a dependency package, such as `ggplot2`. 
+
+> could not find function "ggplot"
+
+This happens when dependency package such as `ggplot2` is not imported. When checking `NAMESPACE`, you see that this package is not in the import list. 
+
+To tackle this, locate the function where the error occurs, add the **Roxygen2 tags** as appropriate: 
+
+```{r}
+#| echo: true
+#| eval: false
+
+#' @importFrom aaapkg aaa_fun
+#' @import bbbpkg
+#' @export
+my_function <- function(x,y){
+  ...
+}
+```
+
+Then document (either `devtools::document()` or Build -> Document button). Check `NAMESPACE` again, see if the package is imported.
+
+
+### Note: all declared imports should be used
+
+>   Namespaces in Imports field not imported from:
+    ‘data.table’ ‘gt’ ‘gtExtras’ ‘magrittr’ ‘rlang’
+    All declared Imports should be used.
+
+This might happen when these external packages are not used. I can be more explicit when I actually use these packages somewhere. See 11.4.1 of the book for more information.
+
+
+

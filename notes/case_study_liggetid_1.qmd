@@ -1,0 +1,195 @@
+---
+title: "Length of hospital stay: Part I"
+description: |
+  Part 1: EDA
+author: "Chi Zhang"
+date: "2023-12-18"
+categories: [Case Study, Real World Data]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+The data `liggetid` was collected at the Geriatric Department at Ullevål Sykehus. This dataset has been used for teaching at University of Oslo, MF9130E. The course material can be accessed [here](https://github.com/ocbe-uio/teaching_mf9130e). 
+
+We will focus on the following variables: 
+
+- `admission_year`, year of hospital admission
+- `age`
+- `sex`
+- `admission_from`, where 1 = home, 2 = Div. of Medicine, 3 =
+Div. of Surgery, 4 = Other division, 5 = Other hospital, 6 =
+Nursing home
+- `stroke`, where 1 = yes, 0 = no
+- `los`, hospital stay, in days 
+
+
+```{r}
+#| label: eda1
+#| echo: true
+#| eval: true
+
+los <- readRDS('data/los.rds')
+head(los, 3)
+```
+
+Some variables need to be recoded and put into factor to display nicely.
+
+```{r}
+#| label: eda2
+#| echo: true
+#| eval: true
+#| code-fold: true
+#| code-summary: "Show the code"
+# library(dplyr)
+library(ggplot2)
+
+# remove NA
+los <- dplyr::filter(los, !is.na(sex) & !is.na(stroke) & !is.na(admission_from))
+
+# code admission from with text
+# unique(los$admission_from)
+los$admission_from <- factor(los$admission_from, 
+                            levels = c('home', 'div_surgery', 
+                                       'div_medicine', 'div_other', 
+                                       'other_hospital', 'nursing_home'), 
+                            labels = c('home', 'div_surgery', 
+                                       'div_medicine', 'div_other', 
+                                       'other_hospital', 'nursing_home'))
+
+# code admission year with text
+los$admission_year <- factor(los$admission_year,
+                            levels = c(1981:1987),
+                            labels = as.character(1981:1987))
+
+los$stroke <- factor(los$stroke, 
+                          levels = c(0, 1), 
+                          labels = c('no','yes'))
+
+```
+
+
+## Visualization 
+
+### LOS vs age and sex
+
+```{r}
+#| label: p1
+#| echo: true
+#| eval: true
+#| code-fold: true
+#| code-summary: "Show the code"
+plt_scat2 <- ggplot(data = los, 
+                    mapping = aes(x = age, y = los, shape = sex, color = sex))
+plt_scat2 <- plt_scat2 + geom_point(size = 2, alpha = 0.7)
+# customize
+plt_scat2 <- plt_scat2 + labs(
+  x = 'Age', 
+  y = 'Length of hosptial stay (days)', 
+  title = 'Length of stay versus age'
+)
+plt_scat2 <- plt_scat2 + theme_bw() # make white background
+# change text size
+plt_scat2 <- plt_scat2 + theme(
+  axis.text = element_text(size = 12),
+  axis.title = element_text(size = 12), 
+  plot.title = element_text(size = 15)
+)
+# change color
+plt_scat2 <- plt_scat2 + scale_color_brewer(palette = 'Set1')
+plt_scat2
+
+```
+
+
+```{r}
+#| label: p2
+#| echo: true
+#| eval: true
+#| code-fold: true
+#| code-summary: "Show the code"
+library(ggridges)
+plt_ridge <- ggplot(data = los, 
+                    mapping = aes(x = los, y = admission_year, fill = sex))
+plt_ridge <- plt_ridge + geom_density_ridges(alpha = 0.6) 
+plt_ridge <- plt_ridge + theme_ridges()
+plt_ridge <- plt_ridge + labs(
+  x = 'Length of hosptial stay (days)', 
+  y = 'Admission year', 
+  title = 'Length of stay in each year, for each gender'
+)
+# change color
+plt_ridge <- plt_ridge + scale_fill_brewer(palette = 'Set1')
+plt_ridge
+```
+
+### LOS vs year of admission
+
+```{r}
+#| label: p3
+#| echo: true
+#| eval: true
+#| code-fold: true
+#| code-summary: "Show the code"
+plt_box <- ggplot(data = los, 
+                  mapping = aes(x = admission_year, y = los, fill = sex))
+plt_box <- plt_box + geom_boxplot(outlier.size = 1)
+# plt_box <- plt_box + facet_wrap( ~ sex)
+plt_box <- plt_box + coord_flip()
+
+# customize
+plt_box <- plt_box + theme_bw() # make white background
+plt_box <- plt_box + labs(
+  x = 'Admission year', 
+  y = 'Length of hosptial stay (days)', 
+  title = 'Length of stay in each year, both men and women'
+)
+plt_box <- plt_box + theme(
+  axis.text = element_text(size = 12),
+  axis.title = element_text(size = 12), 
+  plot.title = element_text(size = 15), 
+  strip.text = element_text(size = 12)
+)
+
+plt_box <- plt_box + scale_fill_brewer(palette = 'Set1')
+plt_box 
+```
+
+### LOS vs types of admission
+
+```{r}
+#| label: p4
+#| echo: true
+#| eval: true
+#| code-fold: true
+#| code-summary: "Show the code"
+plt_box2 <- ggplot(data = los, 
+                   mapping = aes(x = admission_year, y = los, fill = sex))
+plt_box2 <- plt_box2 + geom_boxplot(outlier.size = 0.8)
+plt_box2 <- plt_box2 + facet_wrap( ~ admission_from)
+
+
+# customize
+plt_box2 <- plt_box2 + theme_bw() # make white background
+plt_box2 <- plt_box2 + labs(
+  x = 'Admission year', 
+  y = 'Length of hosptial stay (days)', 
+  title = 'Length of stay in each year, each type of admission'
+)
+plt_box2 <- plt_box2 + theme(
+  axis.text = element_text(size = 11),
+  axis.title = element_text(size = 12), 
+  plot.title = element_text(size = 15), 
+  strip.text = element_text(size = 12), 
+  axis.text.x = element_text(angle = 45) # more readable
+)
+
+plt_box2 <- plt_box2 + scale_fill_brewer(palette = 'Set1')
+plt_box2 
+```

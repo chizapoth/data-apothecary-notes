@@ -1,0 +1,99 @@
+---
+title: "Notes from book: What if (Part 2)"
+description: |
+  IP weighting, standardization (g-computation)
+author: "Chi Zhang"
+date: "2024-08-20"
+categories: [Causal Inference, Statistics]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+> Validatidy of causal inference requires exchangeability, positivity, consistency, no measurement error and no model misspecification.
+
+Code: [What If. R code](https://remlapmot.github.io/cibookex-r/)
+
+Causal question: estimate the average causal effect of **smoking cessation** (treatment, A) on **weight gain** (outcome, Y)
+
+Dataset: NHEFS. 1566 smokers, age 25-74. Baseline visit and follow-up 10 years later. A=1 means they quit smoking, 0 otherwise. Outcome weight gain measured in kg.
+
+Adjust for 9 variables measured at baseline: 
+
+* sex (0M 1F)
+* age
+* race (0 white 1 other)
+* education (5 categories)
+* intensity of smoking (n cigarettes per day)
+* duration of smoking (years)
+* physical activity in daily life (3 categories)
+* recreational exercise (3 categories)
+* weight (kg)
+
+
+R code for the two methods: [link](https://github.com/andreaczhang/data-apothecary-notes/blob/main/dev/causal/whatif_part2.R)
+
+
+
+## IP weighting
+
+IP weighting creates pseudo-population to remove covariates L to the treatment A. Properties of the pseudo-population: 
+
+* A and L are statistically independent
+* $E_{ps}[Y|A=a]$ equals the standardized mean in the actual population, $\sum_{l}E[Y|A=a,L=l]P[L=l]$.
+
+Individual-specific IP weights for treatment A is $W = 1/f(A|L)$. For the quitters (A=1), $f(A|L) = P[A=1|L]$. This is also the **propensity score**.
+
+The weights can be estimated non-parametrically when the problem is simple: count the number of people treated (A=1) in each stratum (L=1, L=0) and then divide by the number in the stratum. When the problem has more variables (confounders), fit a logistic regression to estimate the probability.
+
+
+(more details to be filled in)
+
+
+## g-formula, standardization
+
+IP weighting and standardization are estimators of g-formula (1986). **g-formula** is a synonym of **g-computation**. (g-estimation is a different method)
+
+
+```{mermaid}
+%%| label: dag1
+flowchart LR
+  L(L) --> A[A]
+  A[A] --> Y{Y}
+  L(L) --> Y{Y}
+```
+
+
+
+Procedures:
+
+1) fit a regression with Y as outcome, A as treatment, L as control. It is possible to make polynomials and/or interactions.
+2) create a dataset identical to the original data, but $A = 1$ in every row
+3) create a dataset identical to the original data, but $A = 0$ in every row
+4) use model from step 1 to compute adjusted predictions in the **two counterfactual datasets**.
+
+The quantity of interest is the difference between the predictions.
+
+(Note that in Hernan & Robins, three blocks of data are binded into one. The counterfactual datasets (2nd and 3rd) have `NA` in the outcome. So even though in the regression model it's using the large dataset with duplicates, it is effectively only using the original data to estimate the parameters.)
+
+
+
+### Robust methods
+
+Doubly robust methods combine models for treatment (ipw) and for outcome (standardization) in the same estimator. 
+
+* Augmented IP weighted estimator
+* doubly robust plug-in estimator 
+
+
+
+
+
+
+

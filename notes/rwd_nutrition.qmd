@@ -1,0 +1,98 @@
+---
+title: "Nutritional Epidemiology"
+description: |
+  About Food 
+author: "Chi Zhang"
+date: "2024-05-17"
+categories: [Real World Data]
+bibliography: biblio.bib
+format: 
+  html:
+    code-fold: false
+    code-tools: false
+editor: source
+---
+
+> Reading notes from Chapter 29, Modern Epidemiology
+
+Nutritional epidemiology: determine relationships between dietary factors and occurrence of specific disease.
+
+Nutrition: could be nutrients, natural constituents of food, chemicals created in the cooking and preservation of food, or noninfectious food contaminants.
+
+In NE, exposure are aspects of diet, very complex set of variables. **Measurements of dietary intake** is key
+
+### Study designs
+
+Case control studies
+
+- consistent valid results are difficult to obtain, due to methodological bias
+  - selection bias, appropriate control group is difficult. Hospital based studies use patients from another disease, or from population; low participation rate, higher level of general health consciousness
+  - recall bias
+
+Experimental studies
+
+- trials must be of long duration
+- compliance with the treatment diet is likely to decrease, particularly if treatment involves a real change in food intake, comparison group may adopt diet of the treatment group if the treatment is beneficial
+- higher health consciousness are likely to participate, hence those with highest potential risk are underrepresented
+
+
+### Measurements
+
+In human diets, intake of different components tend to be correlated. All individuals are exposed (e.g. fat, fiber, vitamin A), hence dietary exposures can rarely be 'present' or 'absent'. Continuous range, with limited range of variation between persons with a common culture or geographic location.
+
+Diet can be described in terms of 
+
+- foods
+- food groups
+- overall dietary patterns
+
+#### Using food
+
+Measurement of total intake of a nutrient provides the most powerful test of a hypothesis, especially if many foods each contributes only modestly to intake of that nutrient.
+
+Use of **food** to represent diet has advantage when suspicion exists, but no specific hypothesis is formulated.
+
+Foods are not fully represented by their nutrient composition: milk vs yogurt produce different physiologic effects
+
+Analyses based on foods (rather than nutrients) are more directly related with dietary recommendations.
+
+Reciprocal relations emerge, promoting use of **nutrient**
+
+- dark bread eaters tend to not eat white bread
+- margarine users tend to not use butter
+
+
+#### Using food group
+
+Fiber from grains, fiber from fruit and vegetables may have different association with risk of disease
+
+#### Time dimension
+
+Diet may be important during childhood, even though disease occurs decades later
+
+Diet may also act as a late-stage promoting or inhibiting factor, hence intake near the time before diagnosis may be important.
+
+Diets of individuals tend to be correlated from year to year, with decreasing correlation over longer intervals
+
+
+### Dietary assessment
+
+Three approaches: 
+
+- food intake
+- biochemical measurements of blood or body tissues
+- measurement of body dimensions 
+
+
+
+Short-term recall (24h)
+
+- requires 10-20 minutes
+- no training or literacy and minimal effort for the participants
+- validity needs to be assessed
+- most serious limitation: highly variable from day to day, only very commonly eaten food can be studied with this method
+
+Dietary records, food diaries
+
+- typical 3-7 days
+- burdern on the subject, only for those literate and highly motivated

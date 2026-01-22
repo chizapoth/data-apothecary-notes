@@ -1,0 +1,216 @@
+---
+title: "Length of hospital stay: Part II"
+description: |
+  Part 2: time-to-event analysis
+author: "Chi Zhang"
+date: "2024-10-02"
+categories: [Case Study, Survival]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+> This analysis is in preparation for interviews related to time-to-event analysis. Focus will be put on the procedure (and how to do it in R), as well as interpretation of the results.
+
+The data `liggetid` was collected at the Geriatric Department at Ullevål Sykehus. Detailed description can be found in [part 1](case_study_liggetid_1.qmd) of the case study. 
+
+We will focus on the following variables: 
+
+- `admission_year`, year of hospital admission
+- `age`
+- `sex`
+- `admission_from`, where 1 = home, 2 = Div. of Medicine, 3 =
+Div. of Surgery, 4 = Other division, 5 = Other hospital, 6 =
+Nursing home
+- `stroke`, where 1 = yes, 0 = no
+- `los`, hospital stay, in days 
+
+
+```{r}
+#| label: data
+#| echo: true
+#| eval: true
+
+los <- readRDS('data/los.rds')
+head(los, 3)
+```
+
+
+
+### Simulate times and status
+
+In this analysis we will do the following steps for processing. First we limit the analysis to data from 1985 onwards (not including).
+
+**Simulate censor time**. We know the time for discharge is given as `los` - this is the true event time. In this example for hospital LOS, all patients are discharged (with final status 1). However *for the purpose of learning*, we randomly select 20% of the subjects and assume they are censored. The time for censored is fixed to 0.9 times their final LOS.
+
+**Simulate stroke time**. `stroke` is a variable that is typically not measured at baseline, hence it should be treated as a time dependent variable. The time for stroke is fixed at 0.7 of their time (after censoring). 
+
+
+
+```{r}
+#| label: data-sim
+#| echo: true
+#| eval: true
+#| code-fold: true
+#| code-summary: "Show the code"
+
+suppressMessages(library(dplyr))
+library(ggplot2)
+suppressMessages(library(data.table))
+
+
+los <- readRDS('data/los.rds')
+# table(dlos$admission_from)
+
+# to increase readability, process
+data.table::setDT(los)
+
+# code a status: 1 indicates released. all of them
+los$discharge <- 1
+
+# take those from 1985 onwards
+los <- los[admission_year > 1985]
+
+# we know the true time (los)
+# now randomly select subjects (20%), make a new time, then mark censor
+
+set.seed(1)
+n <- nrow(los)
+id_time <- sample(1:n, size = 0.2*n, replace = F)
+
+los[, time := los]
+los[id_time, time := round(0.9*los, digits = 0)]
+
+# make new status
+los[, status := 1]
+los[id_time, status := 0] # censored
+
+# for those with stroke, simulate a time
+# if no stroke, the time is same as overall time
+los[stroke == 1, time_stroke := round(0.7*time, digits = 0)]
+los[stroke == 0, time_stroke := time]
+
+head(los, 3)
+```
+
+## Kaplan-Meier analysis
+
+Create KM curve
+
+
+```{r}
+#| label: km
+#| echo: true
+#| eval: true
+
+library(survival)
+library(ggsurvfit)
+
+# from ggsurvfit pkg. using surfit also works
+ss <- survfit2(Surv(time, status) ~1, data = los)
+
+ggsurvfit(ss) + 
+  labs(x = 'Days', 
+       y = 'Overall survival prob') + 
+  add_confidence_interval() + 
+  add_censor_mark() + 
+  add_risktable()
+```
+
+
+### x-day survival probability
+
+```{r}
+#| label: xdaysurv
+#| echo: true
+#| eval: true
+
+# beyond 100 days
+summary(survfit(Surv(time, status)~1, data = los), times = 100)
+nrow(los[time>=100]) # n at risk (still alive)
+# nrow(los[time<=100])  # this includes censored, 363+1
+nrow(los[status == 1 & time <= 100]) # n event (already happened)
+# n at risk: 38; n event 290, p = 0.15
+```
+
+401 total, 38 at risk, within the 364 (-1), 290 died 
+
+Naive but incorrect way of calculating: 1-290/401 = 27.7%. This over-estimates how many are alive, as (364-290) = 74 are censored and we do not know the outcome.
+
+
+### Median survival time
+
+Median survival time means half of the subjects have events happen before, and half after. It corresponds to the time where survival probability is 0.5.
+
+The median survival time is **higher** than using `median(time_to_event)` on those with outcome. It is intuitive because with censored data there are time periods that are not observed, which are ignored by `median()`. 
+
+```{r}
+#| label: median
+#| echo: true
+#| eval: true
+
+survfit(Surv(time, status) ~ 1, data = los)
+median(los[status == 1, time]) # only compute time for uncensored
+```
+
+Compare with the complete case when there's no censoring. We use `discharge` as the outcome status, all subjects have 1. The time variable is `los` which is the true time. Now these two should be consistent.
+
+```{r}
+#| label: median2
+#| echo: true
+#| eval: true
+
+survfit(Surv(los, discharge) ~ 1, data = los)
+median(los$los)
+```
+
+```{r}
+#| label: km2
+#| echo: true
+#| eval: true
+
+ggsurvfit(ss) + geom_vline(xintercept = c(100, 35), col = 'red')
+```
+
+
+::: {.callout-note collapse='true'}
+## Interpretation
+
+
+
+:::
+
+::: {.callout-note collapse='true'}
+## Risk of ignoring censored subjects
+
+* over-estimated (higher) survival probability calculated as (1 - dead/n), since the numerator does not include censored subjects whose outcome is unknown.
+* under-estimated (lower) median survival time, since their time before event will prolong the survival time.
+
+:::
+
+
+
+
+
+## Cox proportional hazards model
+
+
+
+
+## Time varying covariate
+
+
+
+
+
+
+
+
+
+

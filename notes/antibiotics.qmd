@@ -1,0 +1,95 @@
+---
+title: "Antibiotics"
+bibliography: biblio.bib
+description: |
+  Background of antimicrobial drugs and resistance
+author: "Chi Zhang"
+date: "2024-02-21"
+categories: [Pharma]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+## Economics and production
+
+Drug-resistant diseases kill 700k people (Plackett2020) yearly, however fewer new antibiotic drugs are reaching the market.
+
+Development cost: 1.5 billion USD (for one drug, based on 2017 study) while revenue is 45 million USD.
+
+* not enough demand: physicians prescribe less, treatment cycle is short compared to chronic diseases
+* price is low
+* development is difficult
+
+https://www.nature.com/articles/s41429-023-00629-8
+
+
+
+## Antibiotics stewardship
+
+[Coursera course: Antibiotics stewardship](https://www.coursera.org/learn/antibiotic-stewardship?)
+
+Antimicrobials are the 2nd most frequently prescribed claass of pharmaceuticals. As much as 50% of antibiotic use is inappropriate.
+
+Five D's: (if it is the right) drug, dose, delivery, deescalation, duration.
+
+Impact of inappropriate AB use: **poor patient outcomes** (adverse reactions, organ toxicity, AB resistance, increased mortality); **excess costs** (drug acquisition cost, complication management, prolonged hospital stays, costs associated with AB resistance)
+
+### Principles
+
+**Prophylactic** to prevent infection, **preemptive** to abort infection, **empiric** to provide initial control in absence of knowledge of its etiology, **definitive** to cure infectiou of a knownn etiology or its antimicrobial susceptibility
+
+Empiric use is very common - e.g. community and hospital acquired pneumonia, sepsis.
+
+### PKPD
+
+**Pharmacokinetics** (PK): what the body does to the drug - absorption, distribution, metabolism, elimination
+
+**Pharmacodynamics** (PD): what the drug does to the body / target organism - measured drug concentration and antimicrobial effect (e.g. adverse effect, safety)
+
+
+MIC: minimum inhibitory concentration, from no visible growth to 99.9% bacteria kill (MBC)
+
+Pharmacodynamic measures
+
+* Cmax, AB peak concentration
+* Cmin, AB trough concentration
+* Cmax / MIC, AUC / MIC, T>MIC (on concentration time curve)
+
+Concentration-dependent AB classes: large, infrequent doses
+
+* aminoglycosides (e.g. gentamicin, tobramycin, aminkacin for life-threatening nosocomial infections)
+* fluoroquinolonse (e.g. norfloxacin, ciprofloxacin, levofloxacin)
+* polymyxin
+
+Time-dependent AB classes (beta-lactam): optimize the duration 
+
+* penicillins
+* cephalosporins
+* carbapenems
+* macrolides
+
+
+
+
+## Research on antibiotics use
+
+(relevant to my research)
+
+https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2814214
+
+https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2814216
+
+
+https://pubmed.ncbi.nlm.nih.gov/37760690/
+
+
+
+

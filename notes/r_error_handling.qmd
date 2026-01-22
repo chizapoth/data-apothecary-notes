@@ -1,0 +1,126 @@
+---
+title: "Run formulae in loops and handle error"
+description: |
+  How to set up formulae from strings, and log the errors without breaking the loop
+author: "Chi Zhang"
+date: "2025-02-28"
+categories: [R]
+sidebar: false
+code-block-bg: false
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+## Create logs with `logr`
+
+```{r}
+#| eval: false
+library(logr)
+
+# Create temp file location
+# create log 
+tmp <- file.path("/cloud/project/test.log")
+# Open log
+# once open, can write stuff in it
+lf <- log_open(tmp)
+lf
+# Send message to log
+log_print("High Mileage Cars Subset")
+
+# Close log
+# once closed, need to open again to write in the same log
+log_close()
+```
+
+
+An example combined with the loop:
+
+```{r}
+#| eval: false
+
+for (i in 1:10) {
+  tryCatch({
+    print(i)
+    if (i==7) stop("Urgh, the iphone is in the blender !")
+  }, 
+  error=function(e){
+    # print to the log
+    log_print(paste0('error at point ', i, '\n'))
+    log_print(paste0("ERROR :",conditionMessage(e), "\n"))
+  })
+}
+```
+
+
+## Create formula list
+
+`paste0(c('a','b','c'), ' ~ fp(age)')`
+
+```{r}
+#| eval: false
+# load the data
+d_nosup <- read_csv("data/nutrient_nosup_spade.csv")
+var_nosup <- colnames(d_nosup)[6:44]
+fml_nosup_list <- paste0(var_nosup, ' ~ fp(age)')
+fml <- as.formula('Fullk ~ fp(age)')
+```
+
+
+## Put together
+
+```{r}
+#| eval: false
+
+# create log 
+log_nosup_male <- file.path("/cloud/project/log_nosup_male.log")
+
+# Open log
+log_open(log_nosup_male)
+
+
+for (i in 1:length(fml_nosup_list)) {
+  varname <- var_nosup[i]
+  
+  tryCatch({
+    
+    fml <- fml_nosup_list[i]
+    fml <- as.formula(fml)
+    
+    f.spade(
+      frml.ia = fml, # model for intake amounts,
+      frml.if = "no.if", 
+      prb = c(25, 50, 75, 95, 97.5)/100,
+      data = d_nosup,
+      min.age = 18,
+      max.age = 80,
+      sex.label = "male", 
+      seed = 29062020,
+      spade.output.path = "output_nutrient_nosup"
+    )
+    
+  }, 
+  
+  error=function(e){
+    # print to the log
+    log_print(paste0('Error at variable ', i, ': ', 
+                     # mark which variable it is
+                     varname, ' : ',
+                     #also print the error message
+                     conditionMessage(e),'\n'))
+    # log_print(paste0("ERROR :",conditionMessage(e), "\n"))
+  })
+}
+
+# close log
+log_close()
+```
+
+
+
+
+

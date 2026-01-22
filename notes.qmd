@@ -3,6 +3,7 @@ title: "Notes"
 listing:
   contents:
     - "old_notes/*.qmd"
+    - "notes/*.qmd"
   sort: "date desc"
   type: table
   categories: true

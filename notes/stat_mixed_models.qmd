@@ -1,0 +1,92 @@
+---
+title: "Mixed models for repeted measurements"
+bibliography: biblio.bib
+categories: [Statistics]
+date: 2024-06-10
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+Resources: 
+
+* `mmrm` package [vignette](https://openpharma.github.io/mmrm/latest-tag/articles/methodological_introduction.html)
+* [Mixed models with R](https://m-clark.github.io/mixed-models-with-R/random_intercepts.html)
+* [GLMM FAQ](https://bbolker.github.io/mixedmodels-misc/glmmFAQ.html)
+
+
+
+## Practical strategy
+
+(Assuming it's normal continuous outcome)
+
+### Understand the design
+
+* repeated measures?
+* any intervention?
+* how many levels? nesting? clustering?
+
+### Model building
+
+Start with **linear model** without any random effect.
+
+
+
+
+### Mixed modeling in R
+
+* Linear mixed models: `nlme::lme`, `lme4::mner`, `brms::brm`
+* generalized linear mixed models (GLMM): `lme4::glmer`, `glmmTMB`; `brms::brm` for Bayesian
+* nonlinear mixed models: `nlme::nlme`, `lme4::nlmer`; `brms::brm`
+
+
+|equation|formula |meaning |
+|:---:|:---: |:---:|
+|$B_0 + B_1X_i + e_i$ | | no random effect|
+|$(B_0+b_{g,0} + B_1X_i + e_i)$| `x+(1|group)`| random group intercept |
+|| `(x|group)`| random slopt of `x` within group, with correlated intercept|
+|| `(1+x|group)`| |
+|| `(0+x | group)`|random slop of `x` within group, no variation in intercept |
+|| `(-1+x | group)`| |
+|| `(1| group) + (0+x|group)`|uncorrelated random intercept and random slopt within group |
+
+
+
+
+### Random intercept 
+
+Each group has different intercelpt, but the slope is the same
+
+$$gpa = (b_0 + effect_{student} + b_{occasion} * occasion + e)$$
+
+
+
+
+# MMRM
+
+MMRM has one distinct feature compared to other linear mixed models: subject-specific random effects are considered as residual effects (part of error correlation matrix).
+
+### Methodology 
+
+Basic linear mixed-effects model for a single level of grouping
+
+$$
+y_i = X_i \beta + Z_i b_i + \epsilon_i, i = 1, ..., n
+$$
+$$
+b_i \sim N(0, \Psi), \epsilon \sim N(0, \sigma^2 I)
+$$
+
+* $\beta$ is p-dim vector of fixed effects
+* $b$ is q-dim vecor of random patient specific effects
+* $X_i$ of size $n_i \times p$ and $Z_i$ of size $n_i \times q$ are regressor matrices relating observations to the fixed effects and random effects.
+* $\epsilon_i$ is $n_i$-dimensional within-subject error
+ 
+
+

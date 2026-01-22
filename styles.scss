@@ -129,3 +129,30 @@ h4 {
   background-size: 1em;
   background-position: 1em 0.5em;
 }
+
+// Listing table column widths
+#listing-listing table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+//#listing-listing table th,
+//#listing-listing table td {
+//  text-align: center;
+//  vertical-align: middle;
+//}
+
+#listing-listing table th:nth-child(1),
+#listing-listing table td:nth-child(1) {
+  width: 18%;
+}
+
+#listing-listing table th:nth-child(2),
+#listing-listing table td:nth-child(2) {
+  width: 57%;
+}
+
+#listing-listing table th:nth-child(3),
+#listing-listing table td:nth-child(3) {
+  width: 25%;
+}

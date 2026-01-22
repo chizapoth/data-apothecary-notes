@@ -1,0 +1,115 @@
+---
+title: "My workflow in working with functions in a package"
+description: |
+  Structure them, write them, test them, document them.
+author: "Chi Zhang"
+date: "2023-10-08"
+categories: [R]
+sidebar: false
+code-block-bg: false
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+::: {.callout-note}
+
+## Ongoing notes
+
+Some of the content are being added as I go.
+
+:::
+
+
+Functions make up the whole R package, except for data-only packages. The workflow should help me navigate the process.
+
+A short example borrowed from [GSWEP4R workshop](https://openpharma.github.io/workshop-r-swe-sf/slides/03_workflow.html#/title-slide) is documented here, [function code](https://github.com/andreaczhang/data-apothecary-notes/blob/main/dev/script/rpkg_functions_1.R) and [test code](https://github.com/andreaczhang/data-apothecary-notes/blob/main/dev/script/rpkg_functions_2_tests.R)
+
+* function 1: implement a function with class attribute `SimulatedResult`
+* function 2: generic function `print.SimulatedResult` that prints what f1 produces
+* test files for function 1 and 2
+
+
+
+## Structure 
+
+
+
+## Write 
+
+
+### What to return?
+
+Put the arguments in a list named `result`, then attach other outputs to `result`. 
+
+```{r}
+#| echo: true
+#| eval: false
+result <- list(arg1 = arg1, arg2 = arg2)
+```
+
+
+Afterwards, set **class attribute** to something meaningful, for example, 
+
+```{r}
+#| echo: true
+#| eval: false
+result <- structure(result, class = 'SimulationResult')
+```
+
+
+
+This allows us to implement generics.
+
+### Generics
+
+Common generics 
+
+* print
+* summary
+* plot
+
+```{r}
+#| echo: true
+#| eval: false
+print.classname <- function(x, ...){
+  # x is an object of `classname`
+  # it should be a list, and have class attribute `classname`
+}
+```
+
+
+## Test 
+
+Tests for functions and generic functions seem to be the same as before. Need to go back to the function and add error messages.
+
+
+
+## Document
+
+The way to document generic functions is exactly the same as any other function.
+
+```{r}
+#| echo: true
+#| eval: false
+
+#' Print method
+#'
+#' @description
+#' Generic function to print a `SimulationResult` object
+#'
+#' @param x a \code{SimulationResult} object to print
+#' @param ... further arguments to pass from other methods
+#'
+#' @return something printed
+#' @export
+#'
+#' @examples
+#' simd <- fsim(n1 = 10, n2 = 10, mean1 = 0, mean2 = 5, sd1 = 1, sd2 = 1)
+#' print(simd)
+```
+

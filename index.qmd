@@ -1,31 +1,21 @@
 ---
-title: "Data Apothecary's Notes"
 image: misc/logo_dan.png
 about:
-  id: hero-heading
   template: trestles
-  image-shape: rectangle
+  image-shape: rounded
   links:
     - icon: github
-      text: Github
-      href: https://github.com/chizapoth/data-apothecary-notes
+      text: Report an issue
+      href: https://github.com/chizapoth/data-apothecary-notes/issues
+    - icon: globe
+      text: About the author
+      href: https://chizapoth.github.io/
 ---
 
-::: {#hero-heading}
+# About Data Apothecary's Notes
 
-Hello, welcome!
+This is a collection of notes on **data science, programming and clinical trials**.
 
-This is the note repository for **modern data science skills with a focus on real-world data (observational studies) and clinical trials**. 
+This is a work in progress — content may be incomplete or contain errors. Use with caution!
 
-Content will be gradually added while I learn the topics, and mostly for personal use. Therefore, it is <u>by no means</u> a complete guide by the time you read it!
-
-I try to organize the content in a modular way: these should cover the important aspects in which a data scientist / modern statistician should know.
-
-* study design
-* inference
-* models
-* programming
-
-Any feedback / mistake corrections are welcome, you can find me [here](https://chizapoth.github.io). Thank you!
-
-:::
+If you spot mistakes or have suggestions, feel free to reach out.

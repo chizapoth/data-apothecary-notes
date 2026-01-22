@@ -1,0 +1,135 @@
+---
+title: "Effects and Estimands"
+description: |
+    An overview of key terminology
+author: "Chi Zhang"
+date: "2023-09-03"
+categories: [Clinical Trials, Real World Data]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+
+## Effects
+
+$Y^{a=1}, Y^{a=0}$ are the **potential outcomes** under treatment 1 and 0. They are random variables. Treatment A has causal effect if $Y^{a=1} \neq Y^{a=0}$.
+
+For individual $i$, $Y_i^{a=1}, Y_i^{a=0}$ are deterministic. 
+
+In reality we *do not* observe both potential outcomes for an individual, since we only have ONE outcome. We observe $Y$ and $A$. For a population, average treatment effect (ATE) can be estimate
+
+
+
+
+### Estimands
+
+Greifer, N., & Stuart, E. A. (2021). Choosing the estimand when matching or weighting in observational studies. arXiv preprint arXiv:2106.10577.
+
+![](fig/estimands.png){width=85% fig-align="center"}
+
+
+ATE: average treatment effect in the population
+
+$E[Y(1) - Y(0)]$
+
+ATT: average treatment effect among the treated
+
+$E[Y(1) - Y(0) | Z = 1]$
+
+ATC: average treatment effect among the controls
+
+$E[Y(1) - Y(0) | Z = 0]$
+
+ATM: average treatment effect among the matched
+
+
+Most of the time we care about ATE and ATT. Pay attention to the matching and weight methods:
+
+* ATE commonly uses IPW (inverse probability weighting)
+* ATT uses PSM (propensity score matching).
+
+
+## Bias
+
+| Data generation | Correct causal model | Correct causal effect |
+|:-------------:|:-----------------:|:-----------------:|
+|      Collider   |    Y ~ X        |        1           |
+|      Confounder |    Y ~ X; Z     |        0.5         |
+|      Mediator   |   Direct effect: Y ~ X; Z. Total effect: Y ~ X     |  Direct: 0; total: 1  |
+|      M-Bias     |    Y ~ X        |        1           |
+
+
+
+
+### Selection bias
+
+This bias is the result of selecting a common effect of 2 other variables (collider): a treatment, an outcome.
+
+* non-response, missing data
+* self-selection, volunteer bias
+* selection affected by treatment before study started
+
+A form of **lack of exchangeability** between the treated and untreated.
+
+Correct for selection bias: IP weighting
+
+
+
+## ICE (in clinical trial)
+
+Key question: how to present the data visually?
+
+What are considered as important, what are not?
+
+
+ITT (intention to treat): include the data after rescue medicine. Includes dropouts
+
+PP (Per-protocol): exclude patients taking rescue medicine, only analyse the complete cases
+
+Trial estimands: trial treatment effect depends on how events occur after treatment initiation.
+
+Treatment effect for a given outcome.
+
+Five core attributes
+
+* population
+* treatment conditions
+* endpoint
+* summary measure
+* strategies to handle each type of intercurrent event
+
+### Intercurrent event
+
+Post-baseline events (post randomisation in RCT) that affects the interpretation of outcome.
+
+Two categories: 
+
+* treatment-modifying events, affects the receipt of assigned treatment. E.g. early discontinuation, use of rescue, wrong dose, wrong type (placebo for example).
+
+* truncating events, e.g. death, amputation of limb when the limb is relevant for the research question.
+
+Strategies (multiple can be used for different ICE in the same study)
+
+* treatment policy strategy: treat as it is, ignore ICE
+* composite strategy: modifies the endpoint value, defined by the investigator
+* while-on-treatment (while alive): before intercurrent event data is used.
+* hypothetical strategy
+* principal stratum strategy: redefine the population
+
+
+
+
+
+
+
+
+
+
