@@ -1,0 +1,30 @@
+---
+title: "Styling your quarto project"
+description: |
+  Learning notes on how to customize a quarto project, such as website.
+author: "Chi Zhang"
+date: "2023-10-18"
+categories: [Website]
+sidebar: false
+code-block-bg: false
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+Useful references: 
+
+* [Talk](https://emilhvitfeldt.com/talk/2023-09-19-quarto-theming-positconf/) by Emil Hvitfeldt on Styling and Templating Quarto Documents
+
+
+
+
+
+
+
+
+

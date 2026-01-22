@@ -1,17 +1,31 @@
 ---
-title: "What is Data Apothecary's Notes?"
+title: "About"
+image: misc/logo_dan.png
 about:
-  id: hero-heading
-  template: solana
-  #image-shape: rectangle
+  template: trestles
+  image-shape: rounded
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/andreaczhang
+    - icon: globe
+      text: Website
+      href: https://andreaczhang.github.io
 ---
 
-Hello, welcome! 
+## About this blog
 
-This is the note repository for some documentation and demonstration on modern data science skills related to drug development. 
+This is a collection of notes on **modern data science skills** with a focus on:
 
-I created this repo so that I can find **notes with code and rendered results** easily. Therefore, the target audience is the future-me; if it helps you in some way as well, I'd be more than happy! 
+- Real-world data and observational studies
+- Clinical trials methodology
+- Causal inference
+- R programming
 
-If you see some errors or have any suggestions, please feel free to reach out.
+I created this space so I can find **notes with code and rendered results** easily. The target audience is future-me — but if it helps you too, I'd be happy!
 
-Find out who I am [here](https://andreaczhang.github.io)! 
+## About me
+
+I work at the intersection of statistics, epidemiology, and software development in healthcare and pharma.
+
+If you spot errors or have suggestions, feel free to reach out!

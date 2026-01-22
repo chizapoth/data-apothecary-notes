@@ -1,0 +1,116 @@
+---
+title: "Notes: The Book of OHDSI - Data Analytics"
+description: |
+  Observational Health Data Sciences and Informatics
+author: "Chi Zhang"
+date: "2024-05-06"
+categories: [Data science, Observational data]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+[The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/) written by the OHDSI community.
+
+What is required to go from origin (source data) to destination (evidence):
+
+* understanding of health informatics, patient and provider interaction through administrative and clinical systems into final depository
+* appreciation of the biases that can arise in the data curation processes
+* mastery of epidemiological principles and statistical methods to translate clinical questions into an observational study design properly
+* technical ability to implement and execute computationally-efficient data science algorithms
+* clinical knowledge to synthesize knowledge learned, and determine how the new knowledge should impact health policy and clinical practice.
+
+
+
+OMOP: Observational Medical Outcomes Partnership, aims to identify true drug safety association.
+
+OMOP CDM: common data model, a mechanism to standardize the structure, content and semantics to make it possible to write statistical code that can be reused at every data site.
+
+OHDSI community (2014) has created libraries of open-source analytics tools atop OMOP CDM to support: 
+
+* clinical characterisation for disease natural history, treatment utilisation, quality improvement
+* population level effect estimation to apply causal inference for medical product safety surveillance and comparative effectiveness
+* patient level prediction to apply machine learning for precision medicine and disease interception
+
+
+# Chapter 7 Data analytics use cases
+
+Three major categories: characterization, population-level estimation, patient-level prediction
+
+
+## Characterization
+
+> What happened to the patients.
+
+[Chapter 11 Characterization](https://ohdsi.github.io/TheBookOfOhdsi/Characterization.html#cohort-characterization)
+
+Typical characterization questions: 
+
+* How many patients...? 
+* How often does...? What proportion of patients ...?
+* What is the distribution of values for ...?
+* What is the median length of exposure for patients on ...?
+* Other drugs the patient is using?
+
+Desired output:
+
+* count, percentage
+* averages and other descriptive statistics
+* prevalence, incidence rate
+* rule-based phenotype
+* drug utilization, adherence, treatment pathways, line of therapy
+* disease natural history, co-morbidity profile
+
+
+## Population-level estimation
+
+> What are the causal effects
+
+[Chapter 12 Population-level Estimation](https://ohdsi.github.io/TheBookOfOhdsi/PopulationLevelEstimation.html)
+
+Typical questions:
+
+* What is the effect of ...?
+* Which treatment works better?
+* What is the risk of X on Y?
+* What is the time-to-event of ...?
+
+Desired output:
+
+* RR, HR, OR
+* Association, correlation
+* ATE, causal effect
+
+## Patient-level prediction
+
+> What will happen to A?
+
+[Chapter 13 Patient-level Prediction](https://ohdsi.github.io/TheBookOfOhdsi/PatientLevelPrediction.html)
+
+Typical questions:
+
+* What is the chance that this patient will...?
+* Who are the candidate for...?
+
+Desired output:
+
+* probability for an individual
+* prediction model
+* high/low risk groups
+* probabilistic phenotype
+
+
+
+
+
+
+
+
+
+

@@ -2,49 +2,35 @@ project:
   type: website
   output-dir: docs
   render:
-    - "*.qmd" # first render all qmd files
-    - "!dev/py_notebooks/*.qmd" # but ignore everything python
-    - "!dev/do_not_render/*.qmd" # and old case studies
+    - "*.qmd"
+    - "old_notes/*.qmd"
+    - "!dev/**/*.qmd"
+    - "!gc_mle/**/*.qmd"
+    - "!random/**/*.qmd"
+
 website:
-  page-navigation: true
   title: "Data Apothecary's Notes"
-
-  navbar:
-    left:
-     # - href: index.qmd
-     #   text: Home
-
-      - href: method/index.qmd
-        text: Methods
-
-      - href: programming/index.qmd
-        text: Programming
-        
-      - href: nest/index.qmd
-        text: NEST
+  description: "Notes on data science, causal inference, and clinical trials"
   
-      - href: industry/index.qmd
-        text: Industry
-        
-      - href: gc_mle/index.qmd
-        text: GC MLE
-        
-      - href: random/index.qmd
-        text: Random tests
-
+  navbar:
+    background: "#bb5c54"
+    foreground: white
+    right:
+      - href: notes.qmd
+        text: Notes
       - href: about.qmd
         text: About
-
-    right: 
       - icon: github
         href: https://github.com/andreaczhang/data-apothecary-notes
-        
+
+  page-footer:
+    center: "Made with [Quarto](https://quarto.org)"
+
 format:
   html:
     theme: styles.scss
-    # css: styles.css
     toc: true
+    code-overflow: wrap
 
-filters: 
+filters:
   - webr
-

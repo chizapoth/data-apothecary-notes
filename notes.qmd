@@ -1,0 +1,17 @@
+---
+title: "Notes"
+listing:
+  contents:
+    - "old_notes/*.qmd"
+  sort: "date desc"
+  type: table
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [date, title, categories]
+  date-format: "MMM D, YYYY"
+  page-size: 15
+page-layout: full
+---
+
+Browse all notes or filter by category.

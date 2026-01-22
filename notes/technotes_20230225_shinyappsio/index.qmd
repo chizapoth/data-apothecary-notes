@@ -1,0 +1,77 @@
+---
+title: "Testing Shiny app and deploy to shinyapps.io"
+description: |
+  Notes on how to set up the free shinyapp.io to deploy a demo shiny app.
+author: "Chi Zhang"
+date: "2023-02-25"
+categories: [Shiny, Website]
+sidebar: false
+code-block-bg: false
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+Useful references: 
+
+* [Shinyapps.io](https://www.shinyapps.io/?_ga=2.153008955.389615798.1677342175-855156568.1676825759) 
+
+* [Get Started with shinyapps.io](https://shiny.rstudio.com/articles/shinyapps.html?_ga=2.91218270.516609615.1677344806-1911681.1677344806)
+
+# Deploy a shiny app 
+
+## Considerations
+
+A few ways to do it: **Shiny Server** (free), **shinyapps.io** (free and premium), and professional Rstudio Connect (paid). 
+
+I choose to test out the second option, since it allows more possibilities compared to the free open-source Shiny Server.
+
+The free option should allow me to create **5 apps**, which is more than enough for personal use. It also allows **25 active hours** per month; a note on that at the end.
+
+
+
+## Configuration
+
+Sign up with GitHub account; or something else. It is possible to change account name afterwards.
+
+In Rstudio, 
+
+* first `install.packages('rsconnect')`
+* then, configure the account. It can be done with `rsconnect::setAccountInfo()` with information provided in your own **shinyapps.io** page.
+
+Before the last step, it is necessary to have an app to deploy!
+
+## Create my first shiny project
+
+Here I use my usual workflow of creating a new R project: 
+
+* Create a new repo on GitHub;
+* Clone the repo locally, by opening a new R project with version control.
+
+Now copy the two R scripts from the [demo example](https://shiny.rstudio.com/articles/shinyapps.html?_ga=2.91218270.516609615.1677344806-1911681.1677344806):
+
+* `server.R`
+* `ui.R`
+
+Test locally by running `shiny::runApp()`. This should render the app.
+
+## Deploy to shinyapps.io
+
+`rsconnect::deployApp()` will deploy the app, with an automatically generated url that links to your account.
+
+The demo app is deployed [here](https://chizapoth.shinyapps.io/shinydev/). 
+
+
+### Note on active hours
+
+After deployment, the site seems to be active until you shut it down manually; or timeout. The default timeout is 15 minutes, which can be reduced to 5 minutes. 
+
+25 hours per month suggests that I can open the site for 300 times (without manually shuting it down). It might be necessary to start using the paid options, if I have more than one site, or multiple users want to access it ...
+
+
+
+

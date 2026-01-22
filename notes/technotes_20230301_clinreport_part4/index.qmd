@@ -1,0 +1,113 @@
+---
+title: "Notes: Making Data Science work for Clinical Reporting - Part 4"
+description: |
+  This is the Part 4 of a four-part course on Coursera.  
+author: "Chi Zhang"
+date: "2023-03-01"
+categories: [Clinical trial, Data science, Reporting]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+This is a course provided by Genentech (part of Roche) on Coursera. 
+
+Course [link](https://www.coursera.org/learn/making-data-science-work-for-clinical-reporting) 
+
+# Risk assessment and management
+
+Over 19k CRAN packages and 10k maintainers
+
+Some are universally used, documented, tested and have vibrant community of users and developers; some have limited docs and testing.
+
+
+## Open source packages
+
+Exmample: 
+
+* `survival`: 8 developers, >18 years
+* `admiral`: 25 developers, >1 year
+* `tern`: 77 developers, 5 years
+* `rtables`: 21 developers, 4 years
+
+Engagement across these packages is different, some receive more issues and comments, some receive more code contributions.
+
+Stale: stable? abandoned?
+
+Contribution is highly skewed, a few contributors write the majority of the code.
+
+R package **life cycles** (indicative, not guaranteed)
+
+* experimental (ready to use?)
+* stable (safe to use?)
+* deprecated, no longer maintained
+* superseded, something better exists
+* `<1.0`: big changes likely; `>=v1.0`: is it safe to use?
+
+
+
+
+## Risk mitigation for R packages
+Combine external and internal packages (CI/CD release)
+
+-> automated package data collection
+
+-> automated quality checks: if not pass, assess
+
+-> package repo integration tests
+
+-> publish to package repo, generate package validation report
+
+
+## Assess external packages for statistical methods
+
+Does it provide the required functionality?
+
+* Correct statistical method?
+* Could you extend it?
+* Correct results? (compare with another software)
+* Do you understand the method? (check the paper linked with package)
+
+Does it work reliably?
+
+* Published? (e.g. on CRAN)
+* Different inputs? 
+* Fast?
+* Do other people use it? (downloads)
+* Does other software use it? (reverse dependencies)
+
+Does the code look robust and well tested?
+
+* How are the functions implemented
+* Is the source code readable
+* Coverage with unit tests
+* Mature package?
+
+Is it well documented?
+
+* Documented functions?
+* Vignettes?
+* Published?
+* Informative NEWS entry?
+
+Who are the authors, are they responsive?
+
+* Did they publish statistics papers on this topic
+* Is a github site with issues available
+
+
+## Tools
+
+`covr` and unit tests
+
+`riskmetric` and the R Validation Hub
+
+**pharmaverse.org**, with end-to-end examples
+
+

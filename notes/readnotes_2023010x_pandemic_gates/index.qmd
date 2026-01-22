@@ -1,0 +1,163 @@
+---
+title: "How to prevent the next pandemic - Bill Gates"
+description: |
+  Reading notes on some of the chapters. 
+author: "Chi Zhang"
+date: "2023-01-04"
+categories: [Notes]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+# Notes from each chapter
+
+## Learn from COVID
+
+Some mistakes
+
+* Federal agencies refused to share data
+* Persons responsible did not have training inn epidemiology
+* Not enough testing, not fast enough 
+* Lacks information sharing
+
+
+## Create a pandemic prevention team
+
+There should be a global expert team to help preventing the pandemic: they *should* be responsible for
+
+* surveillance of potential disease outbreaks, sound the alert when necessary;
+* creation and sharing of data system and data on cases
+* standardising policy making and training
+* evaluation of the capacity of individual countries
+* coordination of personnels
+
+However it is difficult even for all countries to reach an agreement, and secure the funds. There is no **one organisation** that is able to join forces from all parties. Organisations depend on **volunteers**. WHO lacks funds, experts who are specialised in pandemic research, and relies on the free global response networks. 
+
+A team, **GERM (Global Epidemic Response and Mobilisation)** should be established. The main task should be **disease surveillance** and modeling; rather than treating patients.
+
+
+## Get better at detecting outbreaks early
+
+### Disease surveillance
+
+**Passive surveillance**: healthcare workers report cases that use healthcare services (e.g. clinic, hospital) to public health authorities.
+
+**Active surveillance**: workers go to communities to find potential patients that have not been to clinics or hospitals due to inconvenience, or mild symptoms.
+
+When there are many cases (clusters), the signal might be picked up by a computer algorithm, and alerts sent to healthcare workers so that they pay more attention.
+
+In some countries, personnels other than healthcare workers (e.g. teachers, post office staff) might also participate in disease surveillance. In addition, some virus can be detected in the environment such as **waste water** (e.g. polio, illeagal drug). 
+
+### Birth and death
+
+In LMIC (low and middle income countries), there are higher percentage of unrecorded births ad deaths. Some of them carry out census every other year - no real time data. Some data are also lack information such as cause of death. Without knowing causes of death (such as diarrhea), it is impossible to prevent the disease. 
+
+Post-mortem (autopsy) can be unattainable, especially in LMIC. It could also be undesirable for families who have lost their loved ones - procedures are very invasive. Nevertheless, alternatives exist, such as minimally invasive autopsy technologies like MRI and MRI guided fine-needle biopsy.
+
+
+
+## Help people protect themselves right away
+
+The effect of **NPI** (non-pharmaceutical intervention, such as masks and lockdown) is difficult to quantify; yet it is a very important measure.
+
+Paradox: NPI is effective -> reduced cases -> people think NPI is not necessary
+
+Lockdown can slow down spread, yet it has a huge impact on economy, especially for LMIC.
+
+Contact tracing
+
+- not a new technology; used for smallpox, Ebola, AIDS.
+- not widely applicable: some countries do it better than others. Need more trust from people towards public health agencies.
+- smartphone apps, not very useful: limited by users
+
+Good ventilation system
+
+- viruses survive in air, but for different length of time
+
+Social distance
+
+- 6 inch isn't a magic distance
+- depends on circumstances: indoor/outdoor
+
+
+
+
+## Find new treatment fast, get readyy to make vaccines
+
+Infodemic
+
+(these two chapters are highly technical, and they deserve a separate note)
+
+
+## Practice, practice, practice
+
+Disaster simulation and drill
+
+Drill: assume a city is at risk of a disease that has epidemic potential
+
+- how to develop diagnostic tests and large-scale manufacturing and distribution
+- government, timely and comprehensive information dissemination
+- management of quarantine 
+- set up system for case reporting 
+
+
+
+## Close the health gap between rich and poor countries
+
+The impact is different among different groups.
+
+Vaccination distribution is highly imbalanced; yet it is only one of the many aspects where inequality exists, and not even the most unequal.
+
+
+
+
+
+## Make and fund a plan for preventing pandemics 
+
+### Make and provide better tools
+
+Invest in better vaccine, treatment, diagnosis
+
+Testing and approval process
+
+Finding new treatment and vaccine
+
+- create a large database for anti-virus chemicals, open to all
+- AI and software to speed-up development 
+
+### GERM 
+
+Public health agencies are under-funded, this is true for all levels: state/county, country and international organizations (WHO).
+
+### Improve disease surveillance 
+
+Improve census, birth and death in LMIC; then expand into sequencing pathogens, environmental monitoring.
+
+Aggregate disease surveillance systems internationally, and provide real-time data
+
+### Improve health system 
+
+Rebuild the system after Covid, invest more in healthcare, more staff 
+
+Spend more on basic prevention for all and early diagnosis, rather than in-hospital treatment for severe cases
+
+Management, clear tasks and responsibility
+
+
+
+
+
+
+
+
+
+
+
+
+

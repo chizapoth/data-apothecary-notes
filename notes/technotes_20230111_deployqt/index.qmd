@@ -1,0 +1,69 @@
+---
+title: "Publishing Quarto Website with GitHub Pages"
+description: |
+  A workflow that worked for me. This is the *third* time that I go through the Quarto website publishing with GitHub Pages - even more reason to note it down! 
+author: "Chi Zhang"
+date: "2023-01-11"
+categories: [Quarto, Website]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+## 1. Create a public repository on GitHub
+
+After you have the public repo, clone it to your local repo.
+
+## 2. Create Quarto project
+
+This can be a website, a book (a specific type of website) or something else.
+
+Test compilation by `quarto render`, or click the `Render` button.
+
+![](0_test_render.png){width=85% fig-align="center"}
+
+## 3. Configure Quarto project
+
+In `_quarto.yml`, change the project configuration to use `docs` as the `output-dir`: 
+
+```
+project:
+  type: website
+  output-dir: docs
+```
+
+![](1_add_outputdir.png){width=85% fig-align="center"}
+
+Then add `.nojekyll` to the root of the repository. Can do this by (in **terminal**)
+
+```
+touch .nojekyll
+```
+
+Push everything to your repository.
+
+## 4. Configure GitHub Pages
+
+Go to Settings > Pages, publish from `docs` of the `main` branch.
+
+![](2_config_ghp.png){width=85% fig-align="center"}
+
+Can check GitHub Action and deployment status. 
+
+![](3_action.png){width=85% fig-align="center"}
+
+
+![](4_deploy.png){width=85% fig-align="center"}
+
+
+After the deployment is successful, go to `view deployment`, and a successful website should be published. 
+
+![](5_success){width=85% fig-align="center"}
+

@@ -1,0 +1,70 @@
+---
+title: "R package website with `pkgdown`"
+description: |
+  A workflow that worked for me: when you have a few vignette documents, and want to display them nicely in a website format.  
+author: "Chi Zhang"
+date: "2023-02-20"
+categories: [Rpkg, Website]
+sidebar: false
+code-block-bg: true
+code-block-border-left: true
+---
+
+
+# 1. Create the website skeleton.
+
+Before editing the details, we need to create the skeleton for the website. It can be done with `usethis` and `pkgdown` packages.
+
+In R, run this: 
+
+```
+usethis::use_pkgdown()
+```
+This creates the `_pkgdown.yml` file, which is the place you configure your site.
+
+
+To view the initial package website, use the following command:
+```
+pkgdown::build_site()
+```
+
+This creates `docs/` directory containing a website
+
+* `README.md` becomes the homepage,
+* documentation in `man/` generates a function reference,
+* vignettes are rendered into `articles/`.
+
+
+# 2. Edit the vignette documentation
+
+Make sure that the vignette index is consistent with **Title**, otherwise it will not render.
+
+# 3. Build and preview your site
+
+Now check if the site looks good, and contents are correctly positioned.
+
+```
+pkgdown::preview_site()
+pkgdown::build_site()
+```
+
+You can also do this to build the site.
+
+```
+pkgdown::build_site_github_pages()
+```
+
+# 4. Deploy site with GitHub Pages
+
+There seems to be two options: 
+
+* `usethis::use_pkgdown_github_pages()`, this function should take care of everything after pushing changes to GH. 
+* if you used `pkgdown::build_site_github_pages()` and pushed everything to GitHub, it might not automatically deploy your site to GH pages. I tried to go to *Settings -> Pages -> Deploy from a branch -> main -> /docs*, this makes Action deploy your site from the `docs` folder. 
+  * double check if you have `.nojekyll` file
+  * if a website does not show, check whether you have `docs` in the `.gitignore` file; since you are deploying from that folder.
+
+
+
+
+
+
